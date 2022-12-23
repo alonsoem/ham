@@ -16,21 +16,39 @@ export default class utcTime extends React.Component {
   update = () => {
     getUtcTime({})
         .then((data) => {
-             const {time}=data;
-             this.setState({utcTime:time});
-             console.log (data);
-            })
+          const {hour}=data;
+          
+          
+
+
+          
+
+          
+          setInterval(() => {
+            const localTime = new Date();
+            this.setState({ localTime: localTime.toLocaleTimeString("es-AR")})
+            const hourDiff =  parseInt(hour) -parseInt(localTime.getHours());
+    
+            
+
+            let updatedTIme = new Date(localTime.getTime() + hourDiff * 60 * 60 * 1000);
+            this.setState({utcTime:updatedTIme.toLocaleTimeString()});
+
+          }, 1000)
+
+          console.log (data);
+            
+        })
+
          
         
         .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a internar'}));
 }
 
+
 componentDidMount() {
     this.update();
 
-    const current = new Date();
-    const time = current.toLocaleTimeString("es-AR");
-    this.setState({localTime:time});
 }
 
   render() {
