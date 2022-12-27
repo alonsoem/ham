@@ -91,7 +91,7 @@ export default class solarConditions extends  React.Component {
 
         return (
             <div className="container-fluid table-scroll-vertical">
-                <div >
+                
                 <div className="row d-flex justify-content-center ">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
@@ -196,7 +196,7 @@ export default class solarConditions extends  React.Component {
 
 
             </div>
-            </div>
+            
 
 
         );
