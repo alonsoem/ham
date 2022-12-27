@@ -23,7 +23,7 @@ export default class solarConditions extends  React.Component {
       
 
         return (
-            <div className="container-fluid table-scroll-vertical ">
+            <div className="container-fluid table-scroll-vertical">
             <div class="row">
     <div class="col-sm-12">
       <div class="card">
