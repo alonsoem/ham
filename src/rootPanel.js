@@ -19,7 +19,6 @@ export default class App extends React.Component {
             <Route path="/updates" component={updates} />
             <Route path="/cqcall" component={cqCall} />
             <Route path="/utc" component={utcTime} />
-            <Route path="/" component={tools} />
             <Route path="/tools" component={tools} />
           </Switch>
         </BrowserRouter>
