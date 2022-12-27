@@ -23,8 +23,7 @@ export default class solarConditions extends  React.Component {
       
 
         return (
-          <div>
-            <div className="container-fluid table-scroll-vertical bgdiv">
+            <div className="container-fluid table-scroll-vertical ">
                   <h1>Ejemplo de un Comunicado</h1>
 
                   <h2>Preparativos</h2>
@@ -69,8 +68,6 @@ Al responder seguiremos el mismo patr&oacute;n, primero responderemos con la dis
 
 </p>
 
-
-            </div>
 
             </div>
 
