@@ -24,16 +24,24 @@ export default class solarConditions extends  React.Component {
 
         return (
             <div className="container-fluid table-scroll-vertical ">
-                  <h1>Ejemplo de un Comunicado</h1>
+            <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+            <div class="card-header bgdiv">
+                <h1>Ejemplo de un Comunicado</h1> 
+            </div>
+          
+      <div class="card-body">
+                         
 
-                  <h2>Preparativos</h2>
+      <h2>Preparativos</h2>
 
-                  <p>
-                      Conecte la antena de la banda que quiera utilizar al conector del equipo y sintonice la frecuencia 
-                      dentro de la porci&oacute;n de la banda que se quiera utilizar y para la cual se tenga habilitaci&oacute;n.
-                  </p>
+<p>
+    Conecte la antena de la banda que quiera utilizar al conector del equipo y sintonice la frecuencia 
+    dentro de la porci&oacute;n de la banda que se quiera utilizar y para la cual se tenga habilitaci&oacute;n.
+</p>
 
-                  
+
 <p>
 Hacer una escucha de unos segundos en dicha frecuencia comprobando que se encuentra libre de estaciones transmitiendo.
 Si no se escucha a nadie transmitiendo se interroga si la frecuencia se encuentra ocupada, repitiendo tres veces la siguiente frase dejando un breve intervalo entre cada repetici&oacute;n, por ejemplo:<br/><br/>
@@ -68,6 +76,7 @@ Al responder seguiremos el mismo patr&oacute;n, primero responderemos con la dis
 
 </p>
 
+</div></div></div></div>
 
             </div>
 

@@ -66,7 +66,7 @@ componentDidMount() {
             </div>
           
       <div class="card-body">
-        <h5 class="card-title">Hora UTC o GMT, independiente de tu ubicación.</h5>
+        <h5 class="card-title">O GMT, independiente de tu ubicación.</h5>
         <p class="card-text display-4">{this.state.utcTime}</p>
       </div>
      </div>   
