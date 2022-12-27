@@ -15,11 +15,11 @@ export default class tools extends  React.Component {
 
        
         return (
-            <div className="container-fluid table-scroll-vertical bgdiv">
+            <div className="container-fluid table-scroll-vertical ">
               
 
                      
-<div class="jumbotron jumbotron-fluid" >
+<div class="jumbotron jumbotron-fluid bgdiv" >
   <div class="container-fluid" >
   </div>    
       <div class="container" >

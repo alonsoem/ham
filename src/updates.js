@@ -11,29 +11,31 @@ export default class updates extends  React.Component {
         };
     }
 
-
-
-
-
-
     render() {
 
-
-      
-
         return (
-            <div className="container-fluid table-scroll-vertical bgdiv">
-                    <h1>&Uacute;ltimas actualizaciones</h1>
-        <p>Esta aplicaci&oacute;n muestra informaci&oacute;n sobre licencias de radioaficionados de distintos paises. En cada pa&iacute;s un ente oficial se encarga de llevar el registro y nosotros usamos esos registros para mostrarlos en este servicio.<br/>
+            <div className="container-fluid table-scroll-vertical main">
+
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+            <div class="card-header bgdiv">
+                <h1>&Uacute;ltimas actualizaciones</h1>      
+            </div>
+          
+      <div class="card-body">
+        <h5 class="card-title">
+          <p>Esta aplicaci&oacute;n muestra informaci&oacute;n sobre licencias de radioaficionados de distintos paises. En cada pa&iacute;s un ente oficial se encarga de llevar el registro y nosotros usamos esos registros para mostrarlos en este servicio.<br/>
         Aqu&iacute; mostramos cuando fue la &uacute;ltima vez que se publicaron los datos que aqui les ofrecemos.
         </p>
+        </h5>
         
-        
+
         <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Pa&iacute;s</th>
+      <th scope="col"></th>
       <th scope="col">Ult. Actualizaci&oacute;n</th>
       <th scope="col">Fuente</th>
     </tr>
@@ -89,6 +91,18 @@ export default class updates extends  React.Component {
     </tr>
   </tbody>
 </table>
+
+
+      </div>
+     </div>   
+    </div>
+   
+</div>
+                    
+        
+        
+        
+      
 
             </div>
 
