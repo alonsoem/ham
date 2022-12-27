@@ -53,18 +53,9 @@ componentDidMount() {
 
   render() {
       return (
-        <div className="container-fluid table-scroll-vertical">
-<div class="jumbotron jumbotron-fluid" >
-  <div class="container-fluid" >
-  </div>    
-      <div class="container" >
-    <h1 class="display-4">Hora UTC</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-  
-</div>
-        
-     
+        <div className="container-fluid table-scroll-vertical bgdiv">
+
+            
      
      <div class="container">
      
@@ -76,8 +67,8 @@ componentDidMount() {
             </div>
           
       <div class="card-body">
-        <h5 class="card-title">La hora UTC o GMT. Independiente de tu ubicacion</h5>
-        <p class="card-text display-2">{this.state.utcTime}</p>
+        <h5 class="card-title">Hora UTC o GMT, independiente de tu ubicación.</h5>
+        <p class="card-text display-4">{this.state.utcTime}</p>
       </div>
      </div>   
     </div>
@@ -92,8 +83,8 @@ componentDidMount() {
                 Hora Local
             </div>
             <div class="card-body">
-                <h5 class="card-title">Hora Local relativa a tu posicion en el mundo</h5>
-                <p class="card-text  display-2">{this.state.localTime}</p>
+                <h5 class="card-title">Hora relativa a tu posición en el mundo.</h5>
+                <p class="card-text  display-4">{this.state.localTime}</p>
             </div>
       </div>   
     </div>
@@ -101,15 +92,6 @@ componentDidMount() {
 </div>
 
 </div>
-
-<div class="row">1-1</div>
-
-<footer class="footer">
-      <div class="container">
-         <button type="button" class="btn btn-secondary btn-lg btn-block">Volver</button>
-      </div>
-    </footer>
-
           </div>
       );
     }

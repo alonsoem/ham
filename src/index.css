@@ -1,3 +1,8 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,4 +18,22 @@ code {
 }
 
 
-.img img{width:100%;}
+/*.img img{width:100%;}*/
+
+
+.bgdiv {
+  /* The image used */
+  /*background-image: url(../static/login-bg.jpg);*/
+  background-size: cover;
+  background-image: url("https://ham.qrits.com.ar/static/backham.jpg");
+  
+  
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import {getSolar} from "./api/api";
 import {Card,Table} from "react-bootstrap";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import './index.css';
 
 
 export default class solarConditions extends  React.Component {
@@ -89,8 +90,9 @@ export default class solarConditions extends  React.Component {
           })
 
         return (
-            <div className="container-fluid table-scroll-vertical">
-                <div className="row d-flex justify-content-center">
+            <div className="container-fluid table-scroll-vertical bgdiv">
+                <div >
+                <div className="row d-flex justify-content-center ">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
                     <Card.Header>HF Band Conditions</Card.Header>
@@ -193,6 +195,7 @@ export default class solarConditions extends  React.Component {
                     </div></div>
 
 
+            </div>
             </div>
 
 

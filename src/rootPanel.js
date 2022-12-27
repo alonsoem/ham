@@ -13,7 +13,6 @@ import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 export default class App extends React.Component {
     render() {
       return (
-          <div   >
         <BrowserRouter>
           <Switch>
             <Route path="/solarConditions" component={solarConditions} />
@@ -24,7 +23,6 @@ export default class App extends React.Component {
             <Route path="/tools" component={tools} />
           </Switch>
         </BrowserRouter>
-          </div>
       );
     }
   }
