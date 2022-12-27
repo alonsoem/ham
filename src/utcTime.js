@@ -32,7 +32,7 @@ export default class utcTime extends React.Component {
             
 
             let updatedTIme = new Date(localTime.getTime() + hourDiff * 60 * 60 * 1000);
-            this.setState({utcTime:updatedTIme.toLocaleTimeString()});
+            this.setState({utcTime:updatedTIme.toLocaleTimeString("es-AR")});
 
           }, 1000)
 

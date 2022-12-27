@@ -24,11 +24,11 @@ export default class updates extends  React.Component {
             </div>
           
       <div class="card-body">
-        <h5 class="card-title">
+        <h6 class="card-title">
           <p>Esta aplicaci&oacute;n muestra informaci&oacute;n sobre licencias de radioaficionados de distintos paises. En cada pa&iacute;s un ente oficial se encarga de llevar el registro y nosotros usamos esos registros para mostrarlos en este servicio.<br/>
         Aqu&iacute; mostramos cuando fue la &uacute;ltima vez que se publicaron los datos que aqui les ofrecemos.
         </p>
-        </h5>
+        </h6>
         
 
         <table class="table table-striped">
