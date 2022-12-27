@@ -2,7 +2,6 @@ import React from 'react';
 import {getSolar} from "./api/api";
 import {Card,Table} from "react-bootstrap";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
-import './index.css';
 
 
 export default class solarConditions extends  React.Component {
