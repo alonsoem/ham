@@ -53,10 +53,10 @@ componentDidMount() {
 
   render() {
       return (
+        <div>
         <div className="container-fluid table-scroll-vertical bgdiv">
 
-            
-     
+              
      <div class="container">
      
 <div class="row">
@@ -92,6 +92,7 @@ componentDidMount() {
 </div>
 
 </div>
+          </div>
           </div>
       );
     }
