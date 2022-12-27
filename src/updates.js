@@ -35,15 +35,13 @@ export default class updates extends  React.Component {
   <thead>
     <tr>
       <th scope="col">Pa&iacute;s</th>
-      <th scope="col"></th>
       <th scope="col">Ult. Actualizaci&oacute;n</th>
       <th scope="col">Fuente</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><img src="static/flags/gif/ar.gif" alt="Argentina flag" /></th>
-      <td>Argentina</td>
+      <th scope="row"><img src="static/flags/gif/ar.gif" alt="Argentina flag" />Argentina</th>
       <td>07-11-2022</td>
       <td><a href="https://www.enacom.gob.ar/listado-de-radioaficionados_p316">
             Enacom
@@ -52,8 +50,7 @@ export default class updates extends  React.Component {
     
     </tr>
     <tr>
-      <th scope="row"><img src="static/flags/gif/br.gif"  alt="Brasil flag"/></th>
-      <td>Brasil</td>
+      <th scope="row"><img src="static/flags/gif/br.gif"  alt="Brasil flag"/>Brasil</th>
       <td>03-10-2022</td>
       <td><a href="https://www.anatel.gov.br/dadosabertos/paineis_de_dados/outorga_e_licenciamento/estacoes_licenciadas.zip">
             Anatel
@@ -61,8 +58,7 @@ export default class updates extends  React.Component {
       </td>
     </tr>
     <tr>
-      <th scope="row"><img src="static/flags/gif/cl.gif" alt="Chile flag" /></th>
-      <td>Chile</td>
+      <th scope="row"><img src="static/flags/gif/cl.gif" alt="Chile flag" />Chile</th>
       <td>25-11-2022</td>
       <td><a href="https://www.subtel.gob.cl/inicio-concesionario/servicios-de-telecomunicaciones/servicios-de-radio-aficionados/">
             Subtel
@@ -70,8 +66,7 @@ export default class updates extends  React.Component {
       </td>
     </tr>
     <tr>
-      <th scope="row"><img src="static/flags/gif/uy.gif" alt="Uruguay flag"/></th>
-      <td>Uruguay</td>
+      <th scope="row"><img src="static/flags/gif/uy.gif" alt="Uruguay flag"/>Uruguay</th>
       <td>03-11-2022</td>
       <td><a href="https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/datos-y-estadisticas/datos/registro-radioaficionados">
             URSEC
@@ -80,8 +75,7 @@ export default class updates extends  React.Component {
       
     </tr>
         <tr>
-      <th scope="row"><img src="static/flags/gif/pe.gif" alt="Perú flag"/></th>
-      <td>Per&uacute;</td>
+      <th scope="row"><img src="static/flags/gif/pe.gif" alt="Perú flag"/>Perú</th>
       <td>11-11-2022</td>
       <td><a href="https://www.gob.pe/institucion/mtc/informes-publicaciones/396528-radioaficionados-con-autorizacion-vigente-direccion-de-servicios-en-telecomunicaciones-dgat">
             DGAT
