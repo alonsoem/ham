@@ -31,12 +31,12 @@ export default class updates extends  React.Component {
         </h6>
         
 
-        <table class="table table-striped">
+        <table class="table table-striped responsive ">
   <thead>
     <tr>
-      <th scope="col">Pa&iacute;s</th>
-      <th scope="col">Ult. Actualizaci&oacute;n</th>
-      <th scope="col">Fuente</th>
+      <th  scope="col">Pa&iacute;s</th>
+      <th  scope="col">Ult. Actualizaci&oacute;n</th>
+      <th  scope="col">Fuente</th>
     </tr>
   </thead>
   <tbody>
