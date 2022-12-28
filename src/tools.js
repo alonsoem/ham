@@ -145,7 +145,7 @@ export default class tools extends  React.Component {
       <div class="card-body">
         <h5 class="card-title">Llamado CQ</h5>
         <p class="card-text">...</p>
-        <a href="http://ham.qrits.com.ar/app-pages/cq.php" class="btn btn-primary">Ir</a>
+        <a href="/cqcall" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
