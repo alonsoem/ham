@@ -55,6 +55,15 @@ componentDidMount() {
       return (
         <div className="container-fluid table-scroll-vertical">
 
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+            <div class="card-header bgdiv text-white">
+                <h1>Hora UTC</h1> 
+            </div>
+          
+      <div class="card-body">
+
               
      <div class="container">
      
@@ -91,6 +100,8 @@ componentDidMount() {
 </div>
 
 </div>
+          
+</div></div></div></div>
           </div>
       );
     }

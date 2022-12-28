@@ -91,11 +91,19 @@ export default class solarConditions extends  React.Component {
 
         return (
             <div className="container-fluid table-scroll-vertical">
+            <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+            <div class="card-header bgdiv text-white">
+                <h1>Condiciones Solares</h1> 
+            </div>
+          
+      <div class="card-body">
                 
                 <div className="row d-flex justify-content-center ">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
-                    <Card.Header>HF Band Conditions</Card.Header>
+                    <Card.Header>Condiciones bandas HF</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
@@ -123,7 +131,7 @@ export default class solarConditions extends  React.Component {
                 <div className="row d-flex justify-content-center">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
-                    <Card.Header>Other Data</Card.Header>
+                    <Card.Header>Otros Datos</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
@@ -146,7 +154,7 @@ export default class solarConditions extends  React.Component {
                     <div className="row d-flex justify-content-center">
                         <div className=" p-3 col col-12 col-sm-12 col-md-6 col-xl-5">
                         <Card>
-                    <Card.Header>Vhf Conditions</Card.Header>
+                    <Card.Header>Condiciones VHF</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
@@ -195,6 +203,11 @@ export default class solarConditions extends  React.Component {
                     </div></div>
 
 
+            
+                    </div></div></div></div>
+            
+            
+            
             </div>
             
 

@@ -27,7 +27,7 @@ export default class solarConditions extends  React.Component {
             <div class="row">
     <div class="col-sm-12">
       <div class="card">
-            <div class="card-header bgdiv">
+            <div class="card-header bgdiv text-white">
                 <h1>Ejemplo de un Comunicado</h1> 
             </div>
           
