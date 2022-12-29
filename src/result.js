@@ -30,8 +30,9 @@ export default class solarConditions extends  React.Component {
     }
 
     render() {
-        function countryFlag (){
-            switch(this.qth_country) {
+        
+        const countryFlag = () =>{
+            switch(this.state.qth_country) {
                 case 'Argentina':
                   return window.location.origin +"/static/flags/gif/ar.gif";
                 case 'Brasil':
@@ -62,7 +63,6 @@ export default class solarConditions extends  React.Component {
                                 <div class="row">
                                     <div class="col-9">{this.state.signal} - {this.state.name}</div>
                                     <div class="col-3"><span class=" text-white badge rounded-pill bg-dark">{this.state.category}</span></div>
-                                    
                                 </div>
                                  
                             </div>
@@ -70,7 +70,7 @@ export default class solarConditions extends  React.Component {
 
                                 {this.state.qth_city}<br/>
                                 {this.state.qth_province}<br/>
-                                <img src={countryFlag} alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
+                                <img src={countryFlag()} alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
                             </div>
 
                         </div>
