@@ -10,4 +10,3 @@ export const getSolar = (params) => foreignRequest('get', 'http://ham.qrits.com.
 
 export const getUtcTime = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/utcTime.php',{},{'Content-Type':'application/json'});
 
-
