@@ -61,9 +61,14 @@ export default class solarConditions extends  React.Component {
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <div class="col-9">{this.state.signal} <br/> {this.state.name}</div>
+                                    <div class="col-9">{this.state.signal}</div>
                                     <div class="col-3"><span class=" text-white badge rounded-pill bg-dark">{this.state.category}</span></div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12">{this.state.name}</div>
+                                    
+                                </div>
+                                
                                  
                             </div>
                             <div class="card-body ">
