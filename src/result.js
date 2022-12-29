@@ -18,6 +18,7 @@ export default class solarConditions extends  React.Component {
         };
     }
     
+    
     componentDidMount() {
         this.setState({signal:this.props.match.params.signal});
         this.setState({name:this.props.match.params.name});
@@ -29,7 +30,22 @@ export default class solarConditions extends  React.Component {
     }
 
     render() {
- 
+        function countryFlag (value){
+            switch(value) {
+                case 'Argentina':
+                  return "static/flags/gif/ar.gif";
+                case 'Brasil':
+                    return "static/flags/gif/br.gif";
+                case 'Perú':
+                    return "static/flags/gif/pe.gif";
+                case 'Uruguay':
+                    return "static/flags/gif/uy.gif";        
+                case 'Chile':
+                    return "static/flags/gif/cl.gif";
+                default:
+                    return "static/flags/gif/ar.gif";
+              }
+        }
 
         return (
             <div className="container-fluid table-scroll-vertical">
@@ -53,7 +69,7 @@ export default class solarConditions extends  React.Component {
 
                                 {this.state.qth_city}<br/>
                                 {this.state.qth_province}<br/>
-                                <img src="static/flags/gif/ar.gif" alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
+                                <img src={countryFlag(this.state.qth_country)} alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
                             </div>
 
                         </div>
