@@ -30,20 +30,20 @@ export default class solarConditions extends  React.Component {
     }
 
     render() {
-        function countryFlag (value){
-            switch(value) {
+        function countryFlag (){
+            switch(this.qth_country) {
                 case 'Argentina':
-                  return "static/flags/gif/ar.gif";
+                  return "/static/flags/gif/ar.gif";
                 case 'Brasil':
-                    return "static/flags/gif/br.gif";
+                    return "/static/flags/gif/br.gif";
                 case 'Perú':
-                    return "static/flags/gif/pe.gif";
+                    return "/static/flags/gif/pe.gif";
                 case 'Uruguay':
-                    return "static/flags/gif/uy.gif";        
+                    return "/static/flags/gif/uy.gif";        
                 case 'Chile':
-                    return "static/flags/gif/cl.gif";
+                    return "/static/flags/gif/cl.gif";
                 default:
-                    return "static/flags/gif/ar.gif";
+                    return "/static/flags/gif/ar.gif";
               }
         }
 
@@ -69,7 +69,7 @@ export default class solarConditions extends  React.Component {
 
                                 {this.state.qth_city}<br/>
                                 {this.state.qth_province}<br/>
-                                <img src={countryFlag(this.state.qth_country)} alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
+                                <img src={countryFlag} alt={this.state.qth_country + ' flag'} />&nbsp;{this.state.qth_country}
                             </div>
 
                         </div>
