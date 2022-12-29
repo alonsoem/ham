@@ -11,6 +11,8 @@ export default class solarConditions extends  React.Component {
         this.state = {
             calculatedConditions:[],
             calculatedVHFConditions:[],
+            source:'',
+            updated:'',
             resto:[],
 
         };
@@ -20,8 +22,13 @@ export default class solarConditions extends  React.Component {
     update = () => {
         getSolar({})
             .then((data) => {
-                 const {calculatedconditions,calculatedvhfconditions,...resto}=data;
-                 this.setState({resto:resto, calculatedConditions:calculatedconditions.band, calculatedVHFConditions:calculatedvhfconditions.phenomenon})
+                 const {calculatedconditions,calculatedvhfconditions,source,updated,...resto}=data;
+                 this.setState({
+                    source:source,
+                    updated:updated,
+                    resto:resto, 
+                    calculatedConditions:calculatedconditions.band, 
+                    calculatedVHFConditions:calculatedvhfconditions.phenomenon})
                 })
              
             
@@ -188,6 +195,11 @@ export default class solarConditions extends  React.Component {
                         </div></div>
 
 
+                      
+
+
+
+
                         
                 <div className="row d-flex justify-content-center">
                     <div className=" p-3 col col-6 col-sm-12 col-md-6 col-xl-5">
@@ -202,6 +214,26 @@ export default class solarConditions extends  React.Component {
                 </Card>
                     </div></div>
 
+
+
+                    <div className="row d-flex justify-content-center">
+                    <div className=" p-3 col col-6 col-sm-12 col-md-6 col-xl-5">
+
+                <Card>
+
+                    <Card.Body>
+                                <div class="row">
+                                    <div class="col-7">Fuente:</div>
+                                    <div class="col-5">{this.state.source}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-7">Última actualización:</div>
+                                    <div class="col-5">{this.state.updated}</div>
+                                </div>
+
+                    </Card.Body>
+                </Card>
+                    </div></div>
 
             
                     </div></div></div></div>
