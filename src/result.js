@@ -33,17 +33,17 @@ export default class solarConditions extends  React.Component {
         function countryFlag (){
             switch(this.qth_country) {
                 case 'Argentina':
-                  return "/static/flags/gif/ar.gif";
+                  return window.location.origin +"/static/flags/gif/ar.gif";
                 case 'Brasil':
-                    return "/static/flags/gif/br.gif";
+                    return window.location.origin +"/static/flags/gif/br.gif";
                 case 'Perú':
-                    return "/static/flags/gif/pe.gif";
+                    return window.location.origin +"/static/flags/gif/pe.gif";
                 case 'Uruguay':
-                    return "/static/flags/gif/uy.gif";        
+                    return window.location.origin +"/static/flags/gif/uy.gif";        
                 case 'Chile':
-                    return "/static/flags/gif/cl.gif";
+                    return window.location.origin +"/static/flags/gif/cl.gif";
                 default:
-                    return "/static/flags/gif/ar.gif";
+                    return window.location.origin + "/static/flags/gif/ar.gif";
               }
         }
 
@@ -62,6 +62,7 @@ export default class solarConditions extends  React.Component {
                                 <div class="row">
                                     <div class="col-9">{this.state.signal} - {this.state.name}</div>
                                     <div class="col-3"><span class=" text-white badge rounded-pill bg-dark">{this.state.category}</span></div>
+                                    
                                 </div>
                                  
                             </div>
