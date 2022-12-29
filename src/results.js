@@ -1,6 +1,6 @@
 import React from 'react';
 import {getSolar} from "./api/api";
-import {Button, Card,Table} from "react-bootstrap";
+
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
@@ -52,18 +52,17 @@ export default class solarConditions extends  React.Component {
 
             <div class="card">
                 <div class="card-header">
-                     <h4>Buscaste LU1EQ</h4> 
+                     <h4>Buscaste LU1EQ </h4> 
                 </div>
           
                 <div class="card-body">
-                        <div class="card">Parece ser un indicativo de Argentina [flag]. <p>Los indicativos de argentina comienza con: LU, LV, AX...</p></div>
+                        <div class="card">Parece ser un indicativo de Argentina [flag]. <p>Los indicativos de argentina comienza con: LU, LV, AX...</p> <p>Mas info en UIT <a href="https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-OB.1154-2018-OAS-PDF-S.pdf" >Link</a></p></div>
 
                         <div class="card">
                             <div class="card-header">
-                                LU1EQE - Enrique Alonso
+                                LU1EQE - Enrique Alonso <span class=" text-white badge rounded-pill bg-dark">Superior</span>
                             </div>
-                            <div class="card-body">
-                                Categoria: SUPERIOR <br/>
+                            <div class="card-body ">
 
                                 qth: BErazategui<br/>
                                 Provincia de buenos aires<br/>

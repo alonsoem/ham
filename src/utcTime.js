@@ -8,7 +8,9 @@ export default class utcTime extends React.Component {
     super(props);
     this.state = {
         utcTime:"00:00:00",
+        utcDate:"-",
         localTime: "00:00:00",
+        localDate: "-",
 
     };
 }
@@ -16,9 +18,11 @@ export default class utcTime extends React.Component {
   update = () => {
     getUtcTime({})
         .then((data) => {
-          const {hour}=data;
+          const {hour,day,month,year}=data;
           
+          var newDate=new Date(year +"/"+month+"/"+day);
           
+
 
 
           
@@ -26,13 +30,13 @@ export default class utcTime extends React.Component {
           
           setInterval(() => {
             const localTime = new Date();
-            this.setState({ localTime: localTime.toLocaleTimeString("es-AR")})
+            this.setState({ localTime: localTime.toLocaleTimeString("es-AR"), localDate: localTime.toLocaleDateString("es-AR")})
             const hourDiff =  parseInt(hour) -parseInt(localTime.getHours());
     
             
 
             let updatedTIme = new Date(localTime.getTime() + hourDiff * 60 * 60 * 1000);
-            this.setState({utcTime:updatedTIme.toLocaleTimeString("es-AR")});
+            this.setState({utcTime:updatedTIme.toLocaleTimeString("es-AR"), utcDate:newDate.toLocaleDateString("es-AR")});
 
           }, 1000)
 
@@ -76,7 +80,13 @@ componentDidMount() {
           
       <div class="card-body">
         <h5 class="card-title">O GMT, independiente de tu ubicación.</h5>
-        <p class="card-text display-4">{this.state.utcTime}</p>
+        <p class="card-text text-center">
+          <span class="display-4">{this.state.utcTime}</span>
+           <br/>
+
+          <span class="display-6">{this.state.utcDate}</span>
+          </p>
+        
       </div>
      </div>   
     </div>
@@ -92,7 +102,13 @@ componentDidMount() {
             </div>
             <div class="card-body">
                 <h5 class="card-title">Hora relativa a tu posición en el mundo.</h5>
-                <p class="card-text  display-4">{this.state.localTime}</p>
+                <p class="card-text text-center">
+          <span class="display-4">{this.state.localTime}</span>
+           <br/>
+
+          <span class="display-6">{this.state.localDate}</span>
+          </p>
+              
             </div>
       </div>   
     </div>

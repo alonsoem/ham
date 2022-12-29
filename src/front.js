@@ -1,6 +1,6 @@
 import React from 'react';
 import {getSolar} from "./api/api";
-import {Button, Card,Table} from "react-bootstrap";
+import {Button, Card} from "react-bootstrap";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
