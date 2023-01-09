@@ -2,10 +2,11 @@ import React from 'react';
 import {getSolar} from "./api/api";
 import {Card,Table} from "react-bootstrap";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import { withTranslation } from "react-i18next";
 
 
 
-export default class solarConditions extends  React.Component {
+ class solarConditions extends  React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,6 +45,8 @@ export default class solarConditions extends  React.Component {
 
 
     render() {
+
+        const { t } = this.props;
 
 
         var other = this.state.resto;
@@ -110,15 +113,15 @@ export default class solarConditions extends  React.Component {
                 <div className="row d-flex justify-content-center ">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
-                    <Card.Header>Condiciones bandas HF</Card.Header>
+                    <Card.Header>{t("title_hf_conditions")}</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
                     <thead>
                     <tr>
-                        <th>Band</th>
-                        <th>Day</th>
-                        <th>Night</th>
+                        <th>{t("band")}</th>
+                        <th>{t("day")}</th>
+                        <th>{t("night")}</th>
                     </tr>
                     </thead>
                     <tbody >
@@ -138,14 +141,14 @@ export default class solarConditions extends  React.Component {
                 <div className="row d-flex justify-content-center">
                     <div className="p-3  col col-12 col-sm-12 col-md-6 col-xl-5">
                 <Card>
-                    <Card.Header>Otros Datos</Card.Header>
+                    <Card.Header>{t("title_other_data")}</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Value</th>
+                        <th>{t("other_data_name")}</th>
+                        <th>{t("other_data_value")}</th>
                     </tr>
                     </thead>
                     <tbody >
@@ -161,15 +164,15 @@ export default class solarConditions extends  React.Component {
                     <div className="row d-flex justify-content-center">
                         <div className=" p-3 col col-12 col-sm-12 col-md-6 col-xl-5">
                         <Card>
-                    <Card.Header>Condiciones VHF</Card.Header>
+                    <Card.Header>{t("vhf_conditions")}</Card.Header>
 
                     <Card.Body>
                 <Table striped  hover >
                     <thead>
                     <tr>
-                        <th>Location</th>
-                        <th>Phenomenon</th>
-                        <th>Status</th>
+                        <th>{t("location")}</th>
+                        <th>{t("phenomenon")}</th>
+                        <th>{t("status")}</th>
                     </tr>
                     </thead>
                     <tbody >
@@ -197,7 +200,7 @@ export default class solarConditions extends  React.Component {
 
                       
 
-
+                        
 
 
                         
@@ -205,10 +208,10 @@ export default class solarConditions extends  React.Component {
                     <div className=" p-3 col col-6 col-sm-12 col-md-6 col-xl-5">
 
                 <Card>
-                    <Card.Header>Solar Predictions</Card.Header>
+                    <Card.Header>{t("solar_predictions")}</Card.Header>
 
                     <Card.Body>
-                            Proximamente...
+                    {t("next")}
 
                     </Card.Body>
                 </Card>
@@ -223,11 +226,11 @@ export default class solarConditions extends  React.Component {
 
                     <Card.Body>
                                 <div class="row">
-                                    <div class="col-7">Fuente:</div>
+                                    <div class="col-7">{t("source")}:</div>
                                     <div class="col-5">{this.state.source}</div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-7">Última actualización:</div>
+                                    <div class="col-7">{t("updated")}:</div>
                                     <div class="col-5">{this.state.updated}</div>
                                 </div>
 
@@ -250,3 +253,4 @@ export default class solarConditions extends  React.Component {
     }
 
 }
+export default withTranslation()(solarConditions);

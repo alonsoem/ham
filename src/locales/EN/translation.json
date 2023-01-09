@@ -1,0 +1,24 @@
+{
+    "source":"Source",
+    "updated": "Last update",
+
+    "title_hf_conditions": "HF Band Conditions" ,
+
+
+    "band":"Band",
+    "day":"at day",
+    "night": "at night",
+
+    "other_data_name":"Name",
+    "other_data_value":"Value",
+    "title_other_data":"Other data",
+
+    "phenomenon": "Phenomenon",
+    "location":"Location",
+    "status": "Status",
+    "vhf_conditions": "VHF Conditions",
+
+    "next":"Soon",
+    "solar_predictions": "Sol Predictions"
+
+}

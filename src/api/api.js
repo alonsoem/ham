@@ -7,6 +7,7 @@ const foreignRequest = (type, fullPath,params,config) => axios
 
 export const getSolar = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/solarData.php',{},{'Content-Type':'application/json'});
 
-
 export const getUtcTime = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/utcTime.php',{},{'Content-Type':'application/json'});
+
+export const getResults = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getFull.php',params,{'Content-Type':'application/json'});
 

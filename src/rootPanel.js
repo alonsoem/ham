@@ -24,7 +24,7 @@ export default class App extends React.Component {
             <Route path="/utc" component={utcTime} />
             <Route path="/tools" component={tools} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
-            <Route path="/results" component={results} />
+            <Route exact path="/results/:signal" component={results} />
             <Route path="/" component={front} />
           </Switch>
         </BrowserRouter>
