@@ -11,3 +11,7 @@ export const getUtcTime = (params) => foreignRequest('get', 'http://ham.qrits.co
 
 export const getResults = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getFull.php',params,{'Content-Type':'application/json'});
 
+export const getPrefix = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getPrefixInfo.php',params,{'Content-Type':'application/json'});
+
+export const getPrefixInverse = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getPrefixInverseInfo.php',params,{'Content-Type':'application/json'});
+
