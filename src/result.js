@@ -43,6 +43,8 @@ export default class solarConditions extends  React.Component {
                     return window.location.origin +"/static/flags/gif/uy.gif";        
                 case 'Chile':
                     return window.location.origin +"/static/flags/gif/cl.gif";
+                case 'Ecuador':
+                        return window.location.origin +"/static/flags/gif/ec.gif";        
                 default:
                     return "";
               }
