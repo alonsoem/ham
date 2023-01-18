@@ -84,6 +84,15 @@ export default class updates extends  React.Component {
       </td>
       
     </tr>
+    <tr>
+      <th scope="row"><img src="static/flags/gif/ec.gif" alt="Perú flag"/>Ecuador</th>
+      <td>18-01-2023</td>
+      <td><a href="https://www.arcotel.gob.ec/radioaficionados/">
+            ARCOTEL
+         </a>
+      </td>
+      
+    </tr>
   </tbody>
 </table>
 </div>

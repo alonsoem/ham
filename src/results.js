@@ -13,7 +13,7 @@ export default class results extends  React.Component {
             results:{},
             indicativos:[],
             signal:"",
-            prefixInfo:"",
+            prefixInfo:undefined,
             pais:"",
             paisId:null,
         };
@@ -34,18 +34,10 @@ export default class results extends  React.Component {
                      }else{
                         this.inversePrefixInfo (signal);
                      }
-                 
-
-                 //Si no hay indicativos en la respuesta hay que buscar con los 2 primeros digitos de que pais puede ser
-                 //si no hay resultados indicar que no hay informacion sobre tal indicativo
-
-                 
-                 
-
                 })
              
             
-            .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a internar'}));
+            .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a intentar'}));
     }
 
 
@@ -54,18 +46,26 @@ export default class results extends  React.Component {
         .then((data) => {
             this.setState({pais:data.country});
             this.setState({paisId:data.countryId});
-            this.setState({prefixInfo:data.prefix});
+
+            let prefix =data.prefix;
+            if(data.prefix.length===0) {prefix="Aún No conocemos este prefijo, Probá con otro..."}
+            //if(data.prefixl.length>0) {prefix=}
+                        
+            this.setState({prefixInfo:prefix});
+            console.log("S2: "+data.prefix);
             })
-        .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a internar'}));
+        .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a intentar'}));
 
     }
 
     prefixInfo = (countryId) => {
+        
         getPrefix({"countryId":countryId})
             .then((data) => {
                 this.setState({pais:data.country});
                 this.setState({paisId:data.countryId});
                 this.setState({prefixInfo:data.prefix});
+                console.log("s1: "+data.prefix);
 
                 }
                 )
@@ -103,24 +103,35 @@ export default class results extends  React.Component {
                     return window.location.origin +"/static/flags/gif/uy.gif";        
                 case 'Chile':
                     return window.location.origin +"/static/flags/gif/cl.gif";
+                case 'Ecuador':
+                    return window.location.origin +"/static/flags/gif/ec.gif";                    
                 default:
                     return "";
               }
         }
 
         const printPrefixInfo =()=>{
-            console.log(this.state.prefixInfo);
-            if (this.state.prefixInfo!==undefined) {
 
-                return <div>Parece ser un indicativo de {this.state.pais}.  <br/>
+            //undefined = muestra spinner
+            //Si tiene valor: [] - No hay informacion sobre el indicativo...
+            //Si tiene
+
+
+             
+            console.log(this.state.prefixInfo);
+    
+            if (this.state.prefixInfo!==undefined) {
+                
+                return <div >Parece ser un indicativo de {this.state.pais}.  <br/>
                 <p>Los indicativos de {this.state.pais} comienzan con: {this.state.prefixInfo.toString()}</p>
                 <p>Para mas informacion consulta este documento de la UIT: <a href='https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-OB.1154-2018-OAS-PDF-S.pdf' >Link</a></p>
                 </div>
             
             }else{
-                return <p>Aun no tenemos información sobre el prefijo de este indicativo.</p>
+                return <p class="spinner-border"></p>
         
             }
+            
         }
   
 
@@ -140,7 +151,8 @@ export default class results extends  React.Component {
           
                 <div className="card-body">
                         <div className="card">
-                            {printPrefixInfo()}
+                                {printPrefixInfo()}
+                           
                         </div>
 
 
