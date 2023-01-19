@@ -13,7 +13,8 @@ export default class results extends  React.Component {
             results:{},
             indicativos:[],
             signal:"",
-            prefixInfo:undefined,
+            prefixInfo:[],
+            prefixLoading:true,
             pais:"",
             paisId:null,
         };
@@ -46,13 +47,8 @@ export default class results extends  React.Component {
         .then((data) => {
             this.setState({pais:data.country});
             this.setState({paisId:data.countryId});
-
-            let prefix =data.prefix;
-            if(data.prefix.length===0) {prefix="Aún No conocemos este prefijo, Probá con otro..."}
-            //if(data.prefixl.length>0) {prefix=}
-                        
-            this.setState({prefixInfo:prefix});
-            console.log("S2: "+data.prefix);
+            this.setState({prefixInfo:data.prefix});
+            this.setState({prefixLoading:false});
             })
         .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a intentar'}));
 
@@ -65,13 +61,14 @@ export default class results extends  React.Component {
                 this.setState({pais:data.country});
                 this.setState({paisId:data.countryId});
                 this.setState({prefixInfo:data.prefix});
+                this.setState({prefixLoading:false});
                 console.log("s1: "+data.prefix);
 
                 }
                 )
             .catch((response) => {
                 this.setState({error: 'Erorr:'+response});
-                console.log(response);
+                console.log("E:"+response);
             }
             );
     }
@@ -109,26 +106,58 @@ export default class results extends  React.Component {
                     return "";
               }
         }
+        const countryCircleFlag = (country) =>{
+            switch(country) {
+                case 'Argentina':
+                  return window.location.origin +"/static/circle-flags/ar.png";
+                case 'Brasil':
+                    return window.location.origin +"/static/circle-flags/br.png";
+                case 'Perú':
+                    return window.location.origin +"/static/circle-flags/pe.png";
+                case 'Uruguay':
+                    return window.location.origin +"/static/circle-flags/uy.png";        
+                case 'Chile':
+                    return window.location.origin +"/static/circle-flags/cl.png";
+                case 'Ecuador':
+                    return window.location.origin +"/static/circle-flags/ec.png";                    
+                default:
+                    return "";
+              }
+        }
 
         const printPrefixInfo =()=>{
 
             //undefined = muestra spinner
             //Si tiene valor: [] - No hay informacion sobre el indicativo...
-            //Si tiene
-
-
-             
-            console.log(this.state.prefixInfo);
+            //Si tiene algo el array lo muestra
     
-            if (this.state.prefixInfo!==undefined) {
+            if (this.state.prefixLoading) {
                 
-                return <div >Parece ser un indicativo de {this.state.pais}.  <br/>
-                <p>Los indicativos de {this.state.pais} comienzan con: {this.state.prefixInfo.toString()}</p>
-                <p>Para mas informacion consulta este documento de la UIT: <a href='https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-OB.1154-2018-OAS-PDF-S.pdf' >Link</a></p>
-                </div>
-            
+               
+                return <p class="card-text placeholder-glow">
+      <span class="placeholder col-7"></span>
+      <span class="placeholder col-4"></span>
+      <span class="placeholder col-4"></span>
+      <span class="placeholder col-6"></span>
+      <span class="placeholder col-8"></span>
+    </p>
+                
             }else{
-                return <p class="spinner-border"></p>
+                if (this.state.prefixInfo ==undefined){
+                    return <div>Aún no tenemos informacion sobre este indicativo.</div>
+                }else{
+                    return <div className="row">
+                                <div className="col-1">
+                                    <img src={countryCircleFlag(this.state.pais)} size='96px' />
+                                </div>
+                                <div className="col-11">
+                                    <p>Parece ser un indicativo de {this.state.pais}. </p> <br/>
+                                    <p>Los indicativos de {this.state.pais} comienzan con: {this.state.prefixInfo.toString()}</p>
+                                    <p>Para mas informacion consulta este <a href='https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-OB.1154-2018-OAS-PDF-S.pdf' >documento</a> de la UIT.</p>
+                                </div>
+                            </div>
+                }
+            
         
             }
             
@@ -151,7 +180,9 @@ export default class results extends  React.Component {
           
                 <div className="card-body">
                         <div className="card">
+                        <div className="card-body">
                                 {printPrefixInfo()}
+                                </div>
                            
                         </div>
 
