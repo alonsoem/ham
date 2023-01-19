@@ -1,12 +1,10 @@
 import React from 'react';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
-
 export default class updates extends  React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
 
         };
     }
