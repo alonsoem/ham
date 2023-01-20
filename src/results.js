@@ -194,14 +194,19 @@ export default class results extends  React.Component {
                             : null
                             
                         }
+                        {console.log(this.state.signal)}
                         
                             
                         
 
-                        {this.state.indicativos.map((each)=>(
+                        {
+                            
+                        
+                        this.state.indicativos.map((each)=>(
                             
                             <div className="card">
-                                <div className="card-header">
+                                
+                                <div className={"card-header "+(each.indicativo.toUpperCase()==this.state.signal.toUpperCase()? "match":"")}>
                                     <div className="row">
                                         <div className="col-9">{each.indicativo}</div>
                                         <div className="col-3"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>

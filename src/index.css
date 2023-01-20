@@ -45,3 +45,5 @@ code {
 .card-body>.card{margin-top:0.7em;}
 
 th>img {margin: 0.4em;}
+
+.card-header.match{background-color: rgb(119, 187, 133);}
