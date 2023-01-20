@@ -138,12 +138,12 @@ export default class results extends  React.Component {
     </p>
                 
             }else{
-                if (this.state.prefixInfo ==undefined){
+                if (this.state.prefixInfo ===undefined){
                     return <div>Aún no tenemos informacion sobre este indicativo.</div>
                 }else{
                     return <div className="row">
                                 <div className="col-1">
-                                    <img src={countryCircleFlag(this.state.pais)} size='96px' />
+                                    <img src={countryCircleFlag(this.state.pais)} size='96px' alt="Flag" />
                                 </div>
                                 <div className="col-11">
                                     <p>Parece ser un indicativo de {this.state.pais}. </p> <br/>
