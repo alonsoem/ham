@@ -129,12 +129,12 @@ export default class results extends  React.Component {
             if (this.state.prefixLoading) {
                 
                
-                return <p class="card-text placeholder-glow">
-      <span class="placeholder col-7"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-6"></span>
-      <span class="placeholder col-8"></span>
+                return <p className="card-text placeholder-glow">
+      <span className="placeholder col-7"></span>
+      <span className="placeholder col-4"></span>
+      <span className="placeholder col-4"></span>
+      <span className="placeholder col-6"></span>
+      <span className="placeholder col-8"></span>
     </p>
                 
             }else{
@@ -182,30 +182,44 @@ export default class results extends  React.Component {
                         </div>
 
 
-                        {this.state.indicativos.map((each)=>(
+                        <div>
+{console.log(this.state.indicativos.length)}
+                        if ({this.state.indicativos.length===0}){
+                                <div className="card">NO HAY INDICATIVOS</div>
+                            }else
                             
-                            <div className="card">
-                                <div className="card-header">
-                                    <div className="row">
-                                        <div className="col-9">{each.indicativo}</div>
-                                        <div className="col-3"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
+                        {
+                            
+                        
+                                
+                                this.state.indicativos.map((each)=>(
+                            
+                                    <div className="card">
+                                        <div className="card-header">
+                                            <div className="row">
+                                                <div className="col-9">{each.indicativo}</div>
+                                                <div className="col-3"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-12">{each.nombre}</div>
+                                            
+                                            </div>
+                                        </div>
+                                        <div className="card-body ">
+                                            {each.ciudad}<br/>
+                                            {each.provincia}<br/>
+                                            <img src={countryFlag(each.pais)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
+                                        </div>
+        
                                     </div>
-                                    <div className="row">
-                                        <div className="col-12">{each.nombre}</div>
-                                    
-                                    </div>
-                                </div>
-                                <div className="card-body ">
-                                    {each.ciudad}<br/>
-                                    {each.provincia}<br/>
-                                    <img src={countryFlag(each.pais)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
-                                </div>
+        
+        
+                                ))
+                                
 
-                            </div>
-
-
-                        ))
+                            
                        }
+                       </div>
                 </div>
             </div>
                 

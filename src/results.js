@@ -129,12 +129,12 @@ export default class results extends  React.Component {
             if (this.state.prefixLoading) {
                 
                
-                return <p class="card-text placeholder-glow">
-      <span class="placeholder col-7"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-6"></span>
-      <span class="placeholder col-8"></span>
+                return <p className="card-text placeholder-glow">
+      <span className="placeholder col-7"></span>
+      <span className="placeholder col-4"></span>
+      <span className="placeholder col-4"></span>
+      <span className="placeholder col-6"></span>
+      <span className="placeholder col-8"></span>
     </p>
                 
             }else{
@@ -181,6 +181,22 @@ export default class results extends  React.Component {
                            
                         </div>
 
+                    
+                        {this.state.indicativos.length===0 ? 
+                        
+                            <div className="card">
+                                <div className="card-header">
+                                    No encontramos ningun indicativo relacionado con la busqueda.
+                                </div>
+                                
+                            </div> 
+                            
+                            : null
+                            
+                        }
+                        
+                            
+                        
 
                         {this.state.indicativos.map((each)=>(
                             
