@@ -148,7 +148,7 @@ export default class results extends  React.Component {
                                 <div className="col-11">
                                     <p>Parece ser un indicativo de {this.state.pais}. </p> <br/>
                                     <p>Los indicativos de {this.state.pais} comienzan con: {this.state.prefixInfo.toString()}</p>
-                                    <p>Para mas informacion consulta este <a href='https://www.itu.int/dms_pub/itu-t/opb/sp/T-SP-OB.1154-2018-OAS-PDF-S.pdf' >documento</a> de la UIT.</p>
+                                    <p>Para mas informacion consulta este <a href='https://www.itu.int/pub/T-SP-OB.1154-2018/es' >documento</a> de la UIT.</p>
                                 </div>
                             </div>
                 }
