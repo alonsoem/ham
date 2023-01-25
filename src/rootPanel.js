@@ -6,7 +6,7 @@ import updates from "./updates.js";
 import cqCall from "./cqCall.js";
 import utcTime from "./utcTime.js";
 import tools from "./tools.js";
-import front from "./front.js";
+import landing from "./landing.js";
 import results from "./results.js";
 import result from "./result.js";
 
@@ -25,7 +25,7 @@ export default class App extends React.Component {
             <Route path="/tools" component={tools} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
-            <Route path="/" component={front} />
+            <Route path="/" component={landing} />
           </Switch>
         </BrowserRouter>
       );
