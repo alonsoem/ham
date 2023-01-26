@@ -142,13 +142,13 @@ export default class results extends  React.Component {
                     return <div>Aún no tenemos informacion sobre este indicativo.</div>
                 }else{
                     return <div className="row">
-                                <div className="col-1">
-                                    <img src={countryCircleFlag(this.state.pais)} size='96px' alt="Flag" />
+                                <div className="col-4 col-xs-5">
+                                    <img src={countryCircleFlag(this.state.pais)}  alt="Flag" />
                                 </div>
-                                <div className="col-11">
-                                    <p>Parece ser un indicativo de {this.state.pais}. </p> <br/>
-                                    <p>Los indicativos de {this.state.pais} comienzan con: {this.state.prefixInfo.toString()}</p>
-                                    <p>Para mas informacion consulta este <a href='https://www.itu.int/pub/T-SP-OB.1154-2018/es' >documento</a> de la UIT.</p>
+                                <div className="col-8 col-xs-7">
+                                    <p>Es un indicativo de {this.state.pais}.  <br/>
+                                    Los indicativos de este país comienzan con: {this.state.prefixInfo.toString()}</p>
+                                    <p>Para mas informacion consulta este <a href='https://www.itu.int/pub/T-SP-OB.1154-2018/es' >sitio</a> de la UIT.</p>
                                 </div>
                             </div>
                 }
