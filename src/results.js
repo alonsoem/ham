@@ -146,8 +146,8 @@ export default class results extends  React.Component {
                                     <img src={countryCircleFlag(this.state.pais)}  alt="Flag" />
                                 </div>
                                 <div className="col-8 col-xs-7">
-                                    <p>Es un indicativo de {this.state.pais}.  <br/>
-                                    Los indicativos de este país comienzan con: {this.state.prefixInfo.toString()}</p>
+                                    <p>Es un indicativo de <b>{this.state.pais}</b>.  <br/>
+                                    Los indicativos de este país comienzan con: <b>{this.state.prefixInfo.toString()}</b></p>
                                     <p>Para mas informacion consulta este <a href='https://www.itu.int/pub/T-SP-OB.1154-2018/es' >sitio</a> de la UIT.</p>
                                 </div>
                             </div>
