@@ -9,6 +9,7 @@ import tools from "./tools.js";
 import landing from "./landing.js";
 import results from "./results.js";
 import result from "./result.js";
+import repeaters from "./repeaters";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
@@ -25,6 +26,7 @@ export default class App extends React.Component {
             <Route path="/tools" component={tools} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
+            <Route exact path="/repeaters/" component={repeaters} />
             <Route path="/" component={landing} />
           </Switch>
         </BrowserRouter>
