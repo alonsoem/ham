@@ -4,6 +4,9 @@ import {getRepeaters} from "./api/api";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
+import AsyncExample from './asyncSearchBox.js';
+
+
 
 export default class results extends  React.Component {
     constructor(props) {
@@ -12,19 +15,12 @@ export default class results extends  React.Component {
             results:{},          
             repeaters:[],          
             paisId:null,
-            value:""
+            value:"",
         };
-        this.handleChangeValue = this.handleChangeValue.bind(this);
+        
     }
 
-
-    handleChangeValue = (event) => {
-        this.setState({ value: event.target.value });
-        this.update(event.target.value);
-        console.log (this.state.repeaters);
-      };
-
-    
+  
 
     update = (newValue) => {
         getRepeaters({"local":newValue})
@@ -44,6 +40,14 @@ export default class results extends  React.Component {
              
     }
 
+    handleChange= (value) => {
+        if (value.length>0){
+            console.log(value[0].localidad);
+            this.update(value[0].localidad);
+        }else{
+            this.setState({repeaters:[]});
+        }
+      }
 
     render() {
        
@@ -56,9 +60,6 @@ export default class results extends  React.Component {
             </div>
 
             <p>&nbsp;</p>
-
-
-
 
             <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
                         <div class="card" style={{'background-color':'#439139ef'}}>
@@ -75,7 +76,7 @@ export default class results extends  React.Component {
                                 <div className="row">&nbsp;</div>
                                 <div className="row">
                                     <div className="col-12 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="searchValue"  onChange={this.handleChangeValue} value={this.state.value} /> 
+                                    <AsyncExample selectedValue={this.handleChange} />
                                     </div>
                                 </div>
                                 
