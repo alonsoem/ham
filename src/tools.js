@@ -2,6 +2,7 @@ import React from 'react';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
+
 export default class tools extends  React.Component {
     constructor(props) {
         super(props);
@@ -16,47 +17,108 @@ export default class tools extends  React.Component {
        
         return (
             <div className="container-fluid table-scroll-vertical ">
+             
               
-
+              <div class="card-header bgdiv text-white">
+                <h1>Herramientas</h1> 
+            </div>
+            <p>&nbsp;</p>
                      
-<div class="jumbotron jumbotron-fluid bgdiv" >
-  <div class="container-fluid" >
-  </div>    
-      <div class="container" >
-    <h1 class="display-4">Herramientas</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-  
-</div>
-        
-     
-     
-<div class="row">
-    <div class="col-sm-4">
-      <div class="card">
+
+
+    
+
+
+
+
+            <div className="container">
+     <div className="card-columns">
+
+     <div class="card text-center col-5">
       <div class="card-body">
-        <h5 class="card-title">Codigo Fonetico</h5>
-        <p class="card-text">...</p>
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+
+     <div class="card text-center col-5">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center col-5">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center col-5">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+     <div class="card text-center">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
+        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+      </div>
+     </div>   
+
+
+
+<div class="row col-xs-12">
+    <div class="col-xs-3">
+      <div class="card w-100 text-center">
+      <div class="card-body">
+        <p>Codigo Fonetico</p>
+        
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
       </div>
      </div>   
     </div>
     
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Sufijos Argentina</h5>
-        <p class="card-text">...</p>
+        <p>Sufijos Argentina</p>
+        
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-argentina.webp" class="btn btn-primary">Ir</a>
       </div>
      </div>
     </div>      
   
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Sufijos Uruguay</h5>
-        <p class="card-text">...</p>
+        <p>Sufijos Uruguay</p>
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
       </div>
     </div>
@@ -65,31 +127,29 @@ export default class tools extends  React.Component {
 </div>
 
        <div class="row">
-  <div class="col-sm-4">
-      <div class="card">
+  <div class="col-xs-3">
+      <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Prefijos Chile</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Prefijos Chile</p>
+        
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=prefijos-chile.jpg" class="btn btn-primary">Ir</a>
       </div>
     </div>   
     </div>
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Prefijos Brasil</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Prefijos Brasil</p>
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=prefijos-brasil.jpg" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
   </div>      
   
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Codigo Morse</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Codigo Morse</p>
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=morse.jpg" class="btn btn-primary">Ir</a>
       </div>
     </div>
@@ -98,32 +158,29 @@ export default class tools extends  React.Component {
   </div>
   
        <div class="row">
-  <div class="col-sm-4">
-      <div class="card">
+  <div class="col-xs-3">
+      <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Codigo RST</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Código RST</p>
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=rst.jpg" class="btn btn-primary">Ir</a>
       </div>
     </div>   
     </div>
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">codigo Q</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Código Q</p>
         <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigoQ.jpg" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
   </div>      
   
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Bandas y frecuencias</h5>
-        <p class="card-text">...</p>
-        <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=bandas.png" class="btn btn-primary">Ir</a>
+        <p class="card-title">Bandas y frecuencias</p>
+          <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=bandas.png" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
@@ -131,36 +188,37 @@ export default class tools extends  React.Component {
   </div>
   
          <div class="row">
-  <div class="col-sm-4">
-      <div class="card">
+  <div class="col-xs-3">
+      <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Hora UTC</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Hora UTC</p>
         <a href="/utc" class="btn btn-primary">Ir</a>
       </div>
     </div>   
     </div>
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Llamado CQ</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Llamado CQ</p>
         <a href="/cqcall" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
   </div>      
   
-    <div class="col-sm-4">
-     <div class="card">
+    <div class="col-xs-3">
+     <div class="card w-100 text-center">
       <div class="card-body">
-        <h5 class="card-title">Condiciones Solares</h5>
-        <p class="card-text">...</p>
+        <p class="card-title">Condiciones Solares</p>
         <a href="/solarConditions" class="btn btn-primary">Ir</a>
       </div>
     </div>
   
   </div>      
+  </div>
+          
+          
+  </div>
   </div>
             </div>
 

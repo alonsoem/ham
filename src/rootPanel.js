@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Switch } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+
 import solarConditions from "./solarConditions.js";
 import updates from "./updates.js";
 import cqCall from "./cqCall.js";
@@ -26,7 +27,7 @@ export default class App extends React.Component {
             <Route path="/tools" component={tools} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
-            <Route exact path="/repeaters/" component={repeaters} />
+            <Route exact path="/repeaters" component={repeaters} />
             <Route path="/" component={landing} />
           </Switch>
         </BrowserRouter>

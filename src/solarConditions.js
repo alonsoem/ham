@@ -83,6 +83,7 @@ import { withTranslation } from "react-i18next";
             groupBy[name].push({time: item.time, status:item.status});
             return groupBy;
           }, {});
+          
           console.log(groupByName);
         
           var hfStatus = [];
