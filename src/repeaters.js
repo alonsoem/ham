@@ -40,10 +40,16 @@ export default class results extends  React.Component {
              
     }
 
+    convertUnicode(input){
+        return input.replace(/\\+u([0-9a-fA-F]{4})/g, (a,b) =>
+        String.fromCharCode(parseInt(b, 16)));
+    }
+    
+
     handleChange= (value) => {
         if (value.length>0){
-            console.log(value[0].localidad);
-            this.update(value[0].localidad);
+            console.log(this.convertUnicode(value[0].localidad));
+            this.update(this.convertUnicode(value[0].localidad));
         }else{
             this.setState({repeaters:[]});
         }
@@ -125,22 +131,60 @@ export default class results extends  React.Component {
                                             </div>
                                         </div>
                                         <div className="card-body ">
-                                            <div className="row">
-                                                <div className="col-6">
-                                                    RECEPCION: {each.rx}<br/>
-                                                    TRANSMISION: {each.tx}<br/>
-                                                    TONO: {each.tone}<br/>
-                                                </div>
-                                                <div className="col-6">
+                                        
+                                                
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                            RECEPCION:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {each.rx} Mhz
+                                                        </div>
+                                                    </div>
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                        TRANSMISION:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {each.tx} Mhz
+                                                        </div>
+                                                    </div>
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                        TONO:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {each.tone}
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                
+                                                
+                                            
+                                                <div class="w-100"></div>
+                                                
+
+                                                <div className="card bg-light">
+                                                <div className="card-body">
+
                                                 <div className="row">
-                                                     <div className="col-9">{each.provincia}</div>
-                                                    <div className="col-3">{each.localidad}</div>
+                                                    <div className="col-12">{each.localidad}</div>
                                                 </div>
-                                                {each.pais}<br/>
+                                                
+                                                    <div className="row">
+                                                        <div className="col-12">{each.provincia}</div>
+                                                    </div>
+                                                
+                                                    <div className="row">
+                                                        <div className="col-12">{each.pais}</div>
+                                                    </div>
+                                                </div>
                                                 </div>
                                                 
                                                 
-                                            </div>
+                                                
+                                            
                                             
                                             
                                             
