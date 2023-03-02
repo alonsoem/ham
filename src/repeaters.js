@@ -72,7 +72,7 @@ export default class results extends  React.Component {
                             <div class="card-body " >
                                 <div className="row">
                                     <div className="col-12">
-                                        Indique una localidad en Argentina <img src="/static/flags/gif/ar.gif" alt="" /> o Chile <img src="/static/flags/gif/cl.gif" alt="" /> para ver las repetidoras disponibles.
+                                        Indique una localidad en Argentina <img src="/static/flags/gif/ar.gif" alt="" />, Chile <img src="/static/flags/gif/cl.gif" alt="" /> o Uruguay <img src="/static/flags/gif/uy.gif" alt="" /> para ver las repetidoras disponibles.
                                     </div>
                                 </div>
 

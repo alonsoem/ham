@@ -56,7 +56,7 @@ function handleChange(selectedOptions) {
       id="async-example"
       isLoading={isLoading}
       labelKey="localidad"
-      minLength={3}
+      minLength={2}
       onSearch={handleSearch}
       onChange={handleChange}
       options={options}
