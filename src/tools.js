@@ -1,6 +1,6 @@
 import React from 'react';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
-
+import './tools.css';
 
 
 export default class tools extends  React.Component {
@@ -21,13 +21,11 @@ export default class tools extends  React.Component {
               
               <div class="card-header bgdiv text-white">
                 <h1>Herramientas</h1> 
-            </div>
+              </div>
 
 
             <p>&nbsp;</p>
                      
-
-            
 
             <div className="container">
 
@@ -132,8 +130,6 @@ export default class tools extends  React.Component {
               </div>  
    
             </div>
-
-
             
             <div class="row mb-3">
 
