@@ -29,11 +29,9 @@ export default class tools extends  React.Component {
 
             <div className="container">
 
-           
-
             <div class="row mb-3">
 
-              <div class="col-4 col-sm-4">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código Fonetico</p>
@@ -43,7 +41,7 @@ export default class tools extends  React.Component {
               </div>
 
               
-              <div class="col-4 col-sm-4">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Sufijos Argentina</p>
@@ -51,23 +49,23 @@ export default class tools extends  React.Component {
                   </div>
                 </div>   
               </div>
-
-              <div class="col-4 col-sm-4 ">
-                <div class="card text-center">
-                  <div class="card-body">
-                    <p class="fs-1 text-uppercase">Sufijos Uruguay</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
-                  </div>
-                </div>   
-              </div>  
-   
+  
             </div>
 
 
             
             <div class="row mb-3">
 
-            <div class="col-4 col-sm-4">
+            <div class="col-6 col-sm-6 ">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <p class="fs-1 text-uppercase">Sufijos Uruguay</p>
+                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>   
+              </div>                
+
+            <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Prefijos Chile</p>
@@ -77,7 +75,13 @@ export default class tools extends  React.Component {
               </div>
 
               
-              <div class="col-4 col-sm-4">
+            
+            </div>
+
+
+
+          <div class="row mb-3">
+            <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Prefijos Brasil</p>
@@ -86,7 +90,7 @@ export default class tools extends  React.Component {
                 </div>   
               </div>
 
-              <div class="col-4 col-sm-4">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código Morse</p>
@@ -94,14 +98,12 @@ export default class tools extends  React.Component {
                   </div>
                 </div>   
               </div>  
-   
             </div>
-
-
+           
             
             <div class="row mb-3">
 
-            <div class="col-4 col-sm-4">
+            <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código RST</p>
@@ -111,7 +113,7 @@ export default class tools extends  React.Component {
               </div>
 
               
-              <div class="col-4 col-sm-4">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código Q</p>
@@ -119,21 +121,21 @@ export default class tools extends  React.Component {
                   </div>
                 </div>   
               </div>
+  
+            </div>
+            
+            <div class="row mb-3">
 
-              <div class="col-4 col-sm-4">
+            <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Bandas y frecuencias</p>
                     <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=bandas.png" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
-              </div>  
-   
-            </div>
-            
-            <div class="row mb-3">
+              </div>                
 
-            <div class="col-4 col-sm-4">
+            <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Hora UTC</p>
@@ -143,7 +145,12 @@ export default class tools extends  React.Component {
               </div>
 
               
-              <div class="col-4 col-sm-4">
+             
+            </div>
+
+
+            <div class="row mb-3">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Llamado CQ</p>
@@ -152,7 +159,7 @@ export default class tools extends  React.Component {
                 </div>   
               </div>
 
-              <div class="col-4 col-sm-4">
+              <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Condiciones solares</p>
@@ -161,8 +168,7 @@ export default class tools extends  React.Component {
                 </div>   
               </div>  
    
-            </div>
-
+</div>
 
 
             
