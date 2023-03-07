@@ -171,6 +171,27 @@ export default class tools extends  React.Component {
 </div>
 
 
+<div class="row mb-3">
+              <div class="col-6 col-sm-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <p class="fs-1 text-uppercase">test CQ</p>
+                    <a href="http://ham.qrits.casdom.ar/cqcall" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>   
+              </div>
+
+              <div class="col-6 col-sm-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <p class="fs-1 text-uppercase">test solares</p>
+                    <a href="http://ham.qrits.adasdasdcom.ar/solarConditions" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>   
+              </div>  
+   
+</div>
+
             
 
 
@@ -183,7 +204,7 @@ export default class tools extends  React.Component {
 
 
 
-
+<p>&nbsp;</p>
   </div>
 
 
