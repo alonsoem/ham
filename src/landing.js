@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
-import './landing.css';
+
 
 
 
@@ -29,7 +29,8 @@ export default class landing extends  React.Component {
        
     render() {
         return (
-            <div className="container landing ">
+
+            <div className="container justify-content-center">
                  <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">Somos Radioaficionados</Navbar.Brand>
