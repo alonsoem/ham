@@ -1,7 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-//import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
@@ -26,21 +24,13 @@ export default class solarConditions extends  React.Component {
 
         return (
             <div >
-                 <Navbar bg="light" expand="lg" >
-      <Container>
-        <Navbar.Brand href="/">Somos Radioaficionados</Navbar.Brand>
-        {     /*   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-          <Nav.Link href="/">Principal</Nav.Link>
-            <Nav.Link href="/tools">Herramientas</Nav.Link>
-            <Nav.Link href="/updates">Info</Nav.Link>
-            <Nav.Link href="/repeaters">Repetidoras</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>*/}
 
-      </Container>
-    </Navbar>
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    Somos Radioaficionados
+  </div>
+</nav>
+
               <div class="card-header bgdiv text-white">
                 <h1>Ejemplo de un Comunicado</h1> 
                 </div>
