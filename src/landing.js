@@ -34,7 +34,7 @@ export default class landing extends  React.Component {
         
 
         return (
-            <div className="container-fluid table-scroll-vertical">
+            <div className="container mt-0">
                  <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">Somos Radioaficionados</Navbar.Brand>
@@ -49,7 +49,7 @@ export default class landing extends  React.Component {
       </Container>
     </Navbar>
 
-            <div className="container">
+            <div className="container-fluid table-scroll-vertical">
             
             <div class="card-header bgdiv text-white">
                 <h1>Busqueda</h1> 
