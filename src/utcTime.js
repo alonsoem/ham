@@ -59,6 +59,13 @@ componentDidMount() {
       return (
         <div>
 
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    Somos Radioaficionados
+  </div>
+</nav>
+
           <div class="card-header bgdiv text-white">
               <h1>Hora UTC</h1> 
           </div>
