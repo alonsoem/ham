@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import './landing.css';
 
 
 
@@ -25,16 +26,10 @@ export default class landing extends  React.Component {
     componentDidMount() {
                
     }
-
-
-        
-
+       
     render() {
-        
-        
-
         return (
-            <div className="container mt-0">
+            <div className="container landing ">
                  <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">Somos Radioaficionados</Navbar.Brand>
@@ -49,11 +44,13 @@ export default class landing extends  React.Component {
       </Container>
     </Navbar>
 
-            <div className="container-fluid table-scroll-vertical">
+            
             
             <div class="card-header bgdiv text-white">
                 <h1>Busqueda</h1> 
             </div>
+
+            <div className="container-fluid table-scroll-vertical">
 
 <p>&nbsp;</p>
             

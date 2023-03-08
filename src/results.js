@@ -160,11 +160,13 @@ export default class results extends  React.Component {
   
 
         return (
-            <div className="container-fluid table-scroll-vertical">
-            
+            <div>
             <div className="card-header bgdiv text-white">
                 <h1>Resultados</h1> 
             </div>
+            <div className="container-fluid table-scroll-vertical">
+            
+            
 
             <p>&nbsp;</p>
 
@@ -238,7 +240,7 @@ export default class results extends  React.Component {
             
 
             </div>
-            
+            </div>
 
 
         );

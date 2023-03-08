@@ -57,14 +57,19 @@ componentDidMount() {
 
   render() {
       return (
+        <div>
+
+          <div class="card-header bgdiv text-white">
+              <h1>Hora UTC</h1> 
+          </div>
+
+<p>&nbsp;</p>
         <div className="container-fluid table-scroll-vertical">
 
 <div class="row">
     <div class="col-sm-12">
       <div class="card">
-            <div class="card-header bgdiv text-white">
-                <h1>Hora UTC</h1> 
-            </div>
+   
           
       <div class="card-body">
 
@@ -118,6 +123,7 @@ componentDidMount() {
 </div>
           
 </div></div></div></div>
+          </div>
           </div>
       );
     }

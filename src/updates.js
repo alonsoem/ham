@@ -12,16 +12,17 @@ export default class updates extends  React.Component {
     render() {
 
         return (
+          <div>
+
+          <div class="card-header bgdiv text-white">
+              <h1>Actualizaciones</h1> 
+          </div>
             <div className="container-fluid table-scroll-vertical main">
 
+<p>&nbsp;</p>
 <div class="row">
     <div class="col-sm-12">
       <div class="card">
-            <div class="card-header bgdiv text-white">
-                <h2 >Últimas actualizaciones</h2>      
-            </div>
-            
-          
       <div class="card-body ">
         <h6 class="card-title">
           <p>Esta aplicaci&oacute;n muestra informaci&oacute;n sobre licencias de radioaficionados de distintos paises. En cada pa&iacute;s un ente oficial se encarga de llevar el registro y nosotros usamos esos registros para mostrarlos en este servicio.<br/>
@@ -106,6 +107,7 @@ export default class updates extends  React.Component {
         
       
 
+            </div>
             </div>
 
 

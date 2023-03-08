@@ -16,12 +16,15 @@ export default class tools extends  React.Component {
 
        
         return (
+          <div>
+
+            <div class="card-header bgdiv text-white">
+                <h1>Herramientas</h1> 
+            </div>
             <div className="container-fluid table-scroll-vertical ">
              
               
-              <div class="card-header bgdiv text-white">
-                <h1>Herramientas</h1> 
-              </div>
+              
 
 
             <p>&nbsp;</p>
@@ -183,6 +186,7 @@ export default class tools extends  React.Component {
 <p>&nbsp;</p>
   </div>
 
+  </div>
 
         );
 

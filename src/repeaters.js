@@ -59,11 +59,14 @@ export default class results extends  React.Component {
        
 
         return (
-            <div className="container-fluid table-scroll-vertical">
-            
-            <div className="card-header bgdiv text-white">
+            <div>
+                  <div className="card-header bgdiv text-white">
                 <h1>Repetidoras</h1> 
             </div>
+            
+            <div className="container-fluid table-scroll-vertical">
+            
+          
 
             <p>&nbsp;</p>
 
@@ -211,7 +214,7 @@ export default class results extends  React.Component {
             
 
             </div>
-            
+            </div>
 
 
         );
