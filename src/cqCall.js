@@ -25,7 +25,7 @@ export default class solarConditions extends  React.Component {
       
 
         return (
-            <div className="container justify-content-center">
+            <div >
                  <Navbar bg="light" expand="lg" >
       <Container>
         <Navbar.Brand href="/">Somos Radioaficionados</Navbar.Brand>
