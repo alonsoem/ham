@@ -221,7 +221,7 @@ export default class results extends  React.Component {
                                     </div>
                                     <div className="row">
                                         <div className="col-10 text-left">{each.nombre}</div>
-                                        <div className="col-2  text-right"><a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ"  /></a></div>
+                                        <div className="col-2  text-right"><a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ" title="Link en QRZ" /></a></div>
                                         
                                     </div>
                                 </div>
