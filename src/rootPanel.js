@@ -11,6 +11,7 @@ import landing from "./landing.js";
 import results from "./results.js";
 import result from "./result.js";
 import repeaters from "./repeaters";
+import qso from "./qso.js";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
@@ -20,6 +21,7 @@ export default class App extends React.Component {
       return (
         <BrowserRouter>
           <Switch>
+          <Route exact path="/qso" component={qso} />
             <Route path="/solarConditions" component={solarConditions} />
             <Route path="/updates" component={updates} />
             <Route path="/cqcall" component={cqCall} />
