@@ -1,6 +1,6 @@
 {
   "name": "ham",
-  "homepage": "/",
+  "homepage": "/v2/",
   "version": "0.9",
   "private": true,
   "dependencies": {
