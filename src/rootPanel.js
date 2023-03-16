@@ -19,7 +19,7 @@ import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 export default class App extends React.Component {
     render() {
       return (
-        <BrowserRouter basename="/v2/">
+        <BrowserRouter basename="/v2">
           <Switch>
           <Route exact path="/qso" component={qso} />
             <Route path="/solarConditions" component={solarConditions} />
