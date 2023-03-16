@@ -1,6 +1,6 @@
 import React from 'react';
 import {getRepeaters} from "./api/api";
-import TopMenu  from ".topMenu";
+import TopMenu  from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
