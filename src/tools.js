@@ -19,7 +19,7 @@ export default class tools extends  React.Component {
         return (
           <div>
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light ">
   <div class="container">
     Somos Radioaficionados
   </div>

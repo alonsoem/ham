@@ -10,7 +10,7 @@ const TopMenu = () => {
 
 
   return (
-    <ul class="nav">
+    <ul class="nav bg-green" >
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="/v2/">Inicio</a>
   </li>
