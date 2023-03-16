@@ -28,5 +28,5 @@ jobs:
         local-dir: ./build/
         server: ham.qrits.com.ar
         username: integrationv2@ham.qrits.com.ar
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.ftp_password_v2 }}
         
