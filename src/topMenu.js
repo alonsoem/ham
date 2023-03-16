@@ -21,7 +21,7 @@ const TopMenu = () => {
     <a class="nav-link" href="/v2/repeaters">Repetidoras</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/v2/updates" >Actualizaciones-</a>
+    <a class="nav-link" href="/v2/updates" >Actualizaciones</a>
   </li>
 </ul>
   );

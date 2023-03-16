@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import TopMenu from './topMenu';
 
 
 export default class solarConditions extends  React.Component {
@@ -30,6 +31,7 @@ export default class solarConditions extends  React.Component {
     Somos Radioaficionados
   </div>
 </nav>
+<TopMenu />
 
               <div class="card-header bgdiv text-white">
                 <h1>Ejemplo de un Comunicado</h1> 

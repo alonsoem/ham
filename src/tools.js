@@ -150,7 +150,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Hora UTC</p>
-                    <a href="http://ham.qrits.com.ar/utc" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/utc" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -165,7 +165,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Llamado CQ</p>
-                    <a href="http://ham.qrits.com.ar/cqcall" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/cqcall" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -174,7 +174,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Condiciones solares</p>
-                    <a href="http://ham.qrits.com.ar/solarConditions" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/solarConditions" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>  
