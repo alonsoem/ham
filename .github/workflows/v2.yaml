@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push on v2 branch
+name: 🚀 Deploy website on push on V2 branch
 on:
  push:
   branches:
@@ -6,23 +6,23 @@ on:
  
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy V2
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name: 🚚 Get latest code V2
       uses: actions/checkout@v2
 
-    - name: Use Node.js 16
+    - name: Use Node.js 16 V2
       uses: actions/setup-node@v2
       with:
         node-version: '16'
       
-    - name: 🔨 Build Project
+    - name: 🔨 Build Project V2
       run: |
         npm install
         npm run build
     
-    - name: 📂 Sync files
+    - name: 📂 Sync files V2
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:          
         local-dir: ./build/
