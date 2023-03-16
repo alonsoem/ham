@@ -26,7 +26,7 @@ export default class App extends React.Component {
             <Route path="/updates" component={updates} />
             <Route path="/cqcall" component={cqCall} />
             <Route path="/utc" component={utcTime} />
-            <Route path="tools" component={tools} />
+            <Route path="/v2/tools" component={tools} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
             <Route exact path="/repeaters" component={repeaters} />
