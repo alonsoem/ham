@@ -46,7 +46,7 @@ export default class landing extends  React.Component {
     <a class="nav-link" href="/repeaters">Repetidoras</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/updates" >Actualizaciones</a>
+    <a class="nav-link" href="/updates" >Actualizaciones-</a>
   </li>
 </ul>
             
