@@ -3,6 +3,7 @@ import {getSolar} from "./api/api";
 import {Card,Table} from "react-bootstrap";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import { withTranslation } from "react-i18next";
+import TopMenu from "./topMenu";
 
 
 
@@ -108,6 +109,7 @@ import { withTranslation } from "react-i18next";
     Somos Radioaficionados
   </div>
 </nav>
+<TopMenu />
                 <div class="card-header bgdiv text-white">
                     <h1>Condiciones Solares</h1> 
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import TopMenu from './topMenu';
 
 export default class updates extends  React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ export default class updates extends  React.Component {
     Somos Radioaficionados
   </div>
 </nav>
+<TopMenu />
 
           <div class="card-header bgdiv text-white">
               <h1>Actualizaciones</h1> 

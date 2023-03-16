@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import TopMenu from './topMenu';
 
 
 
@@ -35,21 +36,7 @@ export default class landing extends  React.Component {
     Somos Radioaficionados
   </div>
 </nav>
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/tools">Herramientas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/repeaters">Repetidoras</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/updates" >Actualizaciones-</a>
-  </li>
-</ul>
-            
+<TopMenu />     
             
             <div class="card-header bgdiv text-white">
                 <h1>Busqueda</h1> 

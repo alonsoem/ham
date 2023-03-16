@@ -1,6 +1,6 @@
 import React from 'react';
 import {getResults,getPrefix,getPrefixInverse} from "./api/api";
-
+import TopMenu from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
@@ -167,6 +167,7 @@ export default class results extends  React.Component {
     Somos Radioaficionados
   </div>
 </nav>
+<TopMenu />
             <div className="card-header bgdiv text-white">
                 <h1>Resultados</h1> 
             </div>
