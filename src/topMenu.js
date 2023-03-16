@@ -6,22 +6,22 @@ import React from "react";
 
 
 const TopMenu = () => {
-  
+
 
 
   return (
     <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+    <a class="nav-link active" aria-current="page" href="/v2/">Inicio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/tools">Herramientas</a>
+    <a class="nav-link" href="/v2/tools">Herramientas</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/repeaters">Repetidoras</a>
+    <a class="nav-link" href="/v2/repeaters">Repetidoras</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/updates" >Actualizaciones-</a>
+    <a class="nav-link" href="/v2/updates" >Actualizaciones-</a>
   </li>
 </ul>
   );
