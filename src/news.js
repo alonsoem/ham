@@ -46,11 +46,11 @@ export default class news extends  React.Component {
       <h2>Actualizamos la pantalla de presentación</h2>
 
 <ul>
-    <li>Ahora podras navegar entre herramientas, buscadores de repetidoras y de señales distintivas desde la parte superior de la pantalla.</li>
-    <li>El acceso al bloc de notas estara siempre visible para que lo puedas acceder aun cuando estes en medio de una consulta.</li>
-    <li>Ahora podras volver de las pantallas con el boton de regreso de Android y/o tambien navegando las opciones.</li>
-    <li>Ahora toda la aplicacion luce igual.</li>
-    <li> Estamos marcando un estilo que no sea confuso para su uso y que nos permita luego mejorar la aplicacion con nuevos contenidos y funcione mas rápido.</li>
+    <li>Ahora podrás navegar entre herramientas, buscadores de repetidoras y de señales distintivas desde la parte superior de la pantalla.</li>
+    <li>El acceso al bloc de notas estará siempre visible para que lo puedas usar aun cuando estés en medio de una consulta.</li>
+    <li>Ahora podés volver de las pantallas con el botón de regreso de Android y/o también navegando las opciones del menú superior</li>
+    <li>Ahora toda la aplicación luce igual para que te sea más comodo usarla.</li>
+    <li>¡Más cambios vienen en camino! ¡Esperamos que disfrutes la app!</li>
 </ul>
 
 
