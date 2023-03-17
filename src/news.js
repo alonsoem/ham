@@ -43,7 +43,7 @@ export default class news extends  React.Component {
       <div class="card-body">
                          
 
-      <h2>Actualizamos la pantalla de presentación</h2>
+      <h2>Mejoramos la presentación en pantalla</h2>
 
 <ul>
     <li>Ahora podrás navegar entre herramientas, buscadores de repetidoras y de señales distintivas desde la parte superior de la pantalla.</li>
