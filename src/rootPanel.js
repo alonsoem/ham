@@ -14,6 +14,7 @@ import repeaters from "./repeaters";
 import qso from "./qso.js";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+import news from "./news.js";
 
 
 export default class App extends React.Component {
@@ -24,6 +25,7 @@ export default class App extends React.Component {
           <Route exact path="/qso" component={qso} />
             <Route path="/solarConditions" component={solarConditions} />
             <Route path="/updates" component={updates} />
+            <Route path="/news" component={news} />
             <Route path="/cqcall" component={cqCall} />
             <Route path="/utc" component={utcTime} />
             <Route path="/tools" component={tools} />
