@@ -42,7 +42,7 @@ code {
 
 th>img {margin: 0.4em;}
 
-.card-header.match{background-color: rgb(119, 187, 133);}
+.card-header.match{background-color: #77bb85;}
 
 
 .landing{
@@ -54,4 +54,33 @@ th>img {margin: 0.4em;}
   text-align: center!important;
   display:table!important;
   
+}
+
+
+/*implemtnacion imagenes escaladas*/
+
+.caja{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background: #333944;
+}
+.box{
+  width: 100%;
+  height: 100%;
+  background: #CCC;
+  overflow: hidden;
+}
+
+.box img{
+  width: 100%;
+  height: auto;
+}
+@supports(object-fit: cover){
+    .box img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
 }
