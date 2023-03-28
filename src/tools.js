@@ -45,8 +45,8 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Código Fonetico</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigo-ICAO.png" class="btn btn-primary">Ir</a>
+                    <p class="fs-1 text-uppercase">Código Fonético</p>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Código Fonético/codigo-ICAO.png" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -56,7 +56,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Sufijos Argentina</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-argentina.webp" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Sufijos Argentina/sufijos-argentina.webp" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -71,7 +71,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Sufijos Uruguay</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Sufijos Uruguay/sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>                
@@ -80,7 +80,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Prefijos Chile</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=prefijos-chile.jpg" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Prefijos Chile/prefijos-chile.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -96,7 +96,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Prefijos Brasil</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=prefijos-brasil.jpg" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Prefijos Brasil/prefijos-brasil.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -105,7 +105,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código Morse</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=morse.jpg" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Código Morse/morse.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>  
@@ -118,7 +118,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código RST</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=rst.jpg" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Código RST/rst.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -128,7 +128,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Código Q</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=codigoQ.jpg" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Código Q/codigoQ.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
@@ -141,7 +141,7 @@ export default class tools extends  React.Component {
                 <div class="card text-center">
                   <div class="card-body">
                     <p class="fs-1 text-uppercase">Bandas y frecuencias</p>
-                    <a href="http://ham.qrits.com.ar/app-pages/viewer.php?img=bandas.png" class="btn btn-primary">Ir</a>
+                    <a href="http://ham.qrits.com.ar/v2/viewer/Bandas y frecuencias/bandas.png" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>                
