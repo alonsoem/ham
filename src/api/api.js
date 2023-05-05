@@ -17,4 +17,4 @@ export const getPrefixInverse = (params) => foreignRequest('get', 'http://ham.qr
 
 export const getRepeaters = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getRepes.php',params,{'Content-Type':'application/json'});
 export const getRepeatersLocals = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getLocalsR.php',params,{'Content-Type':'application/json'});
-
+export const postQSOLA = (params) => foreignRequest('get', 'https://www.logdeargentina.com.ar/php/subeqso2.php',params,{'Content-Type':'Content-Type: text/html','Control-Allow-Origin':'*'});

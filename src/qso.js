@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import TopMenu from './topMenu';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
-import {Dropdown} from "react-bootstrap";
+import {postQSOLA} from "./api/api";
 
 
 
@@ -13,15 +12,88 @@ export default class qso extends  React.Component {
         super(props);
 
         this.state = {
-            search:"",
+            date:"",
+            time:"",
+            myCall:"lu1eqe",
+            toCall:"",
+            rst:"",
+            message:"",
+            mode:"",
+            band:"",
+            user:"alonso.em@gmail.com",
+            password:"Wsbwnp.04"
+
 
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        
     
-     handleChange = (event) => {
-        this.setState({search:event.target.value});
+        this.submit();
+    }
+
+
+    submit = () =>{
+
+        postQSOLA({
+            user: this.state.user,
+            pass: this.state.password,
+            micall:this.state.myCall,
+            sucall:this.state.toCall,
+            banda:this.state.band,
+            modo:this.state.mode,
+            fecha:this.state.date,
+            hora:this.state.time,
+            rst:this.state.rst,
+            x_qslMSG:this.state.message
+        })
+            .then((response) => {
+              //this.props.history.push("/");
+              console.log("PASO");
+              console.log(response);
+            })
+            .catch((responseError) => console.log(responseError))
+    
+      }
+
+     handleChangeDate = (event) => {
+        this.setState({date:event.target.value});
       };
 
+     handleChangeTime = (event) => {
+        this.setState({time:event.target.value});
+      };
+
+     handleChangeRst = (event) => {
+        this.setState({rst:event.target.value});
+      };
+
+
+
+     handleChangeProp = (event) => {
+        this.setState({prop:event.target.value});
+      };
+     handleChangeMessage= (event) => {
+        this.setState({message:event.target.value});
+      };      
+
+      handleChangeToCall= (event) => {
+        this.setState({toCall:event.target.value});
+      };            
+
+      handleChangeMode= (event) => {
+        this.setState({mode:event.target.value});
+      };            
+
+      handleChangeBand= (event) => {
+        this.setState({band:event.target.value});
+      };            
+
+      
+      
     componentDidMount() {
                
     }
@@ -31,15 +103,15 @@ export default class qso extends  React.Component {
 
             <div >
                  
-                 <nav class="navbar navbar-light bg-light">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
-<TopMenu />
+                 <nav className="navbar navbar-light bg-light">
+                    <div className="container">
+                        Somos Radioaficionados
+                    </div>
+                </nav>
+                <TopMenu />
             
             
-            <div class="card-header bgdiv text-white">
+            <div className="card-header bgdiv text-white">
                 <h1>QSO's</h1> 
             </div>
 
@@ -48,8 +120,11 @@ export default class qso extends  React.Component {
             <p>&nbsp;</p>
             
                     <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
-                        <div class="card" style={{'background-color':'#439139ef'}}>
-                            <div class="card-body " >
+                        <div className="card" style={{'background-color':'#439139ef'}}>
+                        <form onSubmit={this.handleSubmit} className="row g-3 needs-validation">
+                        
+                            <div className="card-body " >
+                             
                                 <div className="row">
                                     <div className="col-12">
                                         Incluya un contacto a Log Argentina
@@ -60,134 +135,133 @@ export default class qso extends  React.Component {
                              
                                 
                                 <div className="row">&nbsp;</div>
+
+                                <div className="row">
+                                <div className="col-2 text-left">Fecha</div>
+                                    <div class="input-group col-10 text-center has-validation">    
+                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="date" value={this.state.date} onChange={this.handleChangeDate} required />
+                                        <div class="invalid-feedback">
+                                                La fecha no puede ser vacia!
+                                        </div>
+                                     </div>
+                                </div>
+                                <div className="row">
+                                <div className="col-2 text-left">Hora</div>
+                                    <div class="input-group col-10 text-center has-validation">    
+                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="time" value={this.state.time} onChange={this.handleChangeTime} required />
+                                        <div className="invalid-feedback">
+                                                La hora no puede ser vacia!
+                                        </div>
+                                     </div>
+                                </div>
+                                
                                 <div className="row">
                                 <div className="col-2 text-left">Callsign</div>
                                     <div className="col-10 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="callsign"  value={this.state.search} onChange={this.handleChange} /> 
+                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="callsign"  value={this.state.toCall} onChange={this.handleChangeToCall} /> 
                                     </div>
+                                </div>
+                            
+                                <div className="row">
+                                    <div className="col-2 text-left">Modo</div>
+
+                                    <div className="col-10 text-center">
+                                        <select className="form-select" id="mode" required onChange={this.handleChangeMode}>
+                                            <option selected disabled value="">Elija un modo...</option>
+                                            <option value="cw">CW</option>
+                                            <option value="am">AM</option>
+                                            <option value="ssb">SSB</option>
+                                            <option value="atv">ATV</option>
+                                            <option value="sstv">SSTV</option>
+                                            <option value="PACKET">PACKET</option>
+                                            <option value="APRS">APRS</option>
+                                            <option value="RTTY">RTTY</option>
+                                            <option value="FM">FM</option>
+                                            <option value="FAX">FAX</option>
+                                            <option value="DV">DV</option>
+                                        </select>
+                                        <div className="invalid-feedback">
+                                            Falta seleccionar un modo!
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div className="row">
                                     <div className="col-2 text-left">Banda</div>
                                     <div className="col-10 text-center">
-
-
-                                    <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  Banda
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#">2200 m</Dropdown.Item>
-                  <Dropdown.Item href="#">630 m</Dropdown.Item>
-                  <Dropdown.Item href="#">160 m</Dropdown.Item>
-                  <Dropdown.Item href="#">80 m</Dropdown.Item>
-                  <Dropdown.Item href="#">60 m</Dropdown.Item>
-                  <Dropdown.Item href="#">40 m</Dropdown.Item>
-                  <Dropdown.Item href="#">30 m</Dropdown.Item>
-                  <Dropdown.Item href="#">20 m</Dropdown.Item>
-                  <Dropdown.Item href="#">17 m</Dropdown.Item>
-                  <Dropdown.Item href="#">15 m</Dropdown.Item>
-                  <Dropdown.Item href="#">12 m</Dropdown.Item>
-                  <Dropdown.Item href="#">10 m</Dropdown.Item>
-                  <Dropdown.Item href="#">6 m</Dropdown.Item>
-                  <Dropdown.Item href="#">2 m</Dropdown.Item>
-                  <Dropdown.Item href="#">1,25 m</Dropdown.Item>
-                  <Dropdown.Item href="#">70 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">23 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">13 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">9 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">5 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">3 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">1,2 cm</Dropdown.Item>
-                  <Dropdown.Item href="#">6 mm</Dropdown.Item>
-
-                  
-                </Dropdown.Menu>
-              </Dropdown>
+    
+                                        <select className="form-select" id="band" required onChange={this.handleChangeBand}>
+                                            <option selected disabled value="">Elija una banda...</option>
+                                            <option value="2200m">2200 m</option>
+                                            <option value="630m">630 m</option>
+                                            <option value="160m">160 m</option>
+                                            <option value="80m">80 m</option>
+                                            <option value="60m">60 m</option>
+                                            <option value="40m">40 m</option>
+                                            <option value="30m">30 m</option>
+                                            <option value="20m">20 m</option>
+                                            <option value="17m">17 m</option>
+                                            <option value="15m">15 m</option>
+                                            <option value="12m">12 m</option>
+                                            <option value="10m">10 m</option>
+                                            <option value="6m">6 m</option>
+                                            <option value="2m">2 m</option>
+                                            <option value="1.25m">1,25 m</option>
+                                            <option value="70cm">70 cm</option>
+                                            <option value="23cm">23 cm</option>
+                                            <option value="13cm">13 cm</option>
+                                            <option value="9cm">9 cm</option>
+                                            <option value="5cm">5 cm</option>
+                                            <option value="3cm">3 cm</option>
+                                            <option value="1.2cm">1,2 cm</option>
+                                            <option value="6mm">6 mm</option>
+                                        </select>
+                                        <div className="invalid-feedback">
+                                            Falta seleccionar una banda!
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="row">
-                                <div className="col-2 text-left">Modo</div>
-                                    <div className="col-10 text-center">
-                                    <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  Modo
-                </Dropdown.Toggle>
+   
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#">CW</Dropdown.Item>
-                  <Dropdown.Item href="#">AM</Dropdown.Item>
-                  <Dropdown.Item href="#">SSB</Dropdown.Item>
-                  <Dropdown.Item href="#">ATV</Dropdown.Item>
-                  <Dropdown.Item href="#">SSTV</Dropdown.Item>
-                  <Dropdown.Item href="#">PACKET</Dropdown.Item>
-                  <Dropdown.Item href="#">APRS</Dropdown.Item>
-                  <Dropdown.Item href="#">RTTY</Dropdown.Item>
-                  <Dropdown.Item href="#">FM</Dropdown.Item>
-                  <Dropdown.Item href="#">FAX</Dropdown.Item>
-                  <Dropdown.Item href="#">DV</Dropdown.Item>
-                  
-                  
-                </Dropdown.Menu>
-              </Dropdown>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                <div className="col-2 text-left">Fecha</div>
-                                    <div className="col-10 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="date"  value={this.state.search} onChange={this.handleChange} /> 
-                                    </div>
-                                </div>
-                                <div className="row">
-                                <div className="col-2 text-left">Hora</div>
-                                    <div className="col-10 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="time"  value={this.state.search} onChange={this.handleChange} /> 
-                                    </div>
-                                </div>
                                 <div className="row">
                                 <div className="col-2 text-left">RST</div>
                                     <div className="col-10 text-center">
                                     <div className="row">
                                         <div className="col-3 text-center">
-                                            <div className="col-3 text-center">R</div>
-                                            <input type="text" className="form-control" id="rst_r"  value={this.state.search} onChange={this.handleChange} /> 
+                                            <input type="text" className="form-control" id="rst"  value={this.state.rst} onChange={this.handleChangeRst} /> 
                                         </div>
-                                        <div className="col-3 text-center">
-                                            <div className="col-3 text-center">S</div>
-                                            <input type="text" className="form-control" id="rst_s"  value={this.state.search} onChange={this.handleChange} /> 
-                                        </div>
-                                        <div className="col-3 text-center">
-                                            <div className="col-3 text-center">T</div>
-                                            <input type="text" className="form-control"  id="rst_t"  value={this.state.search} onChange={this.handleChange} /> 
-                                        </div>
+
                                         </div>
                                     </div>
                                 </div>
+
+
+                                
                                 <div className="row">
-                                <div className="col-2 text-left">Prop</div>
-                                    <div className="col-10 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="prop"  value={this.state.search} onChange={this.handleChange} /> 
+                                    <div className="col-2 text-left">Mensaje</div>
+                                     <div className="col-10 text-center">
+                                     <div class="input-group has-validation">    
+                                        
+                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="message" aria-describedby="inputGroupPrepend" required value={this.state.message} onChange={this.handleChangeMessage} />
+                                        <div className="invalid-feedback">
+                                                El mensaje no puede ser vacio!
+                                        </div>
+                                     </div>
+                                        
                                     </div>
                                 </div>
-                                <div className="row">
-                                <div className="col-2 text-left">Mensaje</div>
-                                    <div className="col-10 text-center">
-                                        <input type="text" className="form-control" style={{ 'width': '100% !important'}} id="message"  value={this.state.search} onChange={this.handleChange} /> 
-                                    </div>
-                                </div>
+
                                 <div className="row">&nbsp;</div>
     
                                 <div className="row">
                                     <div className="col-12 text-right">
-                                
-                                        <Link to={"/results/"+this.state.search}>
-                                            <button type="button" class="btn btn-light">Registrar!</button>
-                                        </Link>
+                                            <button type="submit" className="btn btn-light">Registrar!</button>
                                     </div>
                                 </div>
-                           
-                            </div>
 
+                                
+                            </div>
+                            </form>
                         </div>
                     </div>
             </div>
