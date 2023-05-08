@@ -51,11 +51,15 @@ export default class qso extends  React.Component {
             x_qslMSG:this.state.message
         })
             .then((response) => {
-              //this.props.history.push("/");
+              //registro ok a donde voy?
+                //this.props.history.push("/");
               console.log("PASO");
               console.log(response);
             })
-            .catch((responseError) => console.log(responseError))
+            .catch((responseError) => {
+                //registro FALLIDO que muestro?
+                console.log(responseError)
+            })
     
       }
 
@@ -192,8 +196,6 @@ export default class qso extends  React.Component {
     
                                         <select className="form-select" id="band" required onChange={this.handleChangeBand}>
                                             <option selected disabled value="">Elija una banda...</option>
-                                            <option value="2200m">2200 m</option>
-                                            <option value="630m">630 m</option>
                                             <option value="160m">160 m</option>
                                             <option value="80m">80 m</option>
                                             <option value="60m">60 m</option>
@@ -206,15 +208,9 @@ export default class qso extends  React.Component {
                                             <option value="10m">10 m</option>
                                             <option value="6m">6 m</option>
                                             <option value="2m">2 m</option>
-                                            <option value="1.25m">1,25 m</option>
+                                            <option value="1.2m">1,2 m</option>
                                             <option value="70cm">70 cm</option>
-                                            <option value="23cm">23 cm</option>
-                                            <option value="13cm">13 cm</option>
-                                            <option value="9cm">9 cm</option>
-                                            <option value="5cm">5 cm</option>
-                                            <option value="3cm">3 cm</option>
-                                            <option value="1.2cm">1,2 cm</option>
-                                            <option value="6mm">6 mm</option>
+                                            <option value="VOIP">VOIP</option>
                                         </select>
                                         <div className="invalid-feedback">
                                             Falta seleccionar una banda!
@@ -273,4 +269,24 @@ export default class qso extends  React.Component {
 
     }
 
+
+    /* MENSAJES DE RESPUESTA DE LDA
+
+    Falta Usuario!
+Falta Contraseña!
+El usuario ‘$usuario’ NO existe en LdA!
+Error de Contraseña!
+No es un Call ni Alias registrado para ‘$usuario’ en LdA!
+Falta su Call!
+Falta Call Corresponsal!
+Falta Banda!
+Banda no admitida en LdA!
+Banda mal expresada!
+Falta Modo!
+Falta Fecha!
+Error en el formato de la fecha!
+Falta Hora!
+Error en el formato de la hora!
+Falta RS(T)!
+Solo se acepta PROP_MODE: SAT!*/
 }
