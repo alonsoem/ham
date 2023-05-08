@@ -22,7 +22,8 @@ export default class qso extends  React.Component {
             mode:"",
             band:"",
             user:"alonso.em@gmail.com",
-            password:"Wsbwnp.04"
+            password:"Wsbwnp.04",
+            error:"",
 
 
         };
@@ -64,10 +65,10 @@ export default class qso extends  React.Component {
       }
 
       handleAPIError(responseError) {
-        let errorToDisplay = this.props.t("genericError");
+        let errorToDisplay = "MENSAJE GENERICO DE ERROR";
     
-        if (responseError.request && responseError.request.status === 0) {
-          errorToDisplay = this.props.t("comError");
+        if (responseError.request ) {
+          errorToDisplay = "OTRO ERROR";
         }
     
         this.setState({ error: errorToDisplay });
