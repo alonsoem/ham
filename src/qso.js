@@ -2,6 +2,7 @@ import React from 'react';
 import TopMenu from './topMenu';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import {postQSOLA} from "./api/api";
+import {toast, ToastContainer} from "react-toastify";
 
 
 
@@ -49,18 +50,54 @@ export default class qso extends  React.Component {
             hora:this.state.time,
             rst:this.state.rst,
             x_qslMSG:this.state.message
-        })
+        })       
             .then((response) => {
               //registro ok a donde voy?
                 //this.props.history.push("/");
               console.log("PASO");
               console.log(response);
+              //this.notify(this.props.t("userModifiedOK"));
+              this.notify("CAMBIO REALIZADO");
             })
-            .catch((responseError) => {
-                //registro FALLIDO que muestro?
-                console.log(responseError)
-            })
+            .catch((responseError) => this.handleAPIError(responseError));
     
+      }
+
+      handleAPIError(responseError) {
+        let errorToDisplay = this.props.t("genericError");
+    
+        if (responseError.request && responseError.request.status === 0) {
+          errorToDisplay = this.props.t("comError");
+        }
+    
+        this.setState({ error: errorToDisplay });
+        this.notifyError(errorToDisplay);
+      }
+
+      notify = (message) => {
+        toast.success(message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'colored',
+        });
+      }
+    
+      notifyError = (message) => {
+        toast.error(message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'colored',
+        });
       }
 
      handleChangeDate = (event) => {
@@ -114,6 +151,7 @@ export default class qso extends  React.Component {
                 </nav>
                 <TopMenu />
             
+                <ToastContainer />
             
             <div className="card-header bgdiv text-white">
                 <h1>QSO's</h1> 
