@@ -220,8 +220,8 @@ export default class results extends  React.Component {
                                         <div className="col-3 text-right"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-10 text-left">{each.nombre}</div>
-                                        <div className="col-2  text-right"><a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ" title="Link en QRZ" /></a></div>
+                                        <div className="col-9 text-left">{each.nombre}</div>
+                                        <div className="col-3  text-right"><a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ" title="Link en QRZ" /></a></div>
                                         
                                     </div>
                                 </div>
