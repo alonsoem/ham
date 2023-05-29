@@ -13,10 +13,10 @@ export default class qso extends  React.Component {
         super(props);
 
         this.state = {
-            date:"",
-            time:"",
+            date:"2023/05/11",
+            time:"19:00",
             myCall:"lu1eqe",
-            toCall:"",
+            toCall:"lu1epp",
             rst:"",
             message:"",
             mode:"",
