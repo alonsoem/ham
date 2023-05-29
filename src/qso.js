@@ -152,13 +152,14 @@ export default class qso extends  React.Component {
                 </nav>
                 <TopMenu />
             
-                <ToastContainer />
+                
             
             <div className="card-header bgdiv text-white">
                 <h1>QSO's</h1> 
             </div>
 
             <div className="container-fluid table-scroll-vertical">
+            <ToastContainer />
 
             <p>&nbsp;</p>
             
