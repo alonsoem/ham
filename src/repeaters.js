@@ -121,7 +121,7 @@ export default class results extends  React.Component {
                                 this.state.repeaters.map((each)=>(
                             
                                     <div className="card">
-                                        <div className="card-header">
+                                        <div className="card-header match">
                                             <div className="row">
                                                 <div className="col-9">{each.titular}</div>
                                                 

@@ -203,11 +203,6 @@ export default class results extends  React.Component {
                             : null
                             
                         }
-                        {console.log(this.state.signal)}
-                        
-                            
-                        
-
                         {
                             
                         
