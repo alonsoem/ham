@@ -162,8 +162,8 @@ export default class results extends  React.Component {
         return (
             <div>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
+<nav className="navbar navbar-light bg-light">
+  <div className="container">
     Somos Radioaficionados
   </div>
 </nav>

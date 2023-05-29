@@ -10,18 +10,18 @@ const TopMenu = () => {
 
 
   return (
-    <ul class="nav bg-light" >
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/v2/">Inicio</a>
+    <ul className="nav bg-light" >
+  <li className="nav-item">
+    <a className="nav-link active" aria-current="page" href="/v2/">Inicio</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/v2/tools">Herramientas</a>
+  <li className="nav-item">
+    <a className="nav-link" href="/v2/tools">Herramientas</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/v2/repeaters">Repetidoras</a>
+  <li className="nav-item">
+    <a className="nav-link" href="/v2/repeaters">Repetidoras</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/v2/updates" >Actualizaciones</a>
+  <li className="nav-item">
+    <a className="nav-link" href="/v2/updates" >Actualizaciones</a>
   </li>
 </ul>
   );

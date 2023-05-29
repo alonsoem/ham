@@ -15,6 +15,6 @@ export const getPrefix = (params) => foreignRequest('get', 'http://ham.qrits.com
 
 export const getPrefixInverse = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getPrefixInverseInfo.php',params,{'Content-Type':'application/json'});
 
-export const getRepeaters = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getRepes.php',params,{'Content-Type':'application/json'});
+export const getRepeaters = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getRepesV2.php',params,{'Content-Type':'application/json'});
 export const getRepeatersLocals = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getLocalsR.php',params,{'Content-Type':'application/json'});
 export const postQSOLA = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/postQSOAL.php',params,{'Content-Type':'Content-Type: text/html','Control-Allow-Origin':'*'});
