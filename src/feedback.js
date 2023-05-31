@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import { getFeedback,postFeedback } from './api/api';
 import TopMenu from './topMenu';
@@ -25,7 +23,7 @@ export default class landing extends  React.Component {
         this.setState({comment:event.target.value});
       };
 
-      
+
       handleSubmit = (event) => {
         console.log("envio!");
         console.log (this.state.comment);
@@ -114,7 +112,7 @@ export default class landing extends  React.Component {
         
                     {this.state.feedbacks.map((oneFeedback)=>(
                     <div class="col-3 col-sm-3">
-                <div class={"card text-center "+(oneFeedback.status==1? "bg-info":"bg-success")}>
+                <div class={"card text-center "+(oneFeedback.status===1? "bg-info":"bg-success")}>
                 
                   <div class="card-body">
               
