@@ -91,3 +91,12 @@ th>img {margin: 0.4em;}
   margin-bottom:0.5em;
   margin-left:0.5em;
 }
+
+.card.greenLight{
+  background-color: #61ab7c;
+}
+
+.card-body.bg-noColor{
+  background-color: #b8c0b1 !important;
+  
+}

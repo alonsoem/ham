@@ -45,11 +45,11 @@ export default class landing extends  React.Component {
 
         const showStatus= (status)=>{
             switch(status) {
-                case "1":
+                case 1:
                   return "bg-light";
-                case "2":
+                case 2:
                     return "bg-success";
-                case "3":
+                case 3:
                     return "bg-secondary";
                 default:
                     return "";
@@ -75,7 +75,7 @@ export default class landing extends  React.Component {
 <p>&nbsp;</p>
             
                     <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
-                        <div class="card" style={{'background-color':'#439139ef'}}>
+                        <div className="card greenLight" >
                             <div class="card-body " >
                                 <div className="row">
                                     <div className="col-12">
@@ -117,7 +117,12 @@ export default class landing extends  React.Component {
 
                     <div>&nbsp;</div>
 
-                    <div className="container block">
+                    <div className="card">
+
+                    <div class="card-header text-center" >Últimos comentarios</div>
+                    <div class="card-body bg-noColor" >    
+
+                    <div className="container block text-center ">
                     
                     {this.state.feedbacks.map((oneFeedback)=>(
                     
@@ -132,6 +137,12 @@ export default class landing extends  React.Component {
                     ))}
                     
                     </div>
+
+                    </div>
+
+                    </div>
+
+                    <div>&nbsp;</div>
             </div>
             
         </div>
