@@ -1,6 +1,10 @@
 
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import React from "react";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 
@@ -10,20 +14,24 @@ const TopMenu = () => {
 
 
   return (
-    <ul className="nav bg-light" >
-  <li className="nav-item">
-    <a className="nav-link active" aria-current="page" href="/v2/">Inicio</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="/v2/tools">Herramientas</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="/v2/repeaters">Repetidoras</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="/v2/updates" >Actualizaciones</a>
-  </li>
-</ul>
+
+    <Navbar bg="light">
+      
+          <Nav className="nav me-auto">
+            <Nav.Link href="/v2/">Inicio</Nav.Link>
+            <Nav.Link href="/v2/tools">Herramientas</Nav.Link>
+            <Nav.Link href="/v2/repeaters">Repetidoras</Nav.Link>
+            <NavDropdown title="+ Info" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/v2/updates">Actualizaciones</NavDropdown.Item>
+              
+              
+            </NavDropdown>
+          </Nav>
+        
+      
+    </Navbar>
+    
+
   );
 };
 
