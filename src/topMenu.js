@@ -22,7 +22,7 @@ const TopMenu = () => {
             <Nav.Link href="/v2/repeaters">Repetidoras</Nav.Link>
             <NavDropdown title="+ Info" id="basic-nav-dropdown">
               <NavDropdown.Item href="/v2/updates">Actualizaciones</NavDropdown.Item>
-              
+              <NavDropdown.Item href="/v2/feedback">Enviar Sugerencia</NavDropdown.Item>
               
             </NavDropdown>
           </Nav>

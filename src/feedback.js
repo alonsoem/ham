@@ -27,7 +27,7 @@ export default class landing extends  React.Component {
       handleSubmit = (event) => {
         console.log("envio!");
         console.log (this.state.comment);
-        postFeedback(this.state.comment);
+        postFeedback({comments:this.state.comment});
       };
 
     componentDidMount() {
@@ -51,7 +51,7 @@ export default class landing extends  React.Component {
 
             <div >
                  
-                 <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light">
                 <div class="container">
                     Somos Radioaficionados
                 </div>
