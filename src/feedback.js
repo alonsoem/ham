@@ -75,7 +75,7 @@ export default class landing extends  React.Component {
 
     componentDidMount() {
         this.update();
-        console.log (this.state.feedbacks);
+        
     }
        
 
@@ -83,6 +83,7 @@ export default class landing extends  React.Component {
         getFeedback({})
             .then((data) => {
                     //revisar como controlar la respuesta si no me da 
+                    console.log ("FEEDS : " +data.feedbacks);
                     if (data.feedbacks){
                         this.setState({feedbacks:data.feedbacks});
                     }
