@@ -2,6 +2,8 @@ import React from 'react';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import { getFeedback,postFeedback } from './api/api';
 import TopMenu from './topMenu';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -24,11 +26,57 @@ export default class landing extends  React.Component {
 
 
     handleSubmit = (event) => {
-        postFeedback({comments:this.state.comment});
+        event.preventDefault();
+        if (this.state.comment.length>5){
+            this.submit();
+
+            
+        }else{
+            console.log ("ERROR");
+            this.notifyError("El mensaje no puede ser tan corto!");
+        }
+        
     };
 
+    notifyError = (message) => {
+        toast.error(message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'colored',
+        });
+      }
+
+      notify = (message) => {
+        toast.success(message, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'colored',
+        });
+      }
+
+    submit = () => {
+        postFeedback({comments:this.state.comment})
+            .then(()=>
+                {this.notify("Gracias! Tu comentario fue enviado.");}
+                )
+            .else(()=>
+                {this.notifyError("Ocurrió un error al actualizar. Intentalo nuevamente.");}
+            );    
+    }
+
     componentDidMount() {
-               this.update();
+        this.update();
+        console.log (this.state.feedbacks);
     }
        
 
@@ -79,20 +127,18 @@ export default class landing extends  React.Component {
                             <div class="card-body " >
                                 <div className="row">
                                     <div className="col-12">
-                                        Danos tus comentarios sobre nuevas funcionalidades, informacion, o links que quieras que agreguemos. Tambien las quejas son bienvenidas!
+                                        Danos tus comentarios sobre nuevas funcionalidades, información, o links que quieras que agreguemos. También las quejas son bienvenidas!
                                     </div>
                                 </div>
 
-                                <div className="row">&nbsp;</div>
-                             
-                               
+                                
                                 <div className="row">&nbsp;</div>
 
                                 <form onSubmit={this.handleSubmit}>
                                 <div className="row">
                                     <div className="col-12 text-center">
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Tus comentarios</label>
+                                        
                                         <textarea class="form-control" id="comment"  rows="3" onChange={this.handleChange} value={this.state.comment}></textarea>
                                     </div>
                                     </div>
@@ -101,10 +147,7 @@ export default class landing extends  React.Component {
     
                                 <div className="row">
                                     <div className="col-12 text-right">
-                                
-                                        
-                                            <button type="submit" class="btn btn-light">Enviar</button>
-                                        
+                                            <button type="submit"  class="btn btn-light">Enviar</button>
                                     </div>
                                 </div>
                                 </form>
@@ -122,19 +165,26 @@ export default class landing extends  React.Component {
                     <div class="card-header text-center" >Últimos comentarios</div>
                     <div class="card-body bg-noColor" >    
 
-                    <div className="container block text-center ">
+                    <div class="container block text-center ">
                     
-                    {this.state.feedbacks.map((oneFeedback)=>(
+                    {
+                        this.state.feedbacks
+                        ?
+                            this.state.feedbacks.map((oneFeedback)=>(
                     
-                        <div class={"card quique "+showStatus(oneFeedback.status)} >
-                            <div class="card-body text-left">
-                                <p class="fs-0 ">{oneFeedback.comment}</p>
-                            </div>
-                        </div>   
-              
-
+                                <div class={"card quique "+showStatus(oneFeedback.status)} >
+                                    <div class="card-body text-left">
+                                        <p class="fs-0 ">{oneFeedback.comment}</p>
+                                    </div>
+                                </div>   
+                            ))
+                        :
+                        <p>NO HAY NADA POR AQUI...</p>
+                            
+                    }
                         
-                    ))}
+                        
+                    
                     
                     </div>
 
@@ -144,7 +194,7 @@ export default class landing extends  React.Component {
 
                     <div>&nbsp;</div>
             </div>
-            
+            <ToastContainer />
         </div>
 
         );

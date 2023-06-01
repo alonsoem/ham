@@ -31,14 +31,14 @@ export default class landing extends  React.Component {
 
             <div >
                  
-                 <nav class="navbar navbar-light bg-light">
-  <div class="container">
+                 <nav className="navbar navbar-light bg-light">
+  <div className="container">
     Somos Radioaficionados
   </div>
 </nav>
 <TopMenu />     
             
-            <div class="card-header bgdiv text-white">
+            <div className="card-header bgdiv text-white">
                 <h1>Busqueda</h1> 
             </div>
 
@@ -47,8 +47,8 @@ export default class landing extends  React.Component {
 <p>&nbsp;</p>
             
                     <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
-                        <div class="card" style={{'background-color':'#439139ef'}}>
-                            <div class="card-body " >
+                        <div className="card" style={{'background-color':'#439139ef'}}>
+                            <div className="card-body " >
                                 <div className="row">
                                     <div className="col-12">
                                         Consulte aquí las señales distintivas vigentes de Argentina, Brasil, Chile,  Uruguay, Perú y Ecuador.
@@ -77,7 +77,7 @@ export default class landing extends  React.Component {
                                     <div className="col-12 text-right">
                                 
                                         <Link to={"/results/"+this.state.search}>
-                                            <button type="button" class="btn btn-light">Buscar</button>
+                                            <button type="button" className="btn btn-light">Buscar</button>
                                         </Link>
                                     </div>
                                 </div>
