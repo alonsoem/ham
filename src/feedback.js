@@ -68,7 +68,7 @@ export default class landing extends  React.Component {
             .then(()=>
                 {this.notify("Gracias! Tu comentario fue enviado.");}
                 )
-            .else(()=>
+            .catch(()=>
                 {this.notifyError("Ocurrió un error al actualizar. Intentalo nuevamente.");}
             );    
     }
