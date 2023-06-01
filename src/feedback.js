@@ -168,8 +168,7 @@ export default class landing extends  React.Component {
                     <div class="container block text-center ">
                     
                     {
-                        this.state.feedbacks
-                        ?
+                        
                             this.state.feedbacks.map((oneFeedback)=>(
                     
                                 <div class={"card quique "+showStatus(oneFeedback.status)} >
@@ -178,8 +177,7 @@ export default class landing extends  React.Component {
                                     </div>
                                 </div>   
                             ))
-                        :
-                        <p>NO HAY NADA POR AQUI...</p>
+                       
                             
                     }
                         
