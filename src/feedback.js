@@ -32,7 +32,6 @@ export default class landing extends  React.Component {
 
             
         }else{
-            console.log ("ERROR");
             this.notifyError("El mensaje no puede ser tan corto!");
         }
         
@@ -83,7 +82,10 @@ export default class landing extends  React.Component {
     update = () => {
         getFeedback({})
             .then((data) => {
-                    this.setState({feedbacks:data.feedbacks});
+                    //revisar como controlar la respuesta si no me da 
+                    if (data.feedbacks){
+                        this.setState({feedbacks:data.feedbacks});
+                    }
                 })
             .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a intentar'}));
     }
@@ -168,7 +170,8 @@ export default class landing extends  React.Component {
                     <div class="container block text-center ">
                     
                     {
-                        
+                        this.state.feedbacks
+                        ?
                             this.state.feedbacks.map((oneFeedback)=>(
                     
                                 <div class={"card quique "+showStatus(oneFeedback.status)} >
@@ -177,7 +180,8 @@ export default class landing extends  React.Component {
                                     </div>
                                 </div>   
                             ))
-                       
+                        :
+                        <p>NO HAY NADA POR AQUI...</p>
                             
                     }
                         
