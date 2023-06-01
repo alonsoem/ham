@@ -2,8 +2,8 @@ import React from 'react';
 import TopMenu from './topMenu';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import {postQSOLA} from "./api/api";
-import {toast, ToastContainer} from "react-toastify";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
