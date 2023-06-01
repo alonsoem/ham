@@ -170,7 +170,7 @@ export default class landing extends  React.Component {
                     <div class="container block text-center ">
                     
                     {
-                        this.state.feedbacks
+                        this.state.feedbacks.length>0
                         ?
                             this.state.feedbacks.map((oneFeedback)=>(
                     
