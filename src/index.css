@@ -86,10 +86,14 @@ th>img {margin: 0.4em;}
 }
 
 .card.quique {
-  max-width: 8em;
+  max-width: 12em;
   display:inline-block;
   margin-bottom:0.5em;
   margin-left:0.5em;
+  
+}
+.card.quique.bg-base-card{
+  background-color: #e7e1beef;
 }
 
 .card.greenLight{

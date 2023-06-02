@@ -32,7 +32,7 @@ export default class landing extends  React.Component {
 
             
         }else{
-            this.notifyError("El mensaje no puede ser tan corto!");
+            this.notifyError("¡El mensaje es muy corto!. Intentalo nuevamente.");
         }
         
     };
@@ -64,9 +64,12 @@ export default class landing extends  React.Component {
       }
 
     submit = () => {
-        postFeedback({comments:this.state.comment})
+        postFeedback({comments:this.state.comment.replace("/(\r\n|\n|\r)/gm", "")})
             .then(()=>
-                {this.notify("Gracias! Tu comentario fue enviado.");}
+                {this.notify("Gracias! Tu comentario fue enviado.");
+                this.setState({comment:""});
+            }
+                
                 )
             .catch(()=>
                 {this.notifyError("Ocurrió un error al actualizar. Intentalo nuevamente.");}
@@ -83,7 +86,6 @@ export default class landing extends  React.Component {
         getFeedback({})
             .then((data) => {
                     //revisar como controlar la respuesta si no me da 
-                    console.log ("FEEDS : " +data.feedbacks);
                     if (data.feedbacks){
                         this.setState({feedbacks:data.feedbacks});
                     }
@@ -97,7 +99,7 @@ export default class landing extends  React.Component {
         const showStatus= (status)=>{
             switch(status) {
                 case 1:
-                  return "bg-light";
+                  return "bg-base-card";
                 case 2:
                     return "bg-success";
                 case 3:
@@ -177,7 +179,7 @@ export default class landing extends  React.Component {
                     
                                 <div class={"card quique "+showStatus(oneFeedback.status)} >
                                     <div class="card-body text-left">
-                                        <p class="fs-0 ">{oneFeedback.comment}</p>
+                                        <p class="fs-0 ">"{oneFeedback.comment.charAt(0).toUpperCase() + oneFeedback.comment.substring(0,100).slice(1)}"...</p>
                                     </div>
                                 </div>   
                             ))
