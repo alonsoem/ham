@@ -57,11 +57,21 @@ export default class results extends  React.Component {
 
     render() {
        
-
+        const cabeceraCondicionalCard = ()=>{
+            if (this.state.repeaters){
+                return "<div className=\"card\"><div className=\"card-body\">";
+            }
+        }
+        const pieCondicionalCard= ()=>{
+            if (this.state.repeaters){
+                return "</div></div>";
+            }
+            
+        }
         return (
             <div>
 
-<nav className="navbar navbar-light bg-light">
+<nav className="navbar navbar-light bg-light navbar-custom">
   <div className="container">
     Somos Radioaficionados
   </div>
@@ -95,7 +105,7 @@ export default class results extends  React.Component {
                                     <AsyncExample selectedValue={this.handleChange} />
                                     </div>
                                 </div>
-                                
+                                <div className="row">&nbsp;</div>
     
                                
                            
@@ -113,10 +123,10 @@ export default class results extends  React.Component {
 
 
 
-
-            <div className="card">
-                <div className="card-body">
-                   
+                    <div className="row">&nbsp;</div>
+                    {this.cabeceraCondicionalCard}
+            
+                    
                         {    
                                 this.state.repeaters.map((each)=>(
                             
@@ -194,7 +204,7 @@ export default class results extends  React.Component {
                             
                        }
 
-                       
+{this.pieCondicionalCard}           
 </div>
                            
              
@@ -205,10 +215,9 @@ export default class results extends  React.Component {
 
 
             
-
-            </div>
-            </div>
-
+            
+            
+            
 
         );
 
