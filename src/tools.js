@@ -19,11 +19,6 @@ export default class tools extends  React.Component {
         return (
           <div>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
 <TopMenu />
 
             <div class="card-header bgdiv text-white">

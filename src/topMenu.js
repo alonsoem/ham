@@ -14,6 +14,13 @@ const TopMenu = () => {
 
   return (
 
+    <div >
+                 
+    <nav className="navbar navbar-light bg-light navbar-custom">
+<div className="container ">
+Somos Radioaficionados
+</div>
+</nav>
     <Navbar bg="light" className="navbar-custom">
       
           <Nav className="nav me-auto">
@@ -31,7 +38,7 @@ const TopMenu = () => {
       
     </Navbar>
     
-
+</div>
   );
 };
 

@@ -28,14 +28,9 @@ export default class landing extends  React.Component {
        
     render() {
         return (
+            <div>
 
-            <div >
-                 
-                 <nav className="navbar navbar-light bg-light navbar-custom">
-  <div className="container ">
-    Somos Radioaficionados
-  </div>
-</nav>
+
 <TopMenu />     
             
             <div className="card-header bgdiv text-white">

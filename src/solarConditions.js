@@ -104,11 +104,6 @@ import TopMenu from "./topMenu";
         return (
             <div>
 
-<nav class="navbar navbar-light bg-light navbar-custom">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
 <TopMenu />
                 <div class="card-header bgdiv text-white">
                     <h1>Condiciones Solares</h1> 

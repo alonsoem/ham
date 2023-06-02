@@ -70,12 +70,6 @@ export default class results extends  React.Component {
         }
         return (
             <div>
-
-<nav className="navbar navbar-light bg-light navbar-custom">
-  <div className="container">
-    Somos Radioaficionados
-  </div>
-</nav>
 <TopMenu />
                   <div className="card-header bgdiv text-white">
                 <h1>Repetidoras</h1> 
@@ -198,7 +192,11 @@ export default class results extends  React.Component {
                                             </div>
                                         ))}
                                     </div>
+                                    
+                                    
                                 ))
+
+                                
                                 
 
                             

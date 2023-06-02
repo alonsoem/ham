@@ -59,13 +59,6 @@ componentDidMount() {
   render() {
       return (
         <div>
-
-
-<nav class="navbar navbar-light bg-light navbar-custom">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
 <TopMenu />
 
           <div class="card-header bgdiv text-white">

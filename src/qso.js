@@ -145,12 +145,7 @@ export default class qso extends  React.Component {
 
             <div >
                  
-                 <nav className="navbar navbar-light bg-light">
-                    <div className="container">
-                        Somos Radioaficionados
-                    </div>
-                </nav>
-                <TopMenu />
+                  <TopMenu />
             
                 
             
