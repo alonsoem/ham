@@ -124,7 +124,7 @@ export default class results extends  React.Component {
 
 
                     <div className="row">&nbsp;</div>
-                    {cabeceraCondicionalCard()}
+                    {cabeceraCondicionalCard}
             
                     
                         {    
@@ -204,7 +204,7 @@ export default class results extends  React.Component {
                             
                        }
 
-{pieCondicionalCard()}           
+{pieCondicionalCard}           
 </div>
                            
              
