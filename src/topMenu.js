@@ -14,7 +14,7 @@ const TopMenu = () => {
 
   return (
 
-    <Navbar bg="light">
+    <Navbar bg="light" className="navbar-custom">
       
           <Nav className="nav me-auto">
             <Nav.Link href="/v2/">Inicio</Nav.Link>

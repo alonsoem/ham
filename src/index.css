@@ -108,3 +108,8 @@ th>img {margin: 0.4em;}
 .btn-primary{
   background-color: #439139ef !important;
 }
+
+
+.navbar-custom{
+  height:2em;
+}

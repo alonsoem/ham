@@ -31,8 +31,8 @@ export default class landing extends  React.Component {
 
             <div >
                  
-                 <nav className="navbar navbar-light bg-light">
-  <div className="container">
+                 <nav className="navbar navbar-light bg-light navbar-custom">
+  <div className="container ">
     Somos Radioaficionados
   </div>
 </nav>
