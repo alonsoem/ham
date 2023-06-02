@@ -8,6 +8,7 @@ import cqCall from "./cqCall.js";
 import utcTime from "./utcTime.js";
 import tools from "./tools.js";
 import landing from "./landing.js";
+import landingLive from "./landingLive.js";
 import results from "./results.js";
 import result from "./result.js";
 import repeaters from "./repeaters";
@@ -37,6 +38,7 @@ export default class App extends React.Component {
             <Route exact path="/results/:signal" component={results} />
             <Route exact path="/repeaters" component={repeaters} />
             <Route exact path="/" component={landing} />
+            <Route exact path="/live" component={landingLive} />
           </Switch>
         </BrowserRouter>
       );
