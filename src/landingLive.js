@@ -13,7 +13,7 @@ export default class results extends  React.Component {
         super(props);
         this.state = {
             result:null,          
-                   
+            updating:true,
             paisId:null,
             value:"",
         };
@@ -55,6 +55,11 @@ export default class results extends  React.Component {
         }
       }
 
+      handleUpdate= (value) => {
+        this.setState({updating:value});
+        console.log(value);
+      }
+
       
 
     render() {
@@ -79,8 +84,7 @@ export default class results extends  React.Component {
         }
         const showResult=()=>{
 
-            console.log (this.state.result);
-            if (this.state.result){
+            if (this.state.result && !this.state.updating){
                 return (
             <div className="card">
         
@@ -140,7 +144,7 @@ export default class results extends  React.Component {
                                 <div className="row">&nbsp;</div>
                                 <div className="row">
                                     <div className="col-12 text-center">
-                                    <AsyncExample selectedValue={this.handleChange} />
+                                    <AsyncExample selectedValue={this.handleChange} updating={this.handleUpdate} />
                                     </div>
                                 </div>
                                 <div className="row">&nbsp;</div>

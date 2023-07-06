@@ -12,10 +12,12 @@ const AsyncExample = (props) => {
 
   const handleSearch= (newValue) => {
     setIsLoading(true);
+    handleUpdating(true);
       getResults({"indicativo":newValue})
           .then((data) => {   
                   setOptions(data.indicativos);
                   setIsLoading(false);
+                  handleUpdating(false);
                   console.log(data.indicativos);
               })
            
@@ -50,6 +52,11 @@ const AsyncExample = (props) => {
   function handleChange(selectedOptions) {
       props.selectedValue(selectedOptions);
   }
+  
+  function handleUpdating(value) {
+    props.updating(value);
+  }
+ 
 
   return (
     <AsyncTypeahead
