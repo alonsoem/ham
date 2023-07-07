@@ -25,9 +25,10 @@ export default class results extends  React.Component {
         getResults({"indicativo":signal})
             .then((data) => {
                 
-                
+                console.log(data);
                 this.setState({results:data});
                      if(data.indicativos.length>0){
+                        console.log(data.indicativos[0].paisId);
                         this.setState({indicativos:data.indicativos});
                         this.setState({pais:data.indicativos[0].pais});
                         this.setState({paisId:data.indicativos[0].paisId});
@@ -107,6 +108,8 @@ export default class results extends  React.Component {
               }
         }
         const countryCircleFlag = (country) =>{
+            console.log (country);
+            
             switch(country) {
                 case 'Argentina':
                   return window.location.origin +"/static/circle-flags/ar.png";
@@ -122,9 +125,9 @@ export default class results extends  React.Component {
                     return window.location.origin +"/static/circle-flags/ec.png";                    
                 case 'Estados Unidos':
                     return window.location.origin +"/static/circle-flags/us.png";                      
-                case 'Mexico':
+                case 'México':
                     return window.location.origin +"/static/circle-flags/mx.png";                                          
-                case 'Canada':
+                case 'Canadá':
                     return window.location.origin +"/static/circle-flags/cn.png";                                          
                 default:
                     return "";
