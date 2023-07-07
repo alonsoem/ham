@@ -71,7 +71,7 @@ export default class landing extends  React.Component {
                                 <div className="row">
                                     <div className="col-12 text-right">
                                 
-                                        <Link to={"/results/"+this.state.search}>
+                                        <Link to={"/results/"+this.state.search.trim()}>
                                             <button type="button" className="btn btn-light">Buscar</button>
                                         </Link>
                                     </div>
