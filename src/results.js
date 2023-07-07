@@ -95,8 +95,8 @@ export default class results extends  React.Component {
 
         const countryFlagIso = (countryIsoCode) =>{
             const baseUrl ="/static/flags/gif/";
-            console.log(window.location.origin + baseUrl + countryIsoCode + ".png");
-            return window.location.origin + baseUrl + countryIsoCode +".png";
+            console.log(window.location.origin + baseUrl + countryIsoCode + ".gif");
+            return window.location.origin + baseUrl + countryIsoCode +".gif";
         }
 
         const countryIsoCircleFlag = (countryIsoCode) =>{
