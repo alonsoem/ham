@@ -121,7 +121,11 @@ export default class results extends  React.Component {
                 case 'Ecuador':
                     return window.location.origin +"/static/circle-flags/ec.png";                    
                 case 'Estados Unidos':
-                        return window.location.origin +"/static/circle-flags/us.png";                      
+                    return window.location.origin +"/static/circle-flags/us.png";                      
+                case 'Mexico':
+                    return window.location.origin +"/static/circle-flags/mx.png";                                          
+                case 'Canada':
+                    return window.location.origin +"/static/circle-flags/cn.png";                                          
                 default:
                     return "";
               }
