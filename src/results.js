@@ -17,6 +17,7 @@ export default class results extends  React.Component {
             prefixLoading:true,
             pais:"",
             paisId:null,
+            paisIso:"",
         };
     }
 
@@ -32,6 +33,7 @@ export default class results extends  React.Component {
                         this.setState({indicativos:data.indicativos});
                         this.setState({pais:data.indicativos[0].pais});
                         this.setState({paisId:data.indicativos[0].paisId});
+                        this.setState({paisIso:data.indicativos[0].paisIso});
                         this.prefixInfo (data.indicativos[0].paisId);
                      }else{
                         this.inversePrefixInfo (signal);
@@ -48,6 +50,7 @@ export default class results extends  React.Component {
         .then((data) => {
             this.setState({pais:data.country});
             this.setState({paisId:data.countryId});
+            this.setState({paisIso:data.iso});
             this.setState({prefixInfo:data.prefix});
             this.setState({prefixLoading:false});
             })
@@ -89,49 +92,19 @@ export default class results extends  React.Component {
 
 
     render() {
-        const countryFlag = (country) =>{
-            switch(country) {
-                case 'Argentina':
-                  return window.location.origin +"/static/flags/gif/ar.gif";
-                case 'Brasil':
-                    return window.location.origin +"/static/flags/gif/br.gif";
-                case 'Perú':
-                    return window.location.origin +"/static/flags/gif/pe.gif";
-                case 'Uruguay':
-                    return window.location.origin +"/static/flags/gif/uy.gif";        
-                case 'Chile':
-                    return window.location.origin +"/static/flags/gif/cl.gif";
-                case 'Ecuador':
-                    return window.location.origin +"/static/flags/gif/ec.gif";                    
-                default:
-                    return "";
-              }
+
+        const countryFlagIso = (countryIsoCode) =>{
+            const baseUrl ="/static/flags/gif/";
+            console.log(window.location.origin + baseUrl + countryIsoCode + ".png");
+            return window.location.origin + baseUrl + countryIsoCode +".png";
         }
-        const countryCircleFlag = (country) =>{
-            console.log (country);
-            
-            switch(country) {
-                case 'Argentina':
-                  return window.location.origin +"/static/circle-flags/ar.png";
-                case 'Brasil':
-                    return window.location.origin +"/static/circle-flags/br.png";
-                case 'Perú':
-                    return window.location.origin +"/static/circle-flags/pe.png";
-                case 'Uruguay':
-                    return window.location.origin +"/static/circle-flags/uy.png";        
-                case 'Chile':
-                    return window.location.origin +"/static/circle-flags/cl.png";
-                case 'Ecuador':
-                    return window.location.origin +"/static/circle-flags/ec.png";                    
-                case 'Estados Unidos':
-                    return window.location.origin +"/static/circle-flags/us.png";                      
-                case 'México':
-                    return window.location.origin +"/static/circle-flags/mx.png";                                          
-                case 'Canadá':
-                    return window.location.origin +"/static/circle-flags/cn.png";                                          
-                default:
-                    return "";
-              }
+
+        const countryIsoCircleFlag = (countryIsoCode) =>{
+            console.log ("-"+countryIsoCode+"-");
+            const baseUrl ="/static/circle-flags/";
+            console.log(window.location.origin + baseUrl + countryIsoCode + ".png");
+            return window.location.origin + baseUrl + countryIsoCode +".png";
+                
         }
 
         const printPrefixInfo =()=>{
@@ -152,7 +125,7 @@ export default class results extends  React.Component {
                 }else{
                     return <div className="row">
                                 <div className="col-4 col-xs-5">
-                                    <img src={countryCircleFlag(this.state.pais)}  alt="Flag" />
+                                    <img src={countryIsoCircleFlag(this.state.paisIso)}  alt="Flag" />
                                 </div>
                                 <div className="col-8 col-xs-7">
                                     <p>Es un indicativo de <b>{this.state.pais}</b>.  <br/>
@@ -232,7 +205,7 @@ export default class results extends  React.Component {
                                 <div className="card-body ">
                                     {each.ciudad}<br/>
                                     {each.provincia}<br/>
-                                    <img src={countryFlag(each.pais)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
+                                    <img src={countryFlagIso(each.paisIso)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
                                 </div>
 
                             </div>
