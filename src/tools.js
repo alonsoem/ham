@@ -40,7 +40,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Código Fonético</p>
+                    <p class="fs-6 text-uppercase">Código Fonético</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Código Fonético/codigo-ICAO.png" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -50,7 +50,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Sufijos Argentina</p>
+                    <p class="fs-6 text-uppercase">Sufijos Argentina</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Sufijos Argentina/sufijos-argentina.webp" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -65,7 +65,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6 ">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Sufijos Uruguay</p>
+                    <p class="fs-6 text-uppercase">Sufijos Uruguay</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Sufijos Uruguay/sufijos-uruguay.gif" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -74,7 +74,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Prefijos Chile</p>
+                    <p class="fs-6 text-uppercase">Prefijos Chile</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Prefijos Chile/prefijos-chile.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -90,7 +90,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Prefijos Brasil</p>
+                    <p class="fs-6 text-uppercase">Prefijos Brasil</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Prefijos Brasil/prefijos-brasil.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -99,7 +99,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Código Morse</p>
+                    <p class="fs-6 text-uppercase">Código Morse</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Código Morse/morse.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -112,7 +112,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Código RST</p>
+                    <p class="fs-6 text-uppercase">Código RST</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Código RST/rst.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -122,7 +122,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Código Q</p>
+                    <p class="fs-6 text-uppercase">Código Q</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Código Q/codigoQ.jpg" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -135,7 +135,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Bandas y frecuencias</p>
+                    <p class="fs-6 text-uppercase">Bandas y frecuencias</p>
                     <a href="http://ham.qrits.com.ar/v2/viewer/Bandas y frecuencias/bandas.png" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -144,7 +144,7 @@ export default class tools extends  React.Component {
             <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Hora UTC</p>
+                    <p class="fs-6 text-uppercase">Hora UTC</p>
                     <a href="http://ham.qrits.com.ar/v2/utc" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -159,7 +159,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Llamado CQ</p>
+                    <p class="fs-6 text-uppercase">Llamado CQ</p>
                     <a href="http://ham.qrits.com.ar/v2/cqcall" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -168,7 +168,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Condiciones solares</p>
+                    <p class="fs-6 text-uppercase">Condiciones solares</p>
                     <a href="http://ham.qrits.com.ar/v2/solarConditions" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
@@ -180,7 +180,7 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
-                    <p class="fs-1 text-uppercase">Tracking Satelites</p>
+                    <p class="fs-6 text-uppercase">Tracking Satelites</p>
                     <a href="http://www.amsat.org.ar/pass.htm" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   

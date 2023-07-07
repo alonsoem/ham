@@ -33,7 +33,7 @@ export default class updates extends  React.Component {
         </p>
         </h6>
         
-<div class="fs-1">
+<div class="fs-6">
         <table class="table table-striped responsive ">
   <thead>
     <tr>
