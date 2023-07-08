@@ -55,7 +55,7 @@ export default class updates extends  React.Component {
     <tr>
       <th scope="row"><img src="static/flags/gif/br.gif"  alt="Brasil flag"/>Brasil</th>
       <td>07-07-2023</td>
-      <td><a href="https://www.anatel.gov.br/dadosabertos/paineis_de_dados/outorga_e_licenciamento/estacoes_licenciadas.zip">
+      <td><a href="https://dados.gov.br/dados/conjuntos-dados/estacoes-licenciadas-no-servico-de-radioamador">
             Anatel
          </a>
       </td>
