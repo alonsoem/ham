@@ -214,8 +214,8 @@ export default function FormRequest(props) {
                     <div className="row">&nbsp;</div>
 
     
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="signalValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="signalValue">
           <Form.Label>SEÑAL DISTINTIVA</Form.Label>
           <Form.Control  onChange={handleChangeSignal} value={signal}
                          className={
@@ -237,8 +237,8 @@ export default function FormRequest(props) {
       </Row>
 
 
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="nameValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="nameValue">
           <Form.Label>NOMBRE</Form.Label>
           <Form.Control  onChange={handleChangeName} value={name}
                          className={
@@ -260,8 +260,8 @@ export default function FormRequest(props) {
       </Row>
 
        
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="categoryValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="categoryValue">
           <Form.Label>CATEGORIA</Form.Label>
           <Form.Control  onChange={handleChangeCategory} value={category}
                          className={
@@ -283,8 +283,8 @@ export default function FormRequest(props) {
       </Row>
 
 
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="countryValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="countryValue">
           <Form.Label>PAIS</Form.Label>
           
            <select id="country" onChange={handleChangeCountry}
@@ -313,8 +313,8 @@ export default function FormRequest(props) {
 
 
    
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="rovinceValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="rovinceValue">
           <Form.Label>PROVINCIA</Form.Label>
           <Form.Control  onChange={handleChangeProvince} value={province}
                          className={
@@ -335,8 +335,8 @@ export default function FormRequest(props) {
         </Form.Group>
       </Row>
 
-      <Row className="mb-3">
-        <Form.Group className="mb-3" controlId="cityValue">
+      <Row className="mb-2 col-12 mx-3">
+        <Form.Group className="mb-2" controlId="cityValue">
           <Form.Label>CIUDAD</Form.Label>
           <Form.Control  onChange={handleChangeCity} value={city}
                          className={
