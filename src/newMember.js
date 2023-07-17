@@ -1,6 +1,4 @@
 //import "./styles.css";
-import {Form, Row} from "react-bootstrap";
-import { useHistory } from 'react-router-dom';
 import { useState ,useEffect} from "react";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
@@ -10,28 +8,12 @@ import NewMemberForm from "./newMemberForm.js";
 
 
 export default function FormRequest(props) {
-
-  
-
   const [formState, setFormState] = useState(false);
 
-  const history = useHistory();
-  
-
- 
-
-  useEffect (() => {
-
-        
+  useEffect (() => {       
   },[formState]);
 
-
-
-
-   
-
   function resetForm(){
-
     setFormState(true);
   }
 
@@ -41,7 +23,7 @@ export default function FormRequest(props) {
     }else{
       return (
         <div className="container text-center col-8  p-3">
-          <img src="static/checkBig.png" className="m-2"/>
+          <img src="static/checkBig.png" className="m-2" alt="check"/>
           <h5>Gracias por ayudarnos a crecer!</h5>
           <p>En breve podrás encontrar tu contribución en el listado general.</p>
         </div>
@@ -55,8 +37,6 @@ export default function FormRequest(props) {
   return (
 
     <div>
-
-
     <TopMenu />     
                 
                 <div className="card-header bgdiv text-white">
