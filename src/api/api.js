@@ -21,4 +21,5 @@ export const postQSOLA = (params) => foreignRequest('get', 'http://ham.qrits.com
 
 export const getFeedback = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/getFeedbacks.php',params,{'Content-Type':'application/json'});
 export const postFeedback = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/newFeedback.php',params,{'Content-Type':'Content-Type: text/html','Control-Allow-Origin':'*'});
-export const newMember = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/newMember.php',params,{'Content-Type':'Content-Type: text/html','Control-Allow-Origin':'*'});
+export const newMember = (params) => foreignRequest('get', 'http://ham.qrits.com.ar/api/newMember.php',params,{'Content-Type':'Content-Type: text/html'});
+export const getCountries = () => foreignRequest('get', 'http://ham.qrits.com.ar/api/getCountries.php',null,{'Content-Type':'application/json'});

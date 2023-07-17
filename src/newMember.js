@@ -1,23 +1,34 @@
 //import "./styles.css";
 import {Form, Row} from "react-bootstrap";
-import { useState } from "react";
-import {newMember} from "./api/api";
+import { useHistory } from 'react-router-dom';
+import { useState,useEffect } from "react";
+import {newMember,getCountries} from "./api/api";
 import { ToastContainer, toast } from 'react-toastify';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import TopMenu from './topMenu';
+
 
 
 export default function FormRequest(props) {
 
   
   const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
   const [signal, setSignal] = useState("");
   const [errors, setErrors] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState(null);
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+
+  const history = useHistory();
   
-  
-            
-          
-  
+
+  useEffect (() => {
+    getAllCountries();
+    
+    
+  },[]);
 
   const handleChangeName= (event) => {
     setName(event.target.value);
@@ -27,15 +38,34 @@ export default function FormRequest(props) {
     setSignal(event.target.value);
   };
 
+  const handleChangeCategory  = (event) => {
+    setCategory(event.target.value);
+  };
+  const handleChangeCountry  = (event) => {
+    setCountry(event.target.value);
+  };
+  
+  const handleChangeProvince  = (event) => {
+    setProvince(event.target.value);
 
+  };  
+  const handleChangeCity  = (event) => {
+    setCity(event.target.value);
+  };
   
   const handleAPIError= (response)=> {
     let errorToDisplay = "OCURRIO UN ERROR! VERIFIQUE NUEVAMENTE A LA BREVEDAD";
-
+    console.log(response);
+    
     // eslint-disable-next-line
-    if (response.response=="Not Confirmed" ) {
-      errorToDisplay = "NO SE PUDO CONFIRMAR EL QSO, VERIFIQUE LOS DATOS.";
+    if (response.status.errorCode=1062){
+      errorToDisplay = "Ya existe alguien registrado con esa señal distintiva.";
+
+    }else{
+      errorToDisplay = response.status.message;
     }
+    
+    
 
     //setError(errorToDisplay);
     notifyError(errorToDisplay);
@@ -44,20 +74,14 @@ export default function FormRequest(props) {
   const handleAxiosError = (response) => {
     let errorToDisplay = "OCURRIO UN ERROR! VERIFIQUE NUEVAMENTE A LA BREVEDAD";
 
-    // eslint-disable-next-line
-    if (response.message=="Network Error") {
-      errorToDisplay = "Error de red!. Reintente a la brevedad";
-    }
+    errorToDisplay = response;
+
 
     //setError(errorToDisplay);
     notifyError(errorToDisplay);
   }
 
-  /*const tryQsl = (str) =>{
-    getQsl({qso:str})
-    .then((response)=>this.setState({qsl:response}))
-    .catch((responseError) => this.handleAPIError(responseError));
-  }*/
+ 
 
   const notify = (message) => {
     toast.success(message, {
@@ -90,15 +114,19 @@ export default function FormRequest(props) {
     newMember({
         signal: signal,
         name:name,
+        category:category,
+        country:country,
+        province:province,
+        city:city,
         
         })       
         .then((response) => {
             //eslint-disable-next-line
-            if (response.response=="OK"){
-                notify("NUEVO RADIOAFICIONADO AGREGADO!");
+            if (response.status.state=="OK"){
+              history.push('/');  
+              notify("NUEVO RADIOAFICIONADO AGREGADO!");
                 
-                var url = "http://lu4dq.qrits.com.ar/api/qslCreator.php?qso="+response.document+"&chk="+response.chk;
-                props.qslHook(url);
+                
                 
             }else{
                 handleAPIError(response);
@@ -108,6 +136,18 @@ export default function FormRequest(props) {
 
   }
 
+
+  const getAllCountries = () => {
+    getCountries()
+        .then((data) => {
+            
+            console.log(data);
+            setCountries(data.countries);
+            })
+         
+        
+        .catch(() => this.setState({error: 'Algo anduvo mal! Volvé a intentar'}));
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -202,7 +242,7 @@ export default function FormRequest(props) {
 
 
              <Row className="mb-3">
-               <Form.Group className="mb-3" controlId="signalValue">
+               <Form.Group className="mb-3" controlId="nameValue">
                  <Form.Label>NOMBRE</Form.Label>
                  <Form.Control  onChange={handleChangeName} value={name}
                                 className={
@@ -225,17 +265,17 @@ export default function FormRequest(props) {
    
               
              <Row className="mb-3">
-               <Form.Group className="mb-3" controlId="signalValue">
+               <Form.Group className="mb-3" controlId="categoryValue">
                  <Form.Label>CATEGORIA</Form.Label>
-                 <Form.Control  onChange={handleChangeSignal} value={signal}
+                 <Form.Control  onChange={handleChangeCategory} value={category}
                                 className={
-                                  hasError("signal")
+                                  hasError("category")
                                         ? "form-control is-invalid"
                                         : "form-control"
                                 }/>
                    <div
                        className={
-                        hasError("signal")
+                        hasError("category")
                                ? "invalid-feedback"
                                : "visually-hidden"
                        }
@@ -246,40 +286,49 @@ export default function FormRequest(props) {
                </Form.Group>
              </Row>
 
-            <Row className="mb-3">
-               <Form.Group className="mb-3" controlId="signalValue">
+
+             <Row className="mb-3">
+               <Form.Group className="mb-3" controlId="countryValue">
                  <Form.Label>PAIS</Form.Label>
-                 <Form.Control  onChange={handleChangeSignal} value={signal}
-                                className={
-                                  hasError("signal")
-                                        ? "form-control is-invalid"
-                                        : "form-control"
-                                }/>
+                 
+                  <select id="country" onChange={handleChangeCountry}
+                  className={
+                    hasError("country")
+                          ? "form-select is-invalid"
+                          : "form-select"
+                  } >
+                                            <option selected disabled value="">Elija un país...</option>
+                                            {countries.map((each)=>{
+                                                return <option value={each.id}>{each.name}</option>
+                                            })}
+                                            </select>
                    <div
                        className={
-                        hasError("signal")
+                        hasError("country")
                                ? "invalid-feedback"
                                : "visually-hidden"
                        }
                    >
-                    Escribir al menos 3 digitos de un indicativo válido
+                    Seleccione una banda válida
                    </div>
 
                </Form.Group>
              </Row>
 
+
+          
              <Row className="mb-3">
-               <Form.Group className="mb-3" controlId="signalValue">
+               <Form.Group className="mb-3" controlId="rovinceValue">
                  <Form.Label>PROVINCIA</Form.Label>
-                 <Form.Control  onChange={handleChangeSignal} value={signal}
+                 <Form.Control  onChange={handleChangeProvince} value={province}
                                 className={
-                                  hasError("signal")
+                                  hasError("province")
                                         ? "form-control is-invalid"
                                         : "form-control"
                                 }/>
                    <div
                        className={
-                        hasError("signal")
+                        hasError("province")
                                ? "invalid-feedback"
                                : "visually-hidden"
                        }
@@ -291,17 +340,17 @@ export default function FormRequest(props) {
              </Row>
 
              <Row className="mb-3">
-               <Form.Group className="mb-3" controlId="signalValue">
+               <Form.Group className="mb-3" controlId="cityValue">
                  <Form.Label>CIUDAD</Form.Label>
-                 <Form.Control  onChange={handleChangeSignal} value={signal}
+                 <Form.Control  onChange={handleChangeCity} value={city}
                                 className={
-                                  hasError("signal")
+                                  hasError("city")
                                         ? "form-control is-invalid"
                                         : "form-control"
                                 }/>
                    <div
                        className={
-                        hasError("signal")
+                        hasError("city")
                                ? "invalid-feedback"
                                : "visually-hidden"
                        }
