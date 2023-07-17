@@ -43,7 +43,7 @@ export default function FormRequest(props) {
                     <h1>Nuevo</h1> 
                 </div>
     
-                <div className="container-fluid table-scroll-vertical col-10">
+                <div className="container-fluid table-scroll-vertical col-12">
 
 
 
