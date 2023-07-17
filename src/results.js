@@ -2,7 +2,8 @@ import React from 'react';
 import {getResults,getPrefix,getPrefixInverse} from "./api/api";
 import TopMenu from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 
 export default class results extends  React.Component {
@@ -189,7 +190,7 @@ export default class results extends  React.Component {
                                 
                                 <div className={"card-header "+(each.indicativo.toUpperCase()===this.state.signal.toUpperCase()? "match":"")}>
                                     <div className="row">
-                                        <div className="col-9">{each.indicativo}</div>
+                                        <div className="col-9">{each.indicativo}<FontAwesomeIcon icon={faCircleCheck} className="ml-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Validado oficialmente"/></div>
                                         <div className="col-3 text-right"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
                                     </div>
                                     <div className="row">
