@@ -95,6 +95,16 @@ export default class updates extends  React.Component {
       </td>
       
     </tr>
+
+    <tr>
+      <th scope="row"><img src="static/flags/gif/ca.gif" alt="Can flag"/>Canadá</th>
+      <td>18-07-2023</td>
+      <td><a href="https://ised-isde.canada.ca/site/amateur-radio-operator-certificate-services/en/downloads">
+            CANADA GOV
+         </a>
+      </td>
+      
+    </tr>
   </tbody>
 </table>
 </div>
@@ -104,7 +114,7 @@ export default class updates extends  React.Component {
     </div>
    
 </div>
-                    
+
         
         
         
