@@ -32,32 +32,22 @@ export default function FormRequest(props) {
     }
   }
 
- 
-
   return (
-
     <div>
-    <TopMenu />     
-                
-                <div className="card-header bgdiv text-white">
-                    <h1>Nuevo</h1> 
-                </div>
+      <TopMenu />     
+      <div className="card-header bgdiv text-white">
+          <h1>Nuevo</h1> 
+      </div>
     
-                <div className="container-fluid table-scroll-vertical col-12">
-
-
-
-
-<div className="card m-4">
-    <div className="card-body">
-      {
-       <DisplayConditional resetForm={resetForm} />
-      }
-
-      
-  
-    </div></div>
-
-  </div></div>
+      <div className="container-fluid table-scroll-vertical col-11">
+        <div className="card m-4">
+          <div className="card-body">
+            {
+              <DisplayConditional resetForm={resetForm} />
+            }
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

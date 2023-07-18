@@ -60,19 +60,13 @@ export default function FormRequest(props) {
     }else{
       errorToDisplay = response.status.message;
     }
-    
-    
-    //setError(errorToDisplay);
+  
     notifyError(errorToDisplay);
   }
 
   const handleAxiosError = (response) => {
     let errorToDisplay = "OCURRIO UN ERROR! VERIFIQUE NUEVAMENTE A LA BREVEDAD";
-
     errorToDisplay = response;
-
-
-    //setError(errorToDisplay);
     notifyError(errorToDisplay);
   }
   
@@ -194,27 +188,21 @@ export default function FormRequest(props) {
 
 
   return (
+    <div className="p-3">  
+      <form onSubmit={handleSubmit} className="needs-validation">
 
-  
-    <form onSubmit={handleSubmit} className="row g-3 needs-validation">
-    <div>
-    <ToastContainer />
-        <div className="row rowForm">
-                        <div className="col-12">
-                          <h5>Registra un nuevo radioaficionado</h5>
-                        </div>
-                        <p>Los nuevos radioaficionados deberán ser validados antes de figurar en los listados.</p>
-                    </div>
+      <ToastContainer />
+        <div className="row rowForm mb-4 col-12 ">
+          <div className="mb-2">
+            <h5>Registra un nuevo radioaficionado</h5>
+          </div>
+          <p>Los nuevos radioaficionados deberán ser validados antes de figurar en los listados.</p>
+        </div>
 
-                    <div className="row">&nbsp;</div>
-
-
-                 
                     
-                    <div className="row">&nbsp;</div>
 
     
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="signalValue">
           <Form.Label>SEÑAL DISTINTIVA</Form.Label>
           <Form.Control  onChange={handleChangeSignal} value={signal}
@@ -237,7 +225,7 @@ export default function FormRequest(props) {
       </Row>
 
 
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="nameValue">
           <Form.Label>NOMBRE</Form.Label>
           <Form.Control  onChange={handleChangeName} value={name}
@@ -260,7 +248,7 @@ export default function FormRequest(props) {
       </Row>
 
        
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="categoryValue">
           <Form.Label>CATEGORIA</Form.Label>
           <Form.Control  onChange={handleChangeCategory} value={category}
@@ -283,7 +271,7 @@ export default function FormRequest(props) {
       </Row>
 
 
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="countryValue">
           <Form.Label>PAIS</Form.Label>
           
@@ -313,7 +301,7 @@ export default function FormRequest(props) {
 
 
    
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="rovinceValue">
           <Form.Label>PROVINCIA</Form.Label>
           <Form.Control  onChange={handleChangeProvince} value={province}
@@ -335,7 +323,7 @@ export default function FormRequest(props) {
         </Form.Group>
       </Row>
 
-      <Row className="mb-2 col-12 mx-3">
+      <Row className="mb-2 col-12 ">
         <Form.Group className="mb-2" controlId="cityValue">
           <Form.Label>CIUDAD</Form.Label>
           <Form.Control  onChange={handleChangeCity} value={city}
@@ -360,17 +348,17 @@ export default function FormRequest(props) {
 
                     
                 
-                    <div className="row">&nbsp;</div>
+                    
 
-                    <div className="row">
-                        <div className="col-12 text-right">
-                                <button type="submit" className="btn btn-success">Agregar</button>
-                        </div>
-                    </div>
+    <div className="row mt-3 col-12">
+      <div className="text-right">
+        <button type="submit" className="btn btn-success">Agregar</button>
+      </div>
     </div>
     
-</form>
-
+    
+  </form>
+</div>
       
   
   );
