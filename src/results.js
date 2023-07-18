@@ -94,6 +94,29 @@ export default class results extends  React.Component {
 
     render() {
 
+
+        const AddNewMember = () =>{
+            return (
+                <p>También podés hacer click y 
+                <Link className="ms-1 me-1" to="/newMember">
+                    <button type="button" className="btn btn-success ">Agregar</button>
+                </Link>
+                un nuevo radioaficionado.
+            </p>
+            );
+        }
+        const FooterSearch =()=>{
+            return (
+                        <div className="card border border-success mt-3">
+                            <div className="card-header ">
+                                <p>Se listan los primeros 10 registros coincidentes.</p>
+                               <AddNewMember />
+
+                            </div>
+                        </div>     
+            );
+        }
+
         const countryFlagIso = (countryIsoCode) =>{
             const baseUrl ="/static/flags/gif/";
             console.log(window.location.origin + baseUrl + countryIsoCode + ".gif");
@@ -155,12 +178,7 @@ export default class results extends  React.Component {
                             <div className="card-header">
                                 <p>No encontramos ningun indicativo relacionado con la busqueda.</p>
 
-                                <p>Podés hacer click y 
-                                        <Link className="ms-1 me-1" to="/newMember">
-                                            <button type="button" className="btn btn-success ">Agregar</button>
-                                        </Link>
-                                    un nuevo radioaficionado.
-                                </p>
+                                <AddNewMember />
 
                             </div>
                         </div>               
@@ -168,9 +186,10 @@ export default class results extends  React.Component {
                 }else{
 
                     return (
-                        props.list.map((each)=>(
+                        <div>
+                        {props.list.map((each)=>(
                             
-                    <div className="card">
+                    <div className="card mt-2">
                         
                         <div className={"card-header "+(each.indicativo.toUpperCase()===this.state.signal.toUpperCase()? "match":"")}>
                             <div className="row">
@@ -208,8 +227,14 @@ export default class results extends  React.Component {
                         </div>
 
                     </div>
+                    
                            
                     ))
+                                }
+
+                        <FooterSearch />
+
+                    </div>
                     )
                 }
 
