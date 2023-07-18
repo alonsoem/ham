@@ -38,7 +38,7 @@ export default function FormRequest(props) {
     <div>
       <TopMenu />     
       <div className="card-header bgdiv text-white">
-          <h1>Nuevo</h1> 
+          <h1>Nuevo Radioaficionado</h1> 
       </div>
     
       <div className="container-fluid table-scroll-vertical col-12">

@@ -4,6 +4,7 @@ import TopMenu from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 export default class results extends  React.Component {
@@ -12,7 +13,7 @@ export default class results extends  React.Component {
         this.state = {
             prefix:"",
             results:{},
-            indicativos:[],
+            indicativos:undefined,
             signal:"",
             prefixInfo:[],
             prefixLoading:true,
@@ -22,6 +23,7 @@ export default class results extends  React.Component {
         };
     }
 
+    
 
     update = (signal) => {
         getResults({"indicativo":signal})
@@ -37,6 +39,7 @@ export default class results extends  React.Component {
                         this.setState({paisIso:data.indicativos[0].paisIso});
                         this.prefixInfo (data.indicativos[0].paisId);
                      }else{
+                        this.setState({indicativos:data.indicativos});
                         this.inversePrefixInfo (signal);
                      }
                 })
@@ -82,9 +85,6 @@ export default class results extends  React.Component {
     componentDidMount() {
         this.setState({signal:this.props.match.params.signal});
         this.update(this.props.match.params.signal);
-
-        //this.prefixInfo(this.state.indicativos[0].paisId);
-        //console.log(this.state.indicativos[0]);
         
     }
 
@@ -110,16 +110,13 @@ export default class results extends  React.Component {
 
         const printPrefixInfo =()=>{
             if (this.state.prefixLoading) {
-                
-               
                 return <p className="card-text placeholder-glow">
-      <span className="placeholder col-7"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-6"></span>
-      <span className="placeholder col-8"></span>
-    </p>
-                
+                            <span className="placeholder col-7"></span>
+                            <span className="placeholder col-4"></span>
+                            <span className="placeholder col-4"></span>
+                            <span className="placeholder col-6"></span>
+                            <span className="placeholder col-8"></span>
+                        </p>
             }else{
                 if (this.state.prefixInfo ===undefined){
                     return <div>Aún no tenemos informacion sobre este indicativo.</div>
@@ -135,10 +132,78 @@ export default class results extends  React.Component {
                                 </div>
                             </div>
                 }
-            
-        
             }
             
+        }
+        const CallSignResults =(props)=>{
+            console.log(props.list);
+            if (props.list===undefined){
+                return (
+                    <div className="card">
+                            <div className="card-header">
+                                <p className="card-text placeholder-glow">
+                                    <span className="placeholder col-12"></span>
+                                </p>
+                            </div>
+                    </div>
+                    
+                )
+            } else{
+                if (props.list.length===0){
+                    return (
+                        <div className="card">
+                            <div className="card-header">
+                                <p>No encontramos ningun indicativo relacionado con la busqueda.</p>
+
+                                <p>Podés hacer click y 
+                                        <Link className="ms-1 me-1" to="/newMember">
+                                            <button type="button" className="btn btn-success ">Agregar</button>
+                                        </Link>
+                                    un nuevo radioaficionado.
+                                </p>
+
+                            </div>
+                        </div>               
+                    )
+                }else{
+
+                    return (
+                        props.list.map((each)=>(
+                            
+                    <div className="card">
+                        
+                        <div className={"card-header "+(each.indicativo.toUpperCase()===this.state.signal.toUpperCase()? "match":"")}>
+                            <div className="row">
+                                <div className="col-9">{each.indicativo}<FontAwesomeIcon icon={faCircleCheck} className="ml-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Validado oficialmente"/></div>
+                                <div className="col-3 text-right"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
+                            </div>
+                            <div className="row">
+                                <div className="col-8 text-left">{each.nombre}</div>
+                                <div className="col-4  text-right">
+                                    <a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ" title="Link en QRZ.com" /></a>
+                                    
+                                    <a href={"https://logdeargentina.com.ar/php/otro_b_resp.php?qrz="+each.indicativo} ><img src="/v2/static/lda_30t.png" alt="Link en Log de Argentina" title="Link en QRZ" /></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div className="card-body ">
+                            {each.ciudad}<br/>
+                            {each.provincia}<br/>
+                            <img src={countryFlagIso(each.paisIso)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
+                        </div>
+
+                    </div>
+                           
+                    ))
+                    )
+                }
+
+
+                
+
+            }
+
         }
   
 
@@ -168,51 +233,12 @@ export default class results extends  React.Component {
                            
                         </div>
 
-                    
-                        {this.state.indicativos.length===0 ? 
-                        
-                            <div className="card">
-                                <div className="card-header">
-                                    No encontramos ningun indicativo relacionado con la busqueda.
-                                </div>
-                                
-                            </div> 
-                            
-                            : null
-                            
-                        }
+                        <CallSignResults list={this.state.indicativos} />
+                       
                         {
                             
                         
-                        this.state.indicativos.map((each)=>(
-                            
-                            <div className="card">
-                                
-                                <div className={"card-header "+(each.indicativo.toUpperCase()===this.state.signal.toUpperCase()? "match":"")}>
-                                    <div className="row">
-                                        <div className="col-9">{each.indicativo}<FontAwesomeIcon icon={faCircleCheck} className="ml-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Validado oficialmente"/></div>
-                                        <div className="col-3 text-right"><span className=" text-white badge rounded-pill bg-dark">{each.categoria}</span></div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-8 text-left">{each.nombre}</div>
-                                        <div className="col-4  text-right">
-                                            <a href={"https://www.qrz.com/db/"+each.indicativo} ><img src="/static/qrz_logo.png" alt="Link en QRZ" title="Link en QRZ.com" /></a>
-                                            
-                                            <a href={"https://logdeargentina.com.ar/php/otro_b_resp.php?qrz="+each.indicativo} ><img src="/v2/static/lda_30t.png" alt="Link en Log de Argentina" title="Link en QRZ" /></a>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div className="card-body ">
-                                    {each.ciudad}<br/>
-                                    {each.provincia}<br/>
-                                    <img src={countryFlagIso(each.paisIso)} alt={each.pais + ' flag'} />&nbsp;{each.pais}
-                                </div>
-
-                            </div>
-
-
-                        ))
+                       
                        }
                 </div>
             </div>
