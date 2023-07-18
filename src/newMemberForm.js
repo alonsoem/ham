@@ -1,5 +1,5 @@
 //import "./styles.css";
-import {Form, Row} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import { useState,useEffect } from "react";
 import {newMember,getCountries} from "./api/api";
 import { ToastContainer, toast } from 'react-toastify';
@@ -188,11 +188,11 @@ export default function FormRequest(props) {
 
 
   return (
-    <div className="p-3">  
+    <div className="p-0 col-12  ">  
       <form onSubmit={handleSubmit} className="needs-validation">
 
       <ToastContainer />
-        <div className="row rowForm mb-4 col-12 ">
+        <div className="row rowForm mb-4 col-12">
           <div className="mb-2">
             <h5>Registra un nuevo radioaficionado</h5>
           </div>
@@ -202,7 +202,7 @@ export default function FormRequest(props) {
                     
 
     
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="signalValue">
           <Form.Label>SEÑAL DISTINTIVA</Form.Label>
           <Form.Control  onChange={handleChangeSignal} value={signal}
@@ -222,10 +222,10 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
 
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="nameValue">
           <Form.Label>NOMBRE</Form.Label>
           <Form.Control  onChange={handleChangeName} value={name}
@@ -245,10 +245,10 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
        
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="categoryValue">
           <Form.Label>CATEGORIA</Form.Label>
           <Form.Control  onChange={handleChangeCategory} value={category}
@@ -268,10 +268,10 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
 
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="countryValue">
           <Form.Label>PAIS</Form.Label>
           
@@ -297,11 +297,11 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
 
    
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="rovinceValue">
           <Form.Label>PROVINCIA</Form.Label>
           <Form.Control  onChange={handleChangeProvince} value={province}
@@ -321,9 +321,9 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
-      <Row className="mb-2 col-12 ">
+      <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="cityValue">
           <Form.Label>CIUDAD</Form.Label>
           <Form.Control  onChange={handleChangeCity} value={city}
@@ -343,14 +343,14 @@ export default function FormRequest(props) {
             </div>
 
         </Form.Group>
-      </Row>
+      </div>
 
 
                     
                 
                     
 
-    <div className="row mt-3 col-12">
+    <div className="mb-2 mt-4 col-12 container">
       <div className="text-right">
         <button type="submit" className="btn btn-success">Agregar</button>
       </div>

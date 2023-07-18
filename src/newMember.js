@@ -22,8 +22,10 @@ export default function FormRequest(props) {
       return (<NewMemberForm callBack={props.resetForm} />);
     }else{
       return (
-        <div className="container text-center col-8  p-3">
-          <img src="static/checkBig.png" className="m-2" alt="check"/>
+        <div className="container text-center col-10  p-3 ">
+          <div className="container col-6">
+            <img src="static/checkBig.png" className="m-2" alt="check" height="75%" width="75%"/>
+          </div>
           <h5>Gracias por ayudarnos a crecer!</h5>
           <p>En breve podrás encontrar tu contribución en el listado general.</p>
         </div>
@@ -39,7 +41,7 @@ export default function FormRequest(props) {
           <h1>Nuevo</h1> 
       </div>
     
-      <div className="container-fluid table-scroll-vertical col-11">
+      <div className="container-fluid table-scroll-vertical col-12">
         <div className="card m-4">
           <div className="card-body">
             {
