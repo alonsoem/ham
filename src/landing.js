@@ -52,14 +52,14 @@ export default class landing extends  React.Component {
 
                                 <div className="row">&nbsp;</div>
                              
-                                <div className="row">
-                                    <div className="col-2"><img src="/static/flags/gif/ar.gif" alt="" /></div>
-                                    <div className="col-1"><img src="/static/flags/gif/br.gif" alt=""/></div>
-                                    <div className="col-2"><img src="/static/flags/gif/uy.gif" alt=""/></div>
-                                    <div className="col-2"><img src="/static/flags/gif/cl.gif" alt=""/></div>
-                                    <div className="col-2"><img src="/static/flags/gif/pe.gif" alt=""/></div>
-                                    <div className="col-1"><img src="/static/flags/gif/ec.gif" alt=""/></div>
-                                    <div className="col-2"><img src="/static/flags/gif/ca.gif" alt=""/></div>
+                                <div className="row justify-content-evenly">
+                                    <div className="col-1"><img src="/v2/static/flags/gif/ar.gif" alt="" /></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/br.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/uy.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/cl.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/pe.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/ec.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/ca.gif" alt=""/></div>
                                 </div>
                                 <div className="row">&nbsp;</div>
                                 <div className="row">
