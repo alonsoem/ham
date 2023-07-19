@@ -46,7 +46,7 @@ export default class landing extends  React.Component {
                             <div className="card-body " >
                                 <div className="row">
                                     <div className="col-12">
-                                        Consulte aquí las señales distintivas vigentes de Argentina, Brasil, Chile,  Uruguay, Perú y Ecuador.
+                                        Consulte aquí las señales distintivas vigentes de Argentina, Brasil, Chile,  Uruguay, Perú, Ecuador y Canadá.
                                     </div>
                                 </div>
 
@@ -54,11 +54,12 @@ export default class landing extends  React.Component {
                              
                                 <div className="row">
                                     <div className="col-2"><img src="/static/flags/gif/ar.gif" alt="" /></div>
-                                    <div className="col-2"><img src="/static/flags/gif/br.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/static/flags/gif/br.gif" alt=""/></div>
                                     <div className="col-2"><img src="/static/flags/gif/uy.gif" alt=""/></div>
                                     <div className="col-2"><img src="/static/flags/gif/cl.gif" alt=""/></div>
                                     <div className="col-2"><img src="/static/flags/gif/pe.gif" alt=""/></div>
-                                    <div className="col-2"><img src="/static/flags/gif/ec.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/static/flags/gif/ec.gif" alt=""/></div>
+                                    <div className="col-2"><img src="/static/flags/gif/ca.gif" alt=""/></div>
                                 </div>
                                 <div className="row">&nbsp;</div>
                                 <div className="row">
@@ -70,7 +71,6 @@ export default class landing extends  React.Component {
     
                                 <div className="row">
                                     <div className="col-12 text-right">
-                                
                                         <Link to={"/results/"+this.state.search.trim()}>
                                             <button type="button" className="btn btn-light">Buscar</button>
                                         </Link>
