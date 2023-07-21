@@ -38,7 +38,26 @@ export default class news extends  React.Component {
             <div className="container-fluid table-scroll-vertical">
             <div class="row">
     <div class="col-sm-12">
-      <div class="card">
+    <div class="card">
+             
+             <div class="card-body">
+                                
+       
+             <h2>21-07-2023: Ahora podés cargar Qso!</h2>
+       
+       <ul>
+           <li>Ahora podrás enviar contactos a Log de Argentina desde la aplicación.</li>
+           <li>Podes enviar comentarios para que tomemos en cuenta lo que necesites de la aplicación.</li>
+           <li>Podes agregar nuevos radioaficionados a nuestra base de datos!.</li>
+           <li>Se incluyeron nuevos paises a la base de datos!</li>
+           <li>Se ampliaron los prefijos de paises de América.</li>
+           
+           
+       </ul>
+       
+       
+       </div></div>
+      <div class="card mt-3">
              
       <div class="card-body">
                          
