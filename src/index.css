@@ -111,5 +111,8 @@ th>img {margin: 0.4em;}
 
 
 .navbar-custom{
-  height:2em;
+    height:2em;
+    display : flex;
+    justify-content: center!important;
+  
 }
