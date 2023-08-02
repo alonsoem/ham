@@ -87,7 +87,7 @@ export default class updates extends  React.Component {
       
     </tr>
     <tr>
-      <th scope="row"><img src="static/flags/gif/ec.gif" alt="Perú flag"/>Ecuador</th>
+      <th scope="row"><img src="static/flags/gif/ec.gif" alt="Ecuador flag"/>Ecuador</th>
       <td>18-01-2023</td>
       <td><a href="https://www.arcotel.gob.ec/radioaficionados/">
             ARCOTEL
@@ -97,10 +97,19 @@ export default class updates extends  React.Component {
     </tr>
 
     <tr>
-      <th scope="row"><img src="static/flags/gif/ca.gif" alt="Can flag"/>Canadá</th>
+      <th scope="row"><img src="static/flags/gif/ca.gif" alt="Canada flag"/>Canadá</th>
       <td>18-07-2023</td>
       <td><a href="https://ised-isde.canada.ca/site/amateur-radio-operator-certificate-services/en/downloads">
             CANADA GOV
+         </a>
+      </td>
+      
+    </tr>
+    <tr>
+      <th scope="row"><img src="static/flags/gif/us.gif" alt="US flag"/>Estados Unidos</th>
+      <td>02-08-2023</td>
+      <td><a href="https://wireless2.fcc.gov/UlsApp/UlsSearch/searchAdvanced.jsp">
+            FCC
          </a>
       </td>
       
