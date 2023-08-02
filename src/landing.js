@@ -60,6 +60,7 @@ export default class landing extends  React.Component {
                                     <div className="col-1"><img src="/v2/static/flags/gif/pe.gif" alt=""/></div>
                                     <div className="col-1"><img src="/v2/static/flags/gif/ec.gif" alt=""/></div>
                                     <div className="col-1"><img src="/v2/static/flags/gif/ca.gif" alt=""/></div>
+                                    <div className="col-1"><img src="/v2/static/flags/gif/us.gif" alt=""/></div>
                                 </div>
                                 <div className="row">&nbsp;</div>
                                 <div className="row">

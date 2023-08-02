@@ -108,6 +108,37 @@ export default class landing extends  React.Component {
                     return "";
               } 
         }
+
+        const OneFeedBack=(data)=>{
+            
+                   return (                 
+                                        
+            <div class={"card-body text-left card quique m-1 "+showStatus(data.feedback.status)} >
+                <p class="fs-0 ">"{data.feedback.comment.charAt(0).toUpperCase() + data.feedback.comment.substring(0,100).slice(1)}"...</p>
+            </div>);
+
+            
+            
+            
+
+        }
+
+        const OneFeedBackWithResponse=(data)=>{
+            return (
+            <div class="card quique">
+                                    
+                                        
+            <div class={"card-body text-left card quique m-1 "+showStatus(data.feedback.status)} >
+                <p class="fs-0 ">"{data.feedback.comment.charAt(0).toUpperCase() + data.feedback.comment.substring(0,100).slice(1)}"...</p>
+            </div>
+
+            <div class="card-body">{data.feedback.answer}</div>
+             </div>
+            );
+            
+
+        }
+
         return (
 
             <div >
@@ -172,10 +203,16 @@ export default class landing extends  React.Component {
                         ?
                             this.state.feedbacks.map((oneFeedback)=>(
                     
-                                <div class={"card quique "+showStatus(oneFeedback.status)} >
-                                    <div class="card-body text-left">
-                                        <p class="fs-0 ">"{oneFeedback.comment.charAt(0).toUpperCase() + oneFeedback.comment.substring(0,100).slice(1)}"...</p>
-                                    </div>
+                                <div  >
+                                    
+                                    {oneFeedback.status===1?
+                                        <OneFeedBack feedback={oneFeedback} />
+                                            
+                                    :  <OneFeedBackWithResponse feedback={oneFeedback} />
+                                    }
+                                    
+                                   
+                                
                                 </div>   
                             ))
                         :
