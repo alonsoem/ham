@@ -46,7 +46,7 @@ export default class landing extends  React.Component {
                             <div className="card-body " >
                                 <div className="row">
                                     <div className="col-12">
-                                        Consulte aquí las señales distintivas vigentes de Argentina, Brasil, Chile,  Uruguay, Perú, Ecuador y Canadá.
+                                        Consulte aquí los prefijos y señales distintivas vigentes de Argentina, Brasil, Chile,  Uruguay, Perú, Ecuador, Canadá y Estados Unidos.
                                     </div>
                                 </div>
 
