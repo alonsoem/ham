@@ -62,7 +62,7 @@ export default class updates extends  React.Component {
     </tr>
     <tr>
       <th scope="row"><img src="static/flags/gif/cl.gif" alt="Chile flag" />Chile</th>
-      <td>25-11-2022</td>
+      <td>25-10-2023</td>
       <td><a href="https://www.subtel.gob.cl/inicio-concesionario/servicios-de-telecomunicaciones/servicios-de-radio-aficionados/">
             Subtel
          </a>
@@ -70,7 +70,7 @@ export default class updates extends  React.Component {
     </tr>
     <tr>
       <th scope="row"><img src="static/flags/gif/uy.gif" alt="Uruguay flag"/>Uruguay</th>
-      <td>03-11-2022</td>
+      <td>25-07-2023</td>
       <td><a href="https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/datos-y-estadisticas/datos/registro-radioaficionados">
             URSEC
          </a>
