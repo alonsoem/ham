@@ -29,7 +29,7 @@ const TopMenu = () => {
 
 
     <Navbar collapseOnSelect bg="light" className="navbar" expand="sm">
-          <Nav.Link href="/v2/">Inicio</Nav.Link>
+          <Nav.Link href="/v2/">Búsqueda</Nav.Link>
           <Nav.Link href="/v2/repeaters">Repetidoras</Nav.Link>        
             
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
