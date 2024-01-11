@@ -45,7 +45,7 @@ export default class tools extends  React.Component {
 
             <div className="caja">
             <div className="box">
-              <img src={"http://ham.qrits.com.ar/static/content/"+this.state.file} alt="Cargando imagen..." title={this.state.title} />
+              <img src={"https://ham.qrits.com.ar/static/content/"+this.state.file} alt="Cargando imagen..." title={this.state.title} />
 
 </div>
 </div>

@@ -33,7 +33,7 @@ code {
   /* The image used */
   /*background-image: url(../static/login-bg.jpg);*/
   background-size: cover;
-  background-image: url("http://ham.qrits.com.ar/static/backham.jpg");
+  background-image: url("https://ham.qrits.com.ar/static/backham.jpg");
   /* Full height */
   height: 100%; 
 }
