@@ -274,11 +274,7 @@ export default class results extends  React.Component {
 
                         <CallSignResults list={this.state.indicativos} />
                        
-                        {
-                            
-                        
-                       
-                       }
+              
                 </div>
             </div>
                 
