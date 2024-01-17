@@ -20,13 +20,7 @@ const TopMenu = () => {
 
     <div >
                  
-                 <Navbar  bg="light" className="navbar navbar-light navbar-custom ">
-    
                  
-<b>Somos Radioaficionados</b>
-    
-    </Navbar>
-
 
     <Navbar collapseOnSelect bg="light" className="navbar" expand="sm">
           <Nav.Link href="/">Búsqueda</Nav.Link>

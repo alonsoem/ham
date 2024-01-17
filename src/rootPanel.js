@@ -24,7 +24,7 @@ import news from "./news.js";
 export default class App extends React.Component {
     render() {
       return (
-        <BrowserRouter basename="/v2">
+        <BrowserRouter basename="/">
           <Switch>
             <Route exact path="/qso" component={qso} />
             <Route path="/solarConditions" component={solarConditions} />
