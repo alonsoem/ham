@@ -1,5 +1,6 @@
 import React from 'react';
-import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+
+import TopMenu from './topMenu';
 
 export default class updates extends  React.Component {
     constructor(props) {
@@ -14,11 +15,7 @@ export default class updates extends  React.Component {
         return (
           <div>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
+<TopMenu />
 
           <div class="card-header bgdiv text-white">
               <h1>Actualizaciones</h1> 
@@ -36,7 +33,7 @@ export default class updates extends  React.Component {
         </p>
         </h6>
         
-<div class="fs-1">
+<div class="fs-6">
         <table class="table table-striped responsive ">
   <thead>
     <tr>
@@ -48,7 +45,7 @@ export default class updates extends  React.Component {
   <tbody>
     <tr>
       <th scope="row"><img src="static/flags/gif/ar.gif" alt="Argentina flag" />Argentina</th>
-      <td>09-03-2023</td>
+      <td>26-12-2023</td>
       <td><a href="https://www.enacom.gob.ar/listado-de-radioaficionados_p316">
             Enacom
          </a>
@@ -57,15 +54,15 @@ export default class updates extends  React.Component {
     </tr>
     <tr>
       <th scope="row"><img src="static/flags/gif/br.gif"  alt="Brasil flag"/>Brasil</th>
-      <td>03-10-2022</td>
-      <td><a href="https://www.anatel.gov.br/dadosabertos/paineis_de_dados/outorga_e_licenciamento/estacoes_licenciadas.zip">
+      <td>07-07-2023</td>
+      <td><a href="https://dados.gov.br/dados/conjuntos-dados/estacoes-licenciadas-no-servico-de-radioamador">
             Anatel
          </a>
       </td>
     </tr>
     <tr>
       <th scope="row"><img src="static/flags/gif/cl.gif" alt="Chile flag" />Chile</th>
-      <td>25-11-2022</td>
+      <td>25-10-2023</td>
       <td><a href="https://www.subtel.gob.cl/inicio-concesionario/servicios-de-telecomunicaciones/servicios-de-radio-aficionados/">
             Subtel
          </a>
@@ -73,7 +70,7 @@ export default class updates extends  React.Component {
     </tr>
     <tr>
       <th scope="row"><img src="static/flags/gif/uy.gif" alt="Uruguay flag"/>Uruguay</th>
-      <td>03-11-2022</td>
+      <td>25-07-2023</td>
       <td><a href="https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/datos-y-estadisticas/datos/registro-radioaficionados">
             URSEC
          </a>
@@ -90,10 +87,29 @@ export default class updates extends  React.Component {
       
     </tr>
     <tr>
-      <th scope="row"><img src="static/flags/gif/ec.gif" alt="Perú flag"/>Ecuador</th>
+      <th scope="row"><img src="static/flags/gif/ec.gif" alt="Ecuador flag"/>Ecuador</th>
       <td>18-01-2023</td>
       <td><a href="https://www.arcotel.gob.ec/radioaficionados/">
             ARCOTEL
+         </a>
+      </td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row"><img src="static/flags/gif/ca.gif" alt="Canada flag"/>Canadá</th>
+      <td>18-07-2023</td>
+      <td><a href="https://ised-isde.canada.ca/site/amateur-radio-operator-certificate-services/en/downloads">
+            CANADA GOV
+         </a>
+      </td>
+      
+    </tr>
+    <tr>
+      <th scope="row"><img src="static/flags/gif/us.gif" alt="US flag"/>Estados Unidos</th>
+      <td>02-08-2023</td>
+      <td><a href="https://wireless2.fcc.gov/UlsApp/UlsSearch/searchAdvanced.jsp">
+            FCC
          </a>
       </td>
       
@@ -107,7 +123,7 @@ export default class updates extends  React.Component {
     </div>
    
 </div>
-                    
+
         
         
         

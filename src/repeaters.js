@@ -1,6 +1,6 @@
 import React from 'react';
 import {getRepeaters} from "./api/api";
-
+import TopMenu  from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
@@ -57,15 +57,20 @@ export default class results extends  React.Component {
 
     render() {
        
-
+        const cabeceraCondicionalCard = ()=>{
+            if (this.state.repeaters){
+                return "<div className=\"card\"><div className=\"card-body\">";
+            }
+        }
+        const pieCondicionalCard= ()=>{
+            if (this.state.repeaters){
+                return "</div></div>";
+            }
+            
+        }
         return (
             <div>
-
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
+<TopMenu />
                   <div className="card-header bgdiv text-white">
                 <h1>Repetidoras</h1> 
             </div>
@@ -77,8 +82,8 @@ export default class results extends  React.Component {
             <p>&nbsp;</p>
 
             <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
-                        <div class="card" style={{'background-color':'#439139ef'}}>
-                            <div class="card-body " >
+                        <div className="card" style={{'background-color':'#439139ef'}}>
+                            <div className="card-body " >
                                 <div className="row">
                                     <div className="col-12">
                                         Indique una localidad en Argentina <img src="/static/flags/gif/ar.gif" alt="" />, Chile <img src="/static/flags/gif/cl.gif" alt="" /> o Uruguay <img src="/static/flags/gif/uy.gif" alt="" /> para ver las repetidoras disponibles.
@@ -94,7 +99,7 @@ export default class results extends  React.Component {
                                     <AsyncExample selectedValue={this.handleChange} />
                                     </div>
                                 </div>
-                                
+                                <div className="row">&nbsp;</div>
     
                                
                            
@@ -112,23 +117,15 @@ export default class results extends  React.Component {
 
 
 
-
-            <div className="card">
-                
-          
-                <div className="card-body">
-                  
-                           
-
-                          
-                        {
-                            
-                        
-                                
+                    <div className="row">&nbsp;</div>
+                    {cabeceraCondicionalCard}
+            
+                    
+                        {    
                                 this.state.repeaters.map((each)=>(
                             
                                     <div className="card">
-                                        <div className="card-header">
+                                        <div className="card-header match">
                                             <div className="row">
                                                 <div className="col-9">{each.titular}</div>
                                                 
@@ -138,41 +135,11 @@ export default class results extends  React.Component {
                                             
                                             </div>
                                         </div>
-                                        <div className="card-body ">
+
                                         
-                                                
-                                                    <div className="row">
-                                                        <div className="col-6">
-                                                            RECEPCION:
-                                                        </div>
-                                                        <div className="col-6">
-                                                            {each.rx} Mhz
-                                                        </div>
-                                                    </div>
-                                                    <div className="row">
-                                                        <div className="col-6">
-                                                        TRANSMISION:
-                                                        </div>
-                                                        <div className="col-6">
-                                                            {each.tx} Mhz
-                                                        </div>
-                                                    </div>
-                                                    <div className="row">
-                                                        <div className="col-6">
-                                                        TONO:
-                                                        </div>
-                                                        <div className="col-6">
-                                                            {each.tone}
-                                                        </div>
-                                                    </div>
-
-                                                    
-                                                
-                                                
+                                            <p>&nbsp;</p>
                                             
-                                                <div class="w-100"></div>
-                                                
-
+                                            <div className="col-12">
                                                 <div className="card bg-light">
                                                 <div className="card-body">
 
@@ -189,25 +156,53 @@ export default class results extends  React.Component {
                                                     </div>
                                                 </div>
                                                 </div>
-                                                
-                                                
-                                                
+                                            </div>
+
+
+                                       {each.nodes.map((node)=>(
+                                            <div className="card-body ">
+
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                            RECEPCION:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {node.rx} Mhz
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                        TRANSMISION:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {node.tx} Mhz
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="row">
+                                                        <div className="col-6">
+                                                        TONO:
+                                                        </div>
+                                                        <div className="col-6">
+                                                            {node.tone} Hz
+                                                        </div>
+                                                    </div>   
                                             
-                                            
-                                            
-                                            
-                                        </div>
-        
+                                            </div>
+                                        ))}
                                     </div>
-        
-        
+                                    
+                                    
                                 ))
+
+                                
                                 
 
                             
                        }
 
-                       
+{pieCondicionalCard}           
 </div>
                            
              
@@ -218,10 +213,9 @@ export default class results extends  React.Component {
 
 
             
-
-            </div>
-            </div>
-
+            
+            
+            
 
         );
 

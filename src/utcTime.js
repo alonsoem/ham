@@ -1,6 +1,7 @@
 import React from "react";
 import {getUtcTime} from "./api/api";
-import '../node_modules/bootstrap-css-only/css/bootstrap.css';
+
+import TopMenu from "./topMenu";
 
 
 export default class utcTime extends React.Component {
@@ -58,13 +59,7 @@ componentDidMount() {
   render() {
       return (
         <div>
-
-
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    Somos Radioaficionados
-  </div>
-</nav>
+<TopMenu />
 
           <div class="card-header bgdiv text-white">
               <h1>Hora UTC</h1> 
