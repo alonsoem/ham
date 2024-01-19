@@ -88,7 +88,7 @@ componentDidMount() {
       <div class="card-body">
         <h5 class="card-title">O GMT, independiente de tu ubicación.</h5>
         <p class="card-text text-center">
-          <span class="display-4">{this.state.utcTime}</span>
+          <span class="display-4 text-size-responsive">{this.state.utcTime}</span>
            <br/>
 
           <span class="display-6">{this.state.utcDate}</span>
@@ -110,7 +110,7 @@ componentDidMount() {
             <div class="card-body">
                 <h5 class="card-title">Hora relativa a tu posición en el mundo.</h5>
                 <p class="card-text text-center">
-          <span class="display-4">{this.state.localTime}</span>
+          <span class="display-4 text-size-responsive">{this.state.localTime}</span>
            <br/>
 
           <span class="display-6">{this.state.localDate}</span>

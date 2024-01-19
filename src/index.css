@@ -116,3 +116,9 @@ th>img {margin: 0.4em;}
     justify-content: center!important;
   
 }
+
+@media (min-width: 220px) and (max-width: 340px) {
+  .text-size-responsive{
+     font-size: 2em!important;
+  }
+}
