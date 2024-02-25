@@ -122,3 +122,15 @@ th>img {margin: 0.4em;}
      font-size: 2em!important;
   }
 }
+
+.bandPlanTable thead td{
+  border: 2px solid black;
+  text-align: center;
+  font-weight: bold;
+  background-color:#6da069ef!important;
+}
+
+.bandPlan{
+  border: 2px solid #6da069ef!important;
+
+}

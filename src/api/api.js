@@ -23,3 +23,6 @@ export const getFeedback = (params) => foreignRequest('get', 'https://ham.qrits.
 export const postFeedback = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/newFeedback.php',params,{'Content-Type':'Content-Type: text/html','Control-Allow-Origin':'*'});
 export const newMember = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/newMember.php',params,{'Content-Type':'Content-Type: text/html'});
 export const getCountries = () => foreignRequest('get', 'https://ham.qrits.com.ar/api/getCountries.php',null,{'Content-Type':'application/json'});
+export const getBands = () => foreignRequest('get', 'https://ham.qrits.com.ar/api/getBands.php',null,{'Content-Type':'application/json'});
+export const getModesByBand = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/getModesByBand.php',params,{'Content-Type':'application/json'});
+export const getFreqByBandAndMode = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/getFreqByBandAndMode.php',params,{'Content-Type':'application/json'});
