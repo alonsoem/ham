@@ -26,3 +26,4 @@ export const getCountries = () => foreignRequest('get', 'https://ham.qrits.com.a
 export const getBands = () => foreignRequest('get', 'https://ham.qrits.com.ar/api/getBands.php',null,{'Content-Type':'application/json'});
 export const getModesByBand = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/getModesByBand.php',params,{'Content-Type':'application/json'});
 export const getFreqByBandAndMode = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/getFreqByBandAndMode.php',params,{'Content-Type':'application/json'});
+export const getBandFrequencies = (params) => foreignRequest('get', 'https://ham.qrits.com.ar/api/getBandFrequencies.php',params,{'Content-Type':'application/json'});

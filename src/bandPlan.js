@@ -1,11 +1,9 @@
 import React from 'react';
 import './index.css';
-//import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import TopMenu from './topMenu';
 import {Form} from "react-bootstrap";
-
 import { useState,useEffect } from "react";
-import { getBands,getModesByBand,getFreqByBandAndMode } from './api/api';
+import { getBands,getBandFrequencies } from './api/api';
 
 
 export default function BandPlan (props) {
@@ -14,7 +12,6 @@ export default function BandPlan (props) {
     const [mode, setMode] = useState(null);
 
     const [bands, setBands] = useState([]);
-    const [modes, setModes] = useState([]);
     const [freqs, setFreqs] = useState([]);
     
       const handleChangeBand = (event)=>{
@@ -25,11 +22,7 @@ export default function BandPlan (props) {
         let index = event.target.selectedIndex;
         setBandName(event.target.options[index].text);
       }
-      const handleChangeMode = (event)=>{
-        setMode(event.target.value);
-
-      }
-
+     
     
       const updateBands= ()=>{
         
@@ -44,7 +37,7 @@ export default function BandPlan (props) {
       }
       const updateFreqs= ()=>{
         
-        getFreqByBandAndMode({bandId:band,modeId:mode})
+        getBandFrequencies({bandId:band})
             .then((response) => {
               setFreqs(response.ranges);
                
@@ -53,18 +46,7 @@ export default function BandPlan (props) {
       
       }
 
-      const updateModes=()=>{
-        
-        getModesByBand({bandId:band})
-            .then((response) => {
-              setModes(response.modes);
-              
-              
-          })
-          .catch((response) => console.log(response));
-      
-      }
-
+     
       useEffect(() => {
           updateBands();
         // eslint-disable-next-line
@@ -72,7 +54,7 @@ export default function BandPlan (props) {
 
       useEffect(() => {
         if (band){
-            updateModes();
+            updateFreqs();
         }
         
       // eslint-disable-next-line
@@ -141,7 +123,7 @@ export default function BandPlan (props) {
                                         
                                         </div>
                                         
-                                    
+                                    {/*
                                     <div className="col-6 text-left">
                                     
                                         <Form.Group className="mb-3" controlId="modeValue">
@@ -157,7 +139,7 @@ export default function BandPlan (props) {
                                         </Form.Group>
                                         
                                     </div>
-                                        
+                                        */}
                                     
                                 </div>
                                     </div>
@@ -171,19 +153,19 @@ export default function BandPlan (props) {
                                         <thead >
 
                                             <tr >
-                                                <td class="bandPlanTable" colspan="6" scope="col">BANDA DE {bandName.toUpperCase()}</td>                                               
+                                                <td class="bandPlanTable" colspan="6" >BANDA DE {bandName.toUpperCase()}</td>                                               
                                             </tr>
                                             <tr >
-                                                <td class="bandPlanTable" colspan="2" scope="col">FRECUENCIAS (khz)* REVISAR</td>
-                                                <td class="bandPlanTable align-middle" scope="col" rowspan="2">DESTINOS</td>
-                                                <td class="bandPlanTable" colspan="3" scope="col" >CATEGORIA</td>
+                                                <td class="bandPlanTable" colspan="2" >FRECUENCIAS (khz)* REVISAR</td>
+                                                <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
+                                                <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
                                             </tr>
                                             <tr >
-                                                <td class="bandPlanTable" scope="col">FRECUENCIA DESDE</td>
-                                                <td class="bandPlanTable" scope="col">FRECUENCIA HASTA</td>
-                                                <td class="bandPlanTable" scope="col">NOVICIO</td>
-                                                <td class="bandPlanTable" scope="col">GENERAL</td>
-                                                <td class="bandPlanTable" scope="col">SUPERIOR</td>
+                                                <td class="bandPlanTable" >FRECUENCIA DESDE</td>
+                                                <td class="bandPlanTable" >FRECUENCIA HASTA</td>
+                                                <td class="bandPlanTable" >NOVICIO</td>
+                                                <td class="bandPlanTable" >GENERAL</td>
+                                                <td class="bandPlanTable" >SUPERIOR</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,9 +178,9 @@ export default function BandPlan (props) {
                                                     <td style={{border: '2px solid black'}} class="text-center">{each.from}</td>
                                                     <td style={{border: '2px solid black'}} class="text-center">{each.to}</td>
                                                     <td style={{border: '2px solid black'}} class="text-left">{[...new Set(each.modes)].join(" - ")}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.novicio==1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.general==1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.superior==1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.novicio===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.general===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.superior===1?"X":""}</td>
 
                                                 </tr>
 
