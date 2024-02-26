@@ -16,6 +16,7 @@ import qso from "./qso.js";
 import viewer from "./viewer.js";
 import feedback from "./feedback.js";
 import newMember from "./newMember.js";
+import bandPlan from "./bandPlan.js";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import news from "./news.js";
@@ -39,6 +40,7 @@ export default class App extends React.Component {
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
             <Route exact path="/repeaters" component={repeaters} />
+            <Route exact path="/bands" component={bandPlan} />
             <Route exact path="/" component={landing} />
             <Route exact path="/live" component={landingLive} />
           </Switch>
