@@ -7,27 +7,20 @@ import { getBands,getBandFrequencies } from './api/api';
 
 
 export default function BandPlan (props) {
-    const [bandName, setBandName] = useState("");
     const [band, setBand] = useState(null);
     const [mode, setMode] = useState(null);
 
     const [bands, setBands] = useState([]);
     const [freqs, setFreqs] = useState([]);
-    //const [scale, setScale] = useState(1);
     
       const handleChangeBand = (event)=>{
         setMode(null);
 
         setBand(bands[event.target.value]);
 
-        //let index = event.target.selectedIndex;
-        //setBandName(event.target.options[index].text);
+        
       }
-/*
-      const handleFreqScale = (event)=>{
-        setScale(event.target.value);
-      }
-  */   
+
     
       const updateBands= ()=>{
         
@@ -79,18 +72,22 @@ export default function BandPlan (props) {
       // eslint-disable-next-line
     }, [mode,band]);
 
-    const showBandScaleFromId=(id)=>{
-        switch (id){
+    const showBandScaleFromId=()=>{
+        var value="";
+        switch (band.scale){
             case 0:
-                return "(en Khz)";
+                value= "(en Khz)";
                 break;
             case 1:
-                return "(en Mhz)";
+                value= "(en Mhz)";
                 break;
             case 2:
-                return "(en Ghz)";
+                value= "(en Ghz)";
+                break;
+            default:
                 break;
         }
+        return value;
     }
     
         return (
@@ -193,7 +190,7 @@ export default function BandPlan (props) {
                                             </tr>
                                             <tr >
                                                 <td class="bandPlanTable" colspan="2" >
-                                                        FRECUENCIAS {showBandScaleFromId(band.scale)}
+                                                        FRECUENCIAS {showBandScaleFromId}
                                                 </td>
                                                 <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
                                                 <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
