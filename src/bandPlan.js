@@ -8,17 +8,11 @@ import { getBands,getBandFrequencies } from './api/api';
 
 export default function BandPlan (props) {
     const [band, setBand] = useState(null);
-    const [mode, setMode] = useState(null);
-
     const [bands, setBands] = useState([]);
     const [freqs, setFreqs] = useState([]);
     
       const handleChangeBand = (event)=>{
-        setMode(null);
-
         setBand(bands[event.target.value]);
-
-        
       }
 
     
@@ -30,8 +24,6 @@ export default function BandPlan (props) {
                 response.bands.forEach(each => {
                     bandsById[each.id]=each;    
                 })
-                
-
               setBands(bandsById);
               
               
@@ -64,14 +56,7 @@ export default function BandPlan (props) {
       // eslint-disable-next-line
     }, [band]);
 
-    useEffect(() => {
-        if (band && mode){
-            updateFreqs();
-        }
-        
-      // eslint-disable-next-line
-    }, [mode,band]);
-
+  
     const showBandScaleFromId=()=>{
         var value="";
         switch (band.scale){
