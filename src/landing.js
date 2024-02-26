@@ -82,6 +82,16 @@ export default class landing extends  React.Component {
 
                         </div>
                     </div>
+
+                    <div className="row mt-2">
+                        
+                        <Link to={"/bands/"}>
+                            <div className=" d-grid mx-auto">
+                            <button type="button" className="btn btn-danger">Plan de bandas Argentina</button>
+                            </div>
+                        </Link>
+                    
+                </div>
             </div>
             
         </div>
