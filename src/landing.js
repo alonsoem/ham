@@ -83,8 +83,7 @@ export default class landing extends  React.Component {
                         </div>
                     </div>
 
-                    {
-                        /*
+                    
                     <div className="row mt-2">
                         
                             <Link to={"/bands/"}>
@@ -94,8 +93,7 @@ export default class landing extends  React.Component {
                             </Link>
                         
                     </div>
-                    */
-                    }
+                    
             </div>
             
         </div>
