@@ -186,7 +186,17 @@ export default class tools extends  React.Component {
                   </div>
                 </div>   
               </div>
- 
+
+              <div class="col-6 col-sm-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <p class="fs-6 text-uppercase">Plan de bandas</p>
+                    <a href="https://ham.qrits.com.ar/v2/bands" class="btn btn-primary">Ir</a>
+                  </div>
+                </div>   
+              </div> 
+
+            
 
    
 </div>
@@ -197,6 +207,7 @@ export default class tools extends  React.Component {
 
             </div>
 
+          
 
 
 
