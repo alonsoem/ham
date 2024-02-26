@@ -13,6 +13,7 @@ export default function BandPlan (props) {
 
     const [bands, setBands] = useState([]);
     const [freqs, setFreqs] = useState([]);
+    const [scale, setScale] = useState(1);
     
       const handleChangeBand = (event)=>{
         setMode(null);
@@ -21,6 +22,10 @@ export default function BandPlan (props) {
 
         let index = event.target.selectedIndex;
         setBandName(event.target.options[index].text);
+      }
+
+      const handleFreqScale = (event)=>{
+        setScale(event.target.value);
       }
      
     
@@ -103,7 +108,7 @@ export default function BandPlan (props) {
                                 <div className="row">
                                     <div className="col-6 text-left">
                                     
-                                        <Form.Group className="mb-3" controlId="bandValue">
+                                        <Form.Group className="mb-9" controlId="bandValue">
                                             <Form.Label>Banda</Form.Label>
                                             
                                             <select id="band" class="form-select" onChange={handleChangeBand} >
@@ -140,6 +145,16 @@ export default function BandPlan (props) {
                                         
                                     </div>
                                         */}
+                                        <div className="col-3 text-left">
+                                            <Form.Group className="mb-3" controlId="modeValue">
+                                                <Form.Label>Ver Frecuencias en:</Form.Label>
+                                                <select id="freqScale" class="form-select" onChange={handleFreqScale} >
+                                                    <option selected value="1">Khz</option>
+                                                    <option value="0.001">Mhz</option>
+                                                    <option value="0.000001">Ghz</option>
+                                                </select>
+                                            </Form.Group>
+                                        </div>
                                     
                                 </div>
                                     </div>
@@ -156,16 +171,19 @@ export default function BandPlan (props) {
                                                 <td class="bandPlanTable" colspan="6" >BANDA DE {bandName.toUpperCase()}</td>                                               
                                             </tr>
                                             <tr >
-                                                <td class="bandPlanTable" colspan="2" >FRECUENCIAS (khz)* REVISAR</td>
+                                                <td class="bandPlanTable" colspan="2" >
+                                                        FRECUENCIAS
+                                                       
+                                                </td>
                                                 <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
                                                 <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
                                             </tr>
                                             <tr >
-                                                <td class="bandPlanTable" >FRECUENCIA DESDE</td>
-                                                <td class="bandPlanTable" >FRECUENCIA HASTA</td>
-                                                <td class="bandPlanTable" >NOVICIO</td>
-                                                <td class="bandPlanTable" >GENERAL</td>
-                                                <td class="bandPlanTable" >SUPERIOR</td>
+                                                <td class="bandPlanTable" >DESDE</td>
+                                                <td class="bandPlanTable" >HASTA</td>
+                                                <td class="bandPlanTable" >N</td>
+                                                <td class="bandPlanTable" >G</td>
+                                                <td class="bandPlanTable" >S</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -175,8 +193,8 @@ export default function BandPlan (props) {
 
                                             return (
                                                 <tr >
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.from}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.to}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.from*scale}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.to*scale}</td>
                                                     <td style={{border: '2px solid black'}} class="text-left">{[...new Set(each.modes)].join(" - ")}</td>
                                                     <td style={{border: '2px solid black'}} class="text-center">{each.novicio===1?"X":""}</td>
                                                     <td style={{border: '2px solid black'}} class="text-center">{each.general===1?"X":""}</td>
