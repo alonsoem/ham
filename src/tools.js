@@ -180,12 +180,14 @@ export default class tools extends  React.Component {
               <div class="col-6 col-sm-6">
                 <div class="card text-center">
                   <div class="card-body">
+
                     <p class="fs-6 text-uppercase">Tracking Satelites</p>
                     <a href="https://www.amsat.org.ar/pass.htm" class="btn btn-primary">Ir</a>
                   </div>
                 </div>   
               </div>
  
+
    
 </div>
 
