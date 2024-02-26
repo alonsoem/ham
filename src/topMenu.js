@@ -38,6 +38,7 @@ const TopMenu = () => {
                 <NavDropdown.Item href="/viewer/Sufijos Uruguay/sufijos-uruguay.gif">Sufijos Uruguay</NavDropdown.Item>
                 <NavDropdown.Item href="/viewer/Sufijos Argentina/sufijos-argentina.webp">Sufijos Argentina</NavDropdown.Item>              
                 <NavDropdown.Item href="/cqcall">Llamado CQ</NavDropdown.Item>
+                <NavDropdown.Item href="/bands">Plan de bandas</NavDropdown.Item>
                 <NavDropdown.Item href="http://www.amsat.org.ar/pass.htm">Tracking satélites</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/tools">Todo</NavDropdown.Item>
