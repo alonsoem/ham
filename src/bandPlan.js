@@ -101,7 +101,7 @@ export default function BandPlan (props) {
                                             </tr>
                                             <tr >
                                                 <td class="bandPlanTable" colspan="2" >
-                                                        FRECUENCIAS {showBandScaleFromId}
+                                                        FRECUENCIAS {band && showBandScaleFromId()}
                                                 </td>
                                                 <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
                                                 <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
