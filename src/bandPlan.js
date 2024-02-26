@@ -76,13 +76,13 @@ export default function BandPlan (props) {
         var value="";
         switch (band.scale){
             case 0:
-                value= "(en Khz)";
+                value= "(Khz)";
                 break;
             case 1:
-                value= "(en Mhz)";
+                value= "(Mhz)";
                 break;
             case 2:
-                value= "(en Ghz)";
+                value= "(Ghz)";
                 break;
             default:
                 break;
@@ -121,12 +121,12 @@ export default function BandPlan (props) {
 
                                             return (
                                                 <tr >
-                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.from)}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.to)}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center align-middle">{(each.from)}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center align-middle">{(each.to)}</td>
                                                     <td style={{border: '2px solid black'}} class="text-left">{[...new Set(each.modes)].join(" - ")}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.novicio===1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.general===1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.superior===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center align-middle">{each.novicio===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center align-middle">{each.general===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center align-middle">{each.superior===1?"X":""}</td>
 
                                                 </tr>
 
