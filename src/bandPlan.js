@@ -90,6 +90,55 @@ export default function BandPlan (props) {
         return value;
     }
     
+
+    const showBandTable=()=>{
+        return(
+        <table class="table table-striped bandPlanTable " style={{border: '2px solid black'}}>
+                                        <thead >
+
+                                            <tr >
+                                                <td class="bandPlanTable" colspan="6" >BANDA DE {band && band.name.toUpperCase()}</td>                                               
+                                            </tr>
+                                            <tr >
+                                                <td class="bandPlanTable" colspan="2" >
+                                                        FRECUENCIAS {showBandScaleFromId}
+                                                </td>
+                                                <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
+                                                <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
+                                            </tr>
+                                            <tr >
+                                                <td class="bandPlanTable" >DESDE</td>
+                                                <td class="bandPlanTable" >HASTA</td>
+                                                <td class="bandPlanTable" >N</td>
+                                                <td class="bandPlanTable" >G</td>
+                                                <td class="bandPlanTable" >S</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                    {
+                                        
+                                        freqs.map(each=>{
+
+                                            return (
+                                                <tr >
+                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.from)}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.to)}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-left">{[...new Set(each.modes)].join(" - ")}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.novicio===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.general===1?"X":""}</td>
+                                                    <td style={{border: '2px solid black'}} class="text-center">{each.superior===1?"X":""}</td>
+
+                                                </tr>
+
+                                            )
+                                        })
+
+                                        
+                                    }
+                                    </tbody>
+                                    </table>
+        )
+    }
         return (
             <div>
 
@@ -113,10 +162,7 @@ export default function BandPlan (props) {
                                     <div className="col-12">
                                         Consulte el plan de bandas Argentino publicado por Enacom
                                     </div>
-                                    <div className="col-12 text-right">
-                                        Para mas información descargá el <a href='https://www.enacom.gob.ar/multimedia/noticias/archivos/201811/archivo_20181105083108_1322.pdf' >plan de bandas</a>  de ENACOM.
-                                        
-                                    </div>
+                                    
                                     
                                 </div>
 
@@ -173,6 +219,10 @@ export default function BandPlan (props) {
                                             </Form.Group>
                                         </div>
                                         */}
+                                        <div className="col-12 text-right">
+                                        Para mas información descargá el <a href='https://www.enacom.gob.ar/multimedia/noticias/archivos/201811/archivo_20181105083108_1322.pdf' >plan de bandas</a>  de ENACOM.
+                                        
+                                    </div>
                                     
                                 </div>
                                     </div>
@@ -182,50 +232,10 @@ export default function BandPlan (props) {
 
                                 <div className="row">
                                     <div className="col-12 text-left bg-white p-2">
-                                    <table class="table table-striped bandPlanTable " style={{border: '2px solid black'}}>
-                                        <thead >
-
-                                            <tr >
-                                                <td class="bandPlanTable" colspan="6" >BANDA DE {band.name.toUpperCase()}</td>                                               
-                                            </tr>
-                                            <tr >
-                                                <td class="bandPlanTable" colspan="2" >
-                                                        FRECUENCIAS {showBandScaleFromId}
-                                                </td>
-                                                <td class="bandPlanTable align-middle"  rowspan="2">DESTINOS</td>
-                                                <td class="bandPlanTable" colspan="3"  >CATEGORIA</td>
-                                            </tr>
-                                            <tr >
-                                                <td class="bandPlanTable" >DESDE</td>
-                                                <td class="bandPlanTable" >HASTA</td>
-                                                <td class="bandPlanTable" >N</td>
-                                                <td class="bandPlanTable" >G</td>
-                                                <td class="bandPlanTable" >S</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    
                                     {
-                                        
-                                        freqs.map(each=>{
-
-                                            return (
-                                                <tr >
-                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.from)}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{(each.to)}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-left">{[...new Set(each.modes)].join(" - ")}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.novicio===1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.general===1?"X":""}</td>
-                                                    <td style={{border: '2px solid black'}} class="text-center">{each.superior===1?"X":""}</td>
-
-                                                </tr>
-
-                                            )
-                                        })
-
-                                        
-                                    }
-                                    </tbody>
-                                    </table>
+                                        (band?showBandTable():<p class="text-center">SELECCIONÁ UNA BANDA PARA VISUALIZAR LA ASIGNACIÓN DE FRECUENCIAS</p>)
+                                    } 
                                    
                                     </div>
                                 </div>
