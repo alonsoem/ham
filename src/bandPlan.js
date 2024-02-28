@@ -121,6 +121,21 @@ export default function BandPlan (props) {
                                         
                                     }
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td  colspan="6" >
+                                                <p><b>NOTAS:</b></p>
+                                                <ul>
+                                                {band.notes.map(each=>{
+                                                    return (<li>{each}</li>);
+
+                                                })}
+                                                </ul>
+                                                
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                    
                                     </table>
         )
     }
