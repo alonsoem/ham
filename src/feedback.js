@@ -67,8 +67,6 @@ export default class landing extends  React.Component {
         postFeedback({comments:this.state.comment.replace("/(\r\n|\n|\r)/gm", "")})
             .then(response=>
                 {
-                    console.log("OK");
-                    console.log(response.status);
                     this.notify("Gracias! Tu comentario fue enviado.");
                     this.setState({comment:""});
             }
