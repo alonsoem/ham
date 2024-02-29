@@ -65,14 +65,20 @@ export default class landing extends  React.Component {
 
     submit = () => {
         postFeedback({comments:this.state.comment.replace("/(\r\n|\n|\r)/gm", "")})
-            .then(()=>
-                {this.notify("Gracias! Tu comentario fue enviado.");
-                this.setState({comment:""});
+            .then(response=>
+                {
+                    console.log("OK");
+                    console.log(response.status);
+                    this.notify("Gracias! Tu comentario fue enviado.");
+                    this.setState({comment:""});
             }
                 
                 )
-            .catch(()=>
-                {this.notifyError("Ocurrió un error al actualizar. Intentalo nuevamente.");}
+            .catch((error)=>
+                {
+                    console.log("ERROR");
+                    console.error({ error });
+                    this.notifyError("Ocurrió un error al actualizar. Intentalo nuevamente.");}
             );    
     }
 
