@@ -5,9 +5,6 @@ import { useEffect } from "react";
 import { Marker,Popup,MapContainer,TileLayer } from 'react-leaflet';
 
 
-
-
-
 export default function QthLocator (props) {
     const [maidenhead, setMaiden] = useState("");
 
