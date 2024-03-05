@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './index.css';
 import TopMenu from './topMenu';
 import { useEffect,useRef} from "react";
-import { Marker,Popup,MapContainer,TileLayer} from 'react-leaflet';
-import { useMapEvent,useMap} from 'react-leaflet/hooks';
+import { Marker,Popup,MapContainer,TileLayer,Polygon} from 'react-leaflet';
+import { useMapEvent} from 'react-leaflet/hooks';
 
 
 
@@ -81,12 +81,13 @@ const handleChangeMaiden = (event) =>{
         lon += str_num.indexOf(qth.charAt(2)) * 2;                  // 3rd digit: 2deg longitude slot.
         console.log(lat);
         console.log(lon);
+        // eslint-disable-next-line
         if (qth.length == 6)
         {
             lat += str_chr_lo.indexOf(qth.charAt(5)) * 2.5 / 60;    // 6th digit: 2.5min latitude slot.
             lon += str_chr_lo.indexOf(qth.charAt(4)) * 5 / 60;      // 5th digit: 5min longitude slot.
         }
-
+    // eslint-disable-next-line
         if (qth.length == 4)                                        // Get coordinates of the center of the square.
         {
             lat += 0.5 * 1;
@@ -110,13 +111,6 @@ const handleChangeMaiden = (event) =>{
       }
 
 
-      function MaidenPointer(){
-        const map = useMap();
-        map.setView(gotoMaiden());
-          
-          openPopup();
-      }
-      
        
       function maidenHead  () {
         var lat =position[0];
@@ -142,26 +136,34 @@ const handleChangeMaiden = (event) =>{
        
 
        function MaidenPointer  (){
-       return position === null ? null : (
-        <Marker position={position} ref={markerRef} >
-          <Popup>
-              <div class="card">
-                <div className={"card-header"}>QTH locator</div>
-                <div class="card-body">
-                  <p>{maidenHead()}</p>
-                  <p>{"Latitud:  " +position[0]}</p>
-                  <p>{"Longitud: " +position[1]}</p>
+        return position === null ? null : (
+         <Marker position={position} ref={markerRef} >
+           <Popup>
+               <div class="card">
+                 <div className={"card-header"}>QTH locator</div>
+                 <div class="card-body">
+                   <p>{maidenHead()}</p>
+                   <p>{"Latitud:  " +position[0]}</p>
+                   <p>{"Longitud: " +position[1]}</p>
+ 
+                 </div>
+                 
+               </div>
+               
+               
+           </Popup>
+         </Marker>
+       )
+     }
 
-                </div>
-                
-              </div>
-              
-              
-          </Popup>
-        </Marker>
-      )
-    }
+    const fillBlueOptions = { fillColor: 'blue' }
 
+    const polygon = [
+      [-34.77100056063446, -58.24264590502138],
+      [-34.74588160035689, -58.18196406936771],
+      [ -34.7127006147566, -58.2300848634208],
+      [ -34.72905214813102, -58.29981846865683]
+    ]
 
         return (
             
@@ -196,6 +198,7 @@ const handleChangeMaiden = (event) =>{
                           
                           <LocationMarker />
                           <MaidenPointer />
+                          <Polygon pathOptions={fillBlueOptions} positions={polygon} />
                           
         
                         </MapContainer>
