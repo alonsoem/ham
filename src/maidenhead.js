@@ -1,3 +1,5 @@
+import L from 'leaflet';
+
 // Leaflet.Maidenhead
 //
 // https://gitlab.com/IvanSanchez/leaflet.maidenhead
@@ -149,7 +151,7 @@ L.Maidenhead.indexLetter = function maidenheadIndexLetter(idx) {
 // Given a maidenhead index (as a string), return its bounding box
 // (as a [lat, lng, lat, lng] or [y1, x1, y2, x2] array).
 L.Maidenhead.indexToBBox = function maidehneadIndexToBBox(str) {
-	const strLen = str.length;
+	//const strLen = str.length;
 	let minLat = -90;
 	let minLng = -180;
 
@@ -247,3 +249,7 @@ L.Maidenhead.latLngToIndex = function latLngToMaidenheadIndex(lat, lng, precisio
 	);
 };
 
+
+export const  maidenInstance= function (opts) {
+	return new L.Maidenhead(opts);
+  };
