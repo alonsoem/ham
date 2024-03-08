@@ -31,8 +31,6 @@ const handleChangeMaiden = (event) =>{
   setMaidenPosition(event.target.value);
   
 }
- 
-
 
       function LocationMarker() {
         const map = useMapEvent('click', (e) => {
@@ -89,6 +87,16 @@ const handleChangeMaiden = (event) =>{
 
     const gotoMaiden= ()=>{
       setPosition(getPositionFromMaiden());
+      if (maidenPosition.length==6){
+          mapRef.current.setZoom(13);
+        
+      }else if (maidenPosition.length==4){
+        mapRef.current.setZoom(10);
+      }else if (maidenPosition.length==2){
+        mapRef.current.setZoom(4);
+      }
+      
+      
     
     }
 
@@ -210,8 +218,8 @@ const handleChangeMaiden = (event) =>{
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                           />
                           
-                          <LocationMarker />
-                          <MaidenPointer />
+                        
+                          
                           
                           <MaidenEventLoad />
                           
