@@ -16,11 +16,11 @@ L.Maidenhead = L.FeatureGroup.extend({
 		// the polygons can trigger mouse/pointer events.
 		// (as per https://leafletjs.com/reference-1.5.0.html#polygon)
 		polygonStyle: {
-			color: "black",
+			color: "grey",
 			weight: 1.5,
 			fill: true,
 			fillColor: "transparent",
-			fillOpacity: 0,
+			fillOpacity: 0.5,
 		},
 
 		// Callback function for creating markers in the center of the seen
@@ -32,7 +32,7 @@ L.Maidenhead = L.FeatureGroup.extend({
 			return L.marker(latlng, {
 				icon: L.divIcon({
 					html:
-						"<div style='background:white; border:1px solid #888; position: relative; display: inline-block; left: -0.25em; top: -0.5em; '>" +
+						"<div style='font-weight:bold;font-size:3em; color:grey;position: relative; display: inline-block; left: -1.5em; top: -0.5em; '>" +
 						L.Maidenhead.latLngToIndex(latlng.lat, latlng.lng, precision) +
 						"</div>",
 					iconSize: [0, 0],
@@ -46,12 +46,14 @@ L.Maidenhead = L.FeatureGroup.extend({
 		// 4 = squares  (e.g. "IO43")
 		// 6 = subsquares (e.g. "IO43km")
 		// 8 = exteded subsquares (e.g. "IO43km18")
-		precision: 6,
+		precision:4,
 	},
 
 	initialize: function initialize(options) {
 		L.FeatureGroup.prototype.initialize.call(this, options);
 		L.Util.setOptions(this, options);
+		
+		console.log("initialize");
 
 		// Size of the grid, in lat degrees. Lng degrees will always be double.
 		if (this.options.precision === 2) {
@@ -77,22 +79,45 @@ L.Maidenhead = L.FeatureGroup.extend({
 
 	onAdd: function onAdd(map) {
 		L.FeatureGroup.prototype.onAdd.call(this, map);
-
+		console.log("onadd");
 		this._map = map;
 
-		map.on("move zoom moveend zoomend", this._update, this);
+		map.on(" moveend zoomend", this._update, this);
 		this._update();
 	},
 
 	onRemove: function onRemove(map) {
 		L.FeatureGroup.prototype.onRemove.call(this, map);
-		map.off("move zoom moveend zoomend", this._update, this);
+		console.log("onremove");
+		map.off(" moveend zoomend", this._update, this);
 	},
 
 	_update: function _update() {
 		if (!this._map) {
 			return;
 		}
+
+		if (this._map._zoom>11){
+			this.options.precision=6;
+			this.latDelta = 2.5 / 60;
+		}
+		else if (this._map._zoom<=11 && this._map._zoom>7){
+			this.options.precision=4;
+			this.latDelta = 1;
+		}
+		else if (this._map._zoom<=7 ){
+			this.options.precision=2;	
+			this.latDelta = 10;		
+
+
+		}
+
+		this.lngDelta = this.latDelta * 2;
+		console.log("updating");
+		
+		//console.log(this);
+
+
 
 		var bounds = this._map.getBounds();
 		var n = bounds.getNorth();
@@ -129,6 +154,7 @@ L.Maidenhead = L.FeatureGroup.extend({
 						if (marker) {
 							this.addLayer(marker);
 						}
+						//console.log(bbox);
 					}
 				}
 			}

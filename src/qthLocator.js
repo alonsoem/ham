@@ -26,20 +26,6 @@ export default function QthLocator (props) {
     const str_num = "0123456789";
       
 
-
-    
-
-// Leaflet.Maidenhead
-//
-// https://gitlab.com/IvanSanchez/leaflet.maidenhead
-//
-// "THE BEER-WARE LICENSE":
-// <ivan@sanchezortega.es> wrote this file. As long as you retain this notice you
-// can do whatever you want with this stuff. If we meet some day, and you think
-// this stuff is worth it, you can buy me a beer in return.
-
-
-
      
 const handleChangeMaiden = (event) =>{
   setMaidenPosition(event.target.value);
@@ -72,8 +58,7 @@ const handleChangeMaiden = (event) =>{
             
         if (mapRef.current){
 
-          
-          
+
           maidenInstance({
             color : 'rgba(255, 0, 0, 0.4)'
             })
@@ -110,20 +95,19 @@ const handleChangeMaiden = (event) =>{
       const getPositionFromMaiden= ()=>{
         var lat;
         var lon;
+        
         const qth=maidenPosition;
-        console.log(qth);
+        console.log("IR A :"+qth);
 
-        lat = str_chr_up.indexOf(qth.charAt(1)) * 10;               // 2nd digit: 10deg latitude slot.
-        lon = str_chr_up.indexOf(qth.charAt(0)) * 20;               // 1st digit: 20deg longitude slot.
+        lat = str_chr_up.indexOf(qth.charAt(1).toUpperCase()) * 10;               // 2nd digit: 10deg latitude slot.
+        lon = str_chr_up.indexOf(qth.charAt(0).toUpperCase()) * 20;               // 1st digit: 20deg longitude slot.
         lat += str_num.indexOf(qth.charAt(3)) * 1;                  // 4th digit: 1deg latitude slot.
         lon += str_num.indexOf(qth.charAt(2)) * 2;                  // 3rd digit: 2deg longitude slot.
-        console.log(lat);
-        console.log(lon);
         // eslint-disable-next-line
         if (qth.length == 6)
         {
-            lat += str_chr_lo.indexOf(qth.charAt(5)) * 2.5 / 60;    // 6th digit: 2.5min latitude slot.
-            lon += str_chr_lo.indexOf(qth.charAt(4)) * 5 / 60;      // 5th digit: 5min longitude slot.
+            lat += str_chr_lo.indexOf(qth.charAt(5).toLowerCase()) * 2.5 / 60;    // 6th digit: 2.5min latitude slot.
+            lon += str_chr_lo.indexOf(qth.charAt(4).toLowerCase()) * 5 / 60;      // 5th digit: 5min longitude slot.
         }
         // eslint-disable-next-line
         if (qth.length == 4)                                        // Get coordinates of the center of the square.
@@ -219,21 +203,17 @@ const handleChangeMaiden = (event) =>{
                         
 
  
-                        <MapContainer ref={mapRef} id="map" center={position} zoom={13}  
-                          zoomControl={false} >
+                        <MapContainer ref={mapRef} id="map" center={position} zoom={13} zoomControl={false} >
                           
                           <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                           />
                           
-
-                          
                           <LocationMarker />
                           <MaidenPointer />
                           
                           <MaidenEventLoad />
-                          
                           
                         </MapContainer>
 
