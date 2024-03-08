@@ -91,7 +91,7 @@ const handleChangeMaiden = (event) =>{
           mapRef.current.setZoom(13);
         
       }else if (maidenPosition.length==4){
-        mapRef.current.setZoom(10);
+        mapRef.current.setZoom(9);
       }else if (maidenPosition.length==2){
         mapRef.current.setZoom(4);
       }
