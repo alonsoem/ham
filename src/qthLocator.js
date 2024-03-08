@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './index.css';
 import TopMenu from './topMenu';
 import { useEffect,useRef} from "react";
-import { Marker,Popup,MapContainer,TileLayer} from 'react-leaflet';
+import { MapContainer,TileLayer} from 'react-leaflet';
 
-import { useMapEvent} from 'react-leaflet/hooks';
+//import { useMapEvent} from 'react-leaflet/hooks';
 
 
 import  {maidenInstance} from './maidenhead.js';
@@ -32,6 +32,8 @@ const handleChangeMaiden = (event) =>{
   
 }
 
+/*
+
       function LocationMarker() {
         const map = useMapEvent('click', (e) => {
           setPosition([  e.latlng.lat,  e.latlng.lng]);
@@ -41,7 +43,55 @@ const handleChangeMaiden = (event) =>{
         })
       }
 
+      
+       function MaidenPointer  (){
+        return position === null ? null : (
+         <Marker position={position} ref={markerRef} >
+           <Popup>
+               <div class="card">
+                 <div className={"card-header"}>QTH locator</div>
+                 <div class="card-body">
+                   <p>{maidenHead()}</p>
+                   <p>{"Latitud:  " +position[0]}</p>
+                   <p>{"Longitud: " +position[1]}</p>
+ 
+                 </div>
+                 
+               </div>
+               
+               
+           </Popup>
+         </Marker>
+       )
+     }
 
+     
+       
+      function maidenHead  () {
+        var lat =position[0];
+        var lon =position[1];
+        var qth;
+
+       
+
+
+        lat+= 90;
+                                                          // Locator lat/lon shift.
+        lon += 180;
+
+        qth = str_chr_up.charAt(Math.floor(lon / 20));              // 1st digit: 20deg longitude slot.
+        qth += str_chr_up.charAt(Math.floor(lat / 10));             // 2nd digit: 10deg latitude slot.
+        qth += str_num.charAt(Math.floor((lon % 20) / 2));          // 3rd digit: 2deg longitude slot.
+        qth += str_num.charAt(Math.floor((lat % 10) / 1));          // 4th digit: 1deg latitude slot.
+        qth += str_chr_lo.charAt(Math.floor((lon % 2) * (60 / 5))); // 5th digit: 5min longitude slot.
+        qth += str_chr_lo.charAt(Math.floor((lat % 1) * (60 / 2.5)));  // 6th digit: 2.5min latitude slot.
+        return qth;
+       }
+
+       
+
+
+*/
         useEffect(() => {
           console.log(position);
           openPopup();
@@ -87,11 +137,13 @@ const handleChangeMaiden = (event) =>{
 
     const gotoMaiden= ()=>{
       setPosition(getPositionFromMaiden());
+      // eslint-disable-next-line
       if (maidenPosition.length==6){
           mapRef.current.setZoom(13);
-        
+        // eslint-disable-next-line
       }else if (maidenPosition.length==4){
         mapRef.current.setZoom(9);
+        // eslint-disable-next-line
       }else if (maidenPosition.length==2){
         mapRef.current.setZoom(4);
       }
@@ -140,51 +192,6 @@ const handleChangeMaiden = (event) =>{
       
       }
 
-
-       
-      function maidenHead  () {
-        var lat =position[0];
-        var lon =position[1];
-        var qth;
-
-       
-
-
-        lat+= 90;
-                                                          // Locator lat/lon shift.
-        lon += 180;
-
-        qth = str_chr_up.charAt(Math.floor(lon / 20));              // 1st digit: 20deg longitude slot.
-        qth += str_chr_up.charAt(Math.floor(lat / 10));             // 2nd digit: 10deg latitude slot.
-        qth += str_num.charAt(Math.floor((lon % 20) / 2));          // 3rd digit: 2deg longitude slot.
-        qth += str_num.charAt(Math.floor((lat % 10) / 1));          // 4th digit: 1deg latitude slot.
-        qth += str_chr_lo.charAt(Math.floor((lon % 2) * (60 / 5))); // 5th digit: 5min longitude slot.
-        qth += str_chr_lo.charAt(Math.floor((lat % 1) * (60 / 2.5)));  // 6th digit: 2.5min latitude slot.
-        return qth;
-       }
-
-       
-
-       function MaidenPointer  (){
-        return position === null ? null : (
-         <Marker position={position} ref={markerRef} >
-           <Popup>
-               <div class="card">
-                 <div className={"card-header"}>QTH locator</div>
-                 <div class="card-body">
-                   <p>{maidenHead()}</p>
-                   <p>{"Latitud:  " +position[0]}</p>
-                   <p>{"Longitud: " +position[1]}</p>
- 
-                 </div>
-                 
-               </div>
-               
-               
-           </Popup>
-         </Marker>
-       )
-     }
 
 
         return (
