@@ -23,11 +23,9 @@ const TopMenu = () => {
                  <Navbar  bg="light" className="navbar navbar-light navbar-custom ">
     
                  
-<b>Somos Radioaficionados Lite</b>
+      <b>Somos Radioaficionados Lite</b>
     
     </Navbar>
-
-
     <Navbar collapseOnSelect bg="light" className="navbar" expand="sm">
           <Nav.Link href="/v2/">Búsqueda</Nav.Link>
           <Nav.Link href="/v2/repeaters">Repetidoras</Nav.Link>        
