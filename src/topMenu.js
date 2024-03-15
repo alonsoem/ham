@@ -23,7 +23,7 @@ const TopMenu = () => {
                  <Navbar  bg="light" className="navbar navbar-light navbar-custom ">
     
                  
-<b>Somos Radioaficionados</b>
+<b>Somos Radioaficionados Lite</b>
     
     </Navbar>
 
