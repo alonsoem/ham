@@ -45,7 +45,7 @@ export default class updates extends  React.Component {
   <tbody>
     <tr>
       <th scope="row"><img src="static/flags/gif/ar.gif" alt="Argentina flag" />Argentina</th>
-      <td>26-12-2023</td>
+      <td>10-07-2024</td>
       <td><a href="https://www.enacom.gob.ar/listado-de-radioaficionados_p316">
             Enacom
          </a>
