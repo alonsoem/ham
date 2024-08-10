@@ -414,7 +414,7 @@ export default function FormRequest(props) {
                         : "visually-hidden"
                 }
             >
-             Escriba el nombre de la provincia del QTH
+             Escriba el nombre de la provincia de la repetidora
             </div>
 
         </Form.Group>
@@ -436,7 +436,7 @@ export default function FormRequest(props) {
                         : "visually-hidden"
                 }
             >
-             Escriba el nombre de la ciudad del QTH
+             Escriba el nombre de la ciudad de la repetidora
             </div>
 
         </Form.Group>
