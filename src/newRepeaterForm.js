@@ -1,7 +1,7 @@
 //import "./styles.css";
 import {Form} from "react-bootstrap";
 import { useState,useEffect } from "react";
-import {newMember,getCountries} from "./api/api";
+import {newRepeater,getCountries} from "./api/api";
 import { ToastContainer, toast } from 'react-toastify';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
@@ -11,7 +11,9 @@ export default function FormRequest(props) {
 
   
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
+  const [tx, setTx] = useState(0);
+  const [rx, setRx] = useState(0);
+  const [subtone, setSubtone] = useState(0);
   const [signal, setSignal] = useState("");
   const [errors, setErrors] = useState([]);
   const [countries, setCountries] = useState([]);
@@ -34,9 +36,16 @@ export default function FormRequest(props) {
     setSignal(event.target.value);
   };
 
-  const handleChangeCategory  = (event) => {
-    setCategory(event.target.value);
+  const handleChangeRx  = (event) => {
+    setRx(event.target.value);
   };
+  const handleChangeTx  = (event) => {
+    setTx(event.target.value);
+  };
+  const handleChangeSubtone  = (event) => {
+    setSubtone(event.target.value);
+  };
+
   const handleChangeCountry  = (event) => {
     setCountry(event.target.value);
   };
@@ -99,10 +108,12 @@ export default function FormRequest(props) {
 
   const submit = () =>{
 
-    newMember({
+    newRepeater({
         signal: signal,
         name:name,
-        category:category,
+        rx:rx,
+        tx:tx,
+        subtone:subtone,
         country:country,
         province:province,
         city:city,
@@ -148,11 +159,55 @@ export default function FormRequest(props) {
         errors.push("name");
     }
 
-    
-      if (category.length <= 5) {
-         errors.push("category");
+    if ((rx==null)){
+      errors.push("rx");
+    }else{
+      if(isNaN(rx)){
+        errors.push("rx");
+      }else{
+        if (rx.length===0){
+          errors.push("rx");
+          
+        }else{
+          if (rx===0){
+            errors.push("rx");
+          }
+        }
       }
+    }
+    if ((tx==null)){
+      errors.push("tx");
+    }else{
+      if(isNaN(tx)){
+        errors.push("tx");
+      }else{
+        if (tx.length===0){
+          errors.push("tx");
+          
+        }else{
+          if (tx===0){
+            errors.push("tx");
+          }
+        }
+      }
+    }
 
+    if ((subtone==null)){
+      errors.push("subtone");
+    }else{
+      if(isNaN(subtone)){
+        errors.push("subtone");
+      }else{
+        if (subtone.length===0){
+          errors.push("subtone");
+          
+        }else{
+          if (subtone===0){
+            errors.push("subtone");
+          }
+        }
+      }
+    }
 
       if (country===null) {
         errors.push("country");
@@ -194,9 +249,9 @@ export default function FormRequest(props) {
       <ToastContainer />
         <div className="row rowForm mb-4 col-12">
           <div className="mb-2">
-            <h5>Registra un nuevo radioaficionado</h5>
+            <h5>Registra una nueva repetidora del servicio de radioaficionados</h5>
           </div>
-          <p>Los nuevos radioaficionados deberán ser validados antes de figurar en los listados.</p>
+          <p>Los nuevos registros deberán ser validados antes de figurar en los listados.</p>
         </div>
 
                     
@@ -227,7 +282,7 @@ export default function FormRequest(props) {
 
       <div className="mb-2 col-12 container">
         <Form.Group className="mb-2" controlId="nameValue">
-          <Form.Label>NOMBRE</Form.Label>
+          <Form.Label>NOMBRE DEL TITULAR</Form.Label>
           <Form.Control  onChange={handleChangeName} value={name}
                          className={
                            hasError("name")
@@ -249,22 +304,64 @@ export default function FormRequest(props) {
 
        
       <div className="mb-2 col-12 container">
-        <Form.Group className="mb-2" controlId="categoryValue">
-          <Form.Label>CATEGORIA</Form.Label>
-          <Form.Control  onChange={handleChangeCategory} value={category}
+        <Form.Group className="mb-2" controlId="categoryValue" type="number">
+          <Form.Label>TX (Frecuencia de Transmisión de la repetidora)</Form.Label>
+          <Form.Control  onChange={handleChangeTx} value={tx}
                          className={
-                           hasError("category")
+                           hasError("tx")
                                  ? "form-control is-invalid"
                                  : "form-control"
                          }/>
             <div
                 className={
-                 hasError("category")
+                 hasError("tx")
                         ? "invalid-feedback"
                         : "visually-hidden"
                 }
             >
-             Escriba una categoría válida
+             Escriba una frecuencia válida
+            </div>
+
+        </Form.Group>
+      </div>
+      <div className="mb-2 col-12 container">
+        <Form.Group className="mb-2" controlId="categoryValue">
+          <Form.Label>RX (Frecuencia de Recepción de la repetidora)</Form.Label>
+          <Form.Control  onChange={handleChangeRx} value={rx}
+                         className={
+                           hasError("rx")
+                                 ? "form-control is-invalid"
+                                 : "form-control"
+                         }/>
+            <div
+                className={
+                 hasError("rx")
+                        ? "invalid-feedback"
+                        : "visually-hidden"
+                }
+            >
+             Escriba una frecuencia válida
+            </div>
+
+        </Form.Group>
+      </div>
+      <div className="mb-2 col-12 container">
+        <Form.Group className="mb-2" controlId="categoryValue">
+          <Form.Label>SUBTONO</Form.Label>
+          <Form.Control  onChange={handleChangeSubtone} value={subtone}
+                         className={
+                           hasError("subtone")
+                                 ? "form-control is-invalid"
+                                 : "form-control"
+                         }/>
+            <div
+                className={
+                 hasError("subtone")
+                        ? "invalid-feedback"
+                        : "visually-hidden"
+                }
+            >
+             Escriba un subtono válido
             </div>
 
         </Form.Group>
@@ -317,7 +414,7 @@ export default function FormRequest(props) {
                         : "visually-hidden"
                 }
             >
-             Escriba el nombre de la provincia del QTH
+             Escriba el nombre de la provincia de la repetidora
             </div>
 
         </Form.Group>
@@ -339,7 +436,7 @@ export default function FormRequest(props) {
                         : "visually-hidden"
                 }
             >
-             Escriba el nombre de la ciudad del QTH
+             Escriba el nombre de la ciudad de la repetidora
             </div>
 
         </Form.Group>

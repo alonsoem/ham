@@ -3,7 +3,7 @@ import { useState ,useEffect} from "react";
 
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import TopMenu from './topMenu.js';
-import NewMemberForm from "./newMemberForm.js";
+import NewRepeaterForm from "./newRepeaterForm.js";
 
 
 
@@ -19,7 +19,7 @@ export default function FormRequest(props) {
 
   const DisplayConditional = (props) =>{
     if (!formState){
-      return (<NewMemberForm callBack={props.resetForm} />);
+      return (<NewRepeaterForm callBack={props.resetForm} />);
     }else{
       return (
         <div className="container text-center col-10  p-3 ">
@@ -38,7 +38,7 @@ export default function FormRequest(props) {
     <div>
       <TopMenu />     
       <div className="card-header bgdiv text-white">
-          <h1>Nuevo Radioaficionado</h1> 
+          <h1>Nueva Repetidora</h1> 
       </div>
     
       <div className="container-fluid table-scroll-vertical col-12">
