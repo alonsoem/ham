@@ -16,6 +16,7 @@ import qso from "./qso.js";
 import viewer from "./viewer.js";
 import feedback from "./feedback.js";
 import newMember from "./newMember.js";
+import newRepeater from "./newRepeater.js";
 import bandPlan from "./bandPlan.js";
 import qthLocator from "./qthLocator.js";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
@@ -36,6 +37,7 @@ export default class App extends React.Component {
             <Route path="/utc" component={utcTime} />
             <Route path="/tools" component={tools} />
             <Route path="/newMember" component={newMember} />
+            <Route path="/newRepeater" component={newRepeater} />
             <Route path="/viewer/:title/:file" component={viewer} />
             <Route path="/result/:signal/:name/:category/:country/:province/:city" component={result} />
             <Route exact path="/results/:signal" component={results} />
