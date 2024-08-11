@@ -1,6 +1,8 @@
 import React from 'react';
 import {getRepeaters} from "./api/api";
 import TopMenu  from "./topMenu";
+
+import { Link } from 'react-router-dom';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 
@@ -84,11 +86,18 @@ export default class results extends  React.Component {
             <div style={{'width': '100%', 'height': '100%', 'background-color': 'rgba(0,0,255,0.1)'}}>
                         <div className="card" style={{'background-color':'#439139ef'}}>
                             <div className="card-body " >
-                                <div className="row">
-                                    <div className="col-12">
-                                        Indique una localidad en Argentina <img src="/static/flags/gif/ar.gif" alt="" />, Chile <img src="/static/flags/gif/cl.gif" alt="" /> o Uruguay <img src="/static/flags/gif/uy.gif" alt="" /> para ver las repetidoras disponibles.
+                            <div className="row col-12 col-xs-12">
+                                    
+                                    <div className="col-10 col-xs-5">Indique una localidad en Argentina <img src="/static/flags/gif/ar.gif" alt="" />, Chile <img src="/static/flags/gif/cl.gif" alt="" /> o Uruguay <img src="/static/flags/gif/uy.gif" alt="" /> para ver las repetidoras disponibles.</div>
+                                    <div className="col-2 col-xs-1 m-auto">
+                                    <Link to={"/newRepeater/"}>
+                                        
+                                        <button type="button" className="btn btn-danger">Agregar</button>
+                                        
+                                    </Link>
                                     </div>
-                                </div>
+                                
+                            </div>
 
                                 
                              
