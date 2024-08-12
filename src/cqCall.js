@@ -26,7 +26,7 @@ export default class solarConditions extends  React.Component {
         return (
             <div >
 
-<TopMenu />
+
 
               <div class="card-header bgdiv text-white">
                 <h1>Ejemplo de un Comunicado</h1> 

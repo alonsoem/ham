@@ -15,7 +15,6 @@ export default class updates extends  React.Component {
         return (
           <div>
 
-<TopMenu />
 
           <div class="card-header bgdiv text-white">
               <h1>Actualizaciones</h1> 

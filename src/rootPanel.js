@@ -21,12 +21,15 @@ import bandPlan from "./bandPlan.js";
 import qthLocator from "./qthLocator.js";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 import news from "./news.js";
+import TopMenu from "./topMenu.js";
 
 
 export default class App extends React.Component {
     render() {
       return (
+        
         <BrowserRouter basename="/">
+          <TopMenu />
           <Switch>
             <Route exact path="/qso" component={qso} />
             <Route path="/solarConditions" component={solarConditions} />

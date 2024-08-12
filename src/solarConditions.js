@@ -104,7 +104,7 @@ import TopMenu from "./topMenu";
         return (
             <div>
 
-<TopMenu />
+
                 <div class="card-header bgdiv text-white">
                     <h1>Condiciones Solares</h1> 
                 </div>

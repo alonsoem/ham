@@ -249,7 +249,7 @@ export default class results extends  React.Component {
         return (
             <div>
 
-<TopMenu />
+
             <div className="card-header bgdiv text-white">
                 <h1>Resultados</h1> 
             </div>

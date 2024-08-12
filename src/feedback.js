@@ -147,7 +147,7 @@ export default class landing extends  React.Component {
 
             <div >
                  
-<TopMenu />     
+
             
             <div class="card-header bgdiv text-white">
                 <h1>Sugerencias</h1> 

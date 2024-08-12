@@ -31,7 +31,7 @@ export default class landing extends  React.Component {
             <div>
 
 
-<TopMenu />     
+
             
             <div className="card-header bgdiv text-white">
                 <h1>Busqueda</h1> 

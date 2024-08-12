@@ -157,7 +157,7 @@ export default function BandPlan (props) {
             <div>
 
 
-<TopMenu />     
+
             
             <div className="card-header bgdiv text-white">
                 <h1>Plan de bandas Argentina</h1> 

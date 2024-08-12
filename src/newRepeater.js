@@ -36,7 +36,7 @@ export default function FormRequest(props) {
 
   return (
     <div>
-      <TopMenu />     
+        
       <div className="card-header bgdiv text-white">
           <h1>Nueva Repetidora</h1> 
       </div>

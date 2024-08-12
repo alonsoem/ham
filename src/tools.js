@@ -16,7 +16,7 @@ export default class tools extends  React.Component {
         return (
           <div>
 
-            <TopMenu />
+            
 
             <div class="card-header bgdiv text-white">
                 <h1>Herramientas</h1> 

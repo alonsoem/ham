@@ -145,7 +145,7 @@ export default class qso extends  React.Component {
 
             <div >
                  
-                  <TopMenu />
+                  
             
                 
             
