@@ -1,6 +1,5 @@
 import React from 'react';
 import {getResults} from "./api/api";
-import TopMenu  from "./topMenu";
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 
 

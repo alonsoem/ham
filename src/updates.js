@@ -1,6 +1,5 @@
 import React from 'react';
 
-import TopMenu from './topMenu';
 
 export default class updates extends  React.Component {
     constructor(props) {

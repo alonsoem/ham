@@ -1,7 +1,5 @@
 import React from 'react';
 import {getRepeaters} from "./api/api";
-import TopMenu  from "./topMenu";
-
 import { Link } from 'react-router-dom';
 import '../node_modules/bootstrap-css-only/css/bootstrap.css';
 

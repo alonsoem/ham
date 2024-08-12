@@ -1,9 +1,6 @@
 import React from "react";
 import {getUtcTime} from "./api/api";
 
-import TopMenu from "./topMenu";
-
-
 export default class utcTime extends React.Component {
   constructor(props) {
     super(props);
